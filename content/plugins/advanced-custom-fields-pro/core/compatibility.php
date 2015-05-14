@@ -151,6 +151,11 @@ class acf_compatibility {
 	
 	function get_valid_relationship_field( $field ) {
 		
+		// force array
+		$field['post_type'] = acf_force_type_array($field['post_type']);
+		$field['taxonomy'] = acf_force_type_array($field['taxonomy']);
+		
+		
 		// remove 'all' from post_type
 		if( acf_in_array('all', $field['post_type']) ) {
 			

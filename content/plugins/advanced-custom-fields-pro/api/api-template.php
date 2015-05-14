@@ -226,10 +226,17 @@ function get_field_object( $selector, $post_id = false, $format_value = true, $l
 	
 	
 	// load field reference if not a field_key
-	if( !acf_is_field_key($selector) )
-	{
+	if( !acf_is_field_key($selector) ) {
+		
 		$override_name = $selector;
-		$selector = acf_get_field_reference( $selector, $post_id );
+		$reference = acf_get_field_reference( $selector, $post_id );
+		
+		if( $reference ) {
+			
+			$selector = $reference;
+			
+		}
+		
 	}
 	
 	
@@ -238,9 +245,10 @@ function get_field_object( $selector, $post_id = false, $format_value = true, $l
 	
 	
 	// bail early if no field found
-	if( !$field )
-	{
+	if( !$field ) {
+		
 		return false;
+		
 	}
 	
 	
@@ -1271,7 +1279,8 @@ function acf_form( $args = array() ) {
 		'updated_message'		=> __("Post updated", 'acf'),
 		'label_placement'		=> 'top',
 		'instruction_placement'	=> 'label',
-		'field_el'				=> 'div'
+		'field_el'				=> 'div',
+		'uploader'				=> 'wp'
 	));
 	
 	$args['form_attributes'] = wp_parse_args( $args['form_attributes'], array(
@@ -1316,8 +1325,8 @@ function acf_form( $args = array() ) {
 	
 	
 	// post_title
-	if( $args['post_title'] )
-	{
+	if( $args['post_title'] ) {
+		
 		$fields[] = acf_get_valid_field(array(
 			'name'		=> '_post_title',
 			'label'		=> 'Title',
@@ -1325,18 +1334,20 @@ function acf_form( $args = array() ) {
 			'value'		=> $post_id ? get_post_field('post_title', $post_id) : '',
 			'required'	=> true
 		));
+		
 	}
 	
 	
 	// post_content
-	if( $args['post_content'] )
-	{
+	if( $args['post_content'] ) {
+		
 		$fields[] = acf_get_valid_field(array(
 			'name'		=> '_post_content',
 			'label'		=> 'Content',
 			'type'		=> 'wysiwyg',
 			'value'		=> $post_id ? get_post_field('post_content', $post_id) : ''
 		));
+		
 	}
 	
 	
@@ -1401,6 +1412,10 @@ function acf_form( $args = array() ) {
 	}
 	
 	
+	// uploader (always set incase of multiple forms on the page)
+	acf_update_setting('uploader', $args['uploader']);
+	
+	
 	// display form
 	if( $args['form'] ): ?>
 	
@@ -1459,42 +1474,12 @@ function acf_form( $args = array() ) {
 	<div class="acf-form-submit">
 	
 		<input type="submit" class="button button-primary button-large" value="<?php echo $args['submit_value']; ?>" />
-		<span class="acf-loading" style="display: none;"></span>
+		<span class="acf-spinner"></span>
 		
 	</div>
 	<!-- / Submit -->
 	
 	</form>
-	<script type="text/javascript">
-	(function($) {
-		
-		// vars
-		var $spinner = $('#<?php echo $args['form_attributes']['id']; ?> .acf-form-submit .acf-loading');
-		
-		
-		// show spinner on submit
-		$(document).on('submit', '#<?php echo $args['form_attributes']['id']; ?>', function(){
-			
-			// show spinner
-			$spinner.css('display', 'inline-block');
-			
-		});
-		
-		
-		// hide spinner after validation
-		acf.add_filter('validation_complete', function( json, $form ){
-			
-			// hide spinner
-			$spinner.css('display', 'none');
-			
-			
-			// return
-			return json;
-					
-		});
-		
-	})(jQuery);	
-	</script>
 	<?php endif;
 }
 
@@ -1695,7 +1680,7 @@ function delete_field( $selector, $post_id = false ) {
 	
 	
 	// delete
-	return acf_delete_value( $post_id, $field['name'] );
+	return acf_delete_value( $post_id, $field );
 	
 }
 

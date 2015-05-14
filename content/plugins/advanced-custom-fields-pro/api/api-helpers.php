@@ -37,6 +37,7 @@ function acf_get_setting( $name, $allow_filter = true ) {
 	
 	// return
 	return $r;
+	
 }
 
 
@@ -3001,6 +3002,36 @@ function acf_get_valid_terms( $terms = false, $taxonomy = 'category' ) {
 	// return
 	return $terms;
 	
+}
+
+
+/*
+*  _acf_settings_uploader
+*
+*  Dynamic logic for uploader setting
+*
+*  @type	function
+*  @date	7/05/2015
+*  @since	5.2.3
+*
+*  @param	$uploader (string)
+*  @return	$uploader
+*/
+
+add_filter('acf/settings/uploader', '_acf_settings_uploader');
+
+function _acf_settings_uploader( $uploader ) {
+	
+	// if can't upload files
+	if( !current_user_can('upload_files') ) {
+		
+		$uploader = 'basic';
+		
+	}
+	
+	
+	// return
+	return $uploader;
 }
 
 

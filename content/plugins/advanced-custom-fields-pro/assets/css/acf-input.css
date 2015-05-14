@@ -34,6 +34,7 @@
   background: #F55E4F;
   color: #fff;
   margin: 0 0 10px;
+  display: inline-block;
 }
 .acf-field .acf-error-message:after {
   content: "";
@@ -1126,6 +1127,13 @@ html[dir="rtl"] .acf-image-uploader .view {
 .media-modal .upload-error-message {
   white-space: pre-wrap;
 }
+/* fix required span */
+.media-modal .acf-required {
+  padding: 0 !important;
+  margin: 0 !important;
+  float: none !important;
+  color: #f00 !important;
+}
 /*---------------------------------------------------------------------------------------------
 *
 *  Media Model (Edit Mode)
@@ -1237,13 +1245,69 @@ body.acf-wp-4 .media-modal.acf-media-modal .media-frame-content {
 .media-modal.acf-media-modal .media-frame-content {
   left: 0;
 }
-/*--------------------------------------------------------------------------
+/*--------------------------------------------------------------------------------------------
 *
-*	Profile page
-*	
-*-------------------------------------------------------------------------*/
-#profile-page .acf-field textarea {
-  width: 100%;
+*	User
+*
+*--------------------------------------------------------------------------------------------*/
+.form-table > tbody > .acf-field > .acf-label {
+  padding: 20px 10px 20px 0;
+  width: 200px;
+}
+.form-table > tbody > .acf-field > .acf-label label {
+  font-size: 14px;
+}
+.form-table > tbody > .acf-field > .acf-input {
+  padding: 15px 5% 15px 10px;
+}
+.form-table th.acf-th {
+  width: auto;
+}
+/*
+.form-table .acf-error-message {
+	display: inline-block;
+}
+*/
+/*--------------------------------------------------------------------------------------------
+*
+*	Term
+*
+*--------------------------------------------------------------------------------------------*/
+#addtag .acf-field {
+  padding-right: 5%;
+}
+#addtag .acf-field .acf-label {
+  margin: 0;
+}
+#addtag .acf-field .acf-label label {
+  font-size: 12px;
+  font-weight: normal;
+}
+p.submit .spinner,
+p.submit .acf-spinner {
+  vertical-align: top;
+  float: none;
+  margin: 4px 4px 0;
+}
+/*--------------------------------------------------------------------------------------------
+*
+*	Comment
+*
+*--------------------------------------------------------------------------------------------*/
+.editcomment td:first-child {
+  white-space: nowrap;
+  width: 131px;
+}
+/*--------------------------------------------------------------------------------------------
+*
+*	Widget
+*
+*--------------------------------------------------------------------------------------------*/
+.widget .acf-field .acf-label {
+  margin: 0;
+}
+.widget .acf-field .acf-label label {
+  font-weight: normal;
 }
 /*--------------------------------------------------------------------------
 *
