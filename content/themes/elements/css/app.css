@@ -1751,7 +1751,6 @@ body.is-mobile .section-hero .section-hero-banner {
   .section_domain .bottom {
     position: absolute;
     width: 100%;
-    height: 100vh;
     background-size: cover !important;
     background-repeat: no-repeat !important; }
     .section_domain .top.is_pinned,
@@ -1762,7 +1761,8 @@ body.is-mobile .section-hero .section-hero-banner {
   .section_domain .top {
     top: 0; }
   .section_domain .bottom {
-    bottom: 0; }
+    bottom: 0;
+    background: rgba(32, 45, 94, 0.8); }
 
 .section_domain .section_header,
 .section_domain .bottom > * {

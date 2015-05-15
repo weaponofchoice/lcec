@@ -11,12 +11,12 @@ $text_c_title = get_sub_field( 'text_c_title' );
 $text_c_text = preg_replace( '/<p>/', '<p class="is_aligned-' . $text_o_c_align . '">', get_sub_field( 'text_c_text' ) );
 ?>
 <section class="section_text <?php if( $text_o_menu == true ){ echo 'has_anchor" id="anchor-' . $i_anchor; } else { echo '"'; }; ?>">
-  <div class="section_body row <?php echo 'is_positioned-' . $text_o_c_pos; ?>">
-    <p class="s-4 columns <?php echo 'is_aligned-' . $text_o_c_align; ?>"><?php echo $text_c_caption; ?></p>
-    <h3 class="s-4 columns <?php echo 'is_aligned-' . $text_o_c_align; ?>">
+  <div class="section_body <?php echo 'is_positioned-' . $text_o_c_pos; ?>">
+    <p class="<?php echo 'is_aligned-' . $text_o_c_align; ?>"><?php echo $text_c_caption; ?></p>
+    <h3 class="<?php echo 'is_aligned-' . $text_o_c_align; ?>">
       <?php echo $text_c_title; ?>
     </h3>
-    <div class="s-4 columns">
+    <div>
       <?php echo $text_c_text; ?>
     </div>
   </div>
