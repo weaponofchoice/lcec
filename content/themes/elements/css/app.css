@@ -1,4 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
 [class*="grid-"] {
   display: block;
   padding: 0;
@@ -1319,20 +1318,25 @@ ul {
 .margin-b100 {
   margin-bottom: 6.25rem !important; }
 
-h1, h2, p, a {
-  font-family: 'Open Sans', sans-serif;
+h1, h2, h3, p, a {
+  font-family: 'nimbus-sans', sans-serif;
   font-style: normal;
   font-size: 16px;
   font-weight: normal;
-  text-rendering: geometricPrecision; }
-  h1.is_bold, h2.is_bold, p.is_bold, a.is_bold {
+  line-height: 1;
+  color: #202d5e; }
+  h1.is_bold, h2.is_bold, h3.is_bold, p.is_bold, a.is_bold {
     font-weight: 700; }
 
-h1, h2 {
-  font-size: 3em; }
-
 h2 {
-  font-size: 2em; }
+  font-size: 5.625rem;
+  font-weight: 700; }
+
+h3 {
+  font-size: 2.25rem; }
+
+p {
+  font-size: 1.125rem; }
 
 a {
   color: black;
@@ -1674,7 +1678,7 @@ body.is-mobile .section-hero .section-hero-banner {
   .section_text .section_body {
     max-width: 600px;
     margin: auto; }
-    .section_text .section_body h2,
+    .section_text .section_body h3,
     .section_text .section_body p,
     .section_text .section_body a {
       margin-bottom: 1em; }
@@ -2013,27 +2017,27 @@ section.has_extra-padBottom,
 .section_image .section_body.is_positioned-right {
   text-align: right; }
 
-h1.is_italic, h2.is_italic, p.is_italic, a.is_italic {
+h1.is_italic, h2.is_italic, h3.is_italic, p.is_italic, a.is_italic {
   font-style: italic; }
-h1.is_underlined, h2.is_underlined, p.is_underlined, a.is_underlined {
+h1.is_underlined, h2.is_underlined, h3.is_underlined, p.is_underlined, a.is_underlined {
   text-decoration: underline; }
-h1.is_capitalized, h2.is_capitalized, p.is_capitalized, a.is_capitalized {
+h1.is_capitalized, h2.is_capitalized, h3.is_capitalized, p.is_capitalized, a.is_capitalized {
   text-transform: capitalize; }
-h1.is_uppercase, h2.is_uppercase, p.is_uppercase, a.is_uppercase {
+h1.is_uppercase, h2.is_uppercase, h3.is_uppercase, p.is_uppercase, a.is_uppercase {
   text-transform: uppercase; }
-h1.is_lowercase, h2.is_lowercase, p.is_lowercase, a.is_lowercase {
+h1.is_lowercase, h2.is_lowercase, h3.is_lowercase, p.is_lowercase, a.is_lowercase {
   text-transform: lowercase; }
-h1.is_bold, h2.is_bold, p.is_bold, a.is_bold {
+h1.is_bold, h2.is_bold, h3.is_bold, p.is_bold, a.is_bold {
   font-weight: 700; }
-h1.is_aligned-center, h2.is_aligned-center, p.is_aligned-center, a.is_aligned-center {
+h1.is_aligned-center, h2.is_aligned-center, h3.is_aligned-center, p.is_aligned-center, a.is_aligned-center {
   text-align: center; }
-h1.is_aligned-left, h2.is_aligned-left, p.is_aligned-left, a.is_aligned-left {
+h1.is_aligned-left, h2.is_aligned-left, h3.is_aligned-left, p.is_aligned-left, a.is_aligned-left {
   text-align: left; }
-h1.is_aligned-right, h2.is_aligned-right, p.is_aligned-right, a.is_aligned-right {
+h1.is_aligned-right, h2.is_aligned-right, h3.is_aligned-right, p.is_aligned-right, a.is_aligned-right {
   text-align: right; }
-h1.is_black, h2.is_black, p.is_black, a.is_black {
+h1.is_black, h2.is_black, h3.is_black, p.is_black, a.is_black {
   color: black; }
-h1.is_white, h2.is_white, p.is_white, a.is_white {
+h1.is_white, h2.is_white, h3.is_white, p.is_white, a.is_white {
   color: white; }
 
 p.is_small {

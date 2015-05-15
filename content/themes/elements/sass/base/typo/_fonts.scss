@@ -1,7 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
-
-@mixin opensans{
-  font-family: 'Open Sans', sans-serif;
+@mixin nimbus{
+  font-family: 'nimbus-sans', sans-serif;
   font-style: normal;
   
   &.is_bold{
