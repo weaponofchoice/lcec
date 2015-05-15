@@ -1676,7 +1676,7 @@ body.is-mobile .section-hero .section-hero-banner {
 .section_text {
   text-align: center; }
   .section_text .section_body {
-    max-width: 600px;
+    max-width: 650px;
     margin: auto; }
     .section_text .section_body h3,
     .section_text .section_body p,
@@ -1764,13 +1764,20 @@ body.is-mobile .section-hero .section-hero-banner {
   .section_domain .bottom {
     bottom: 0; }
 
+.section_domain .section_header,
+.section_domain .bottom > * {
+  max-width: 650px;
+  margin: auto; }
+
 .section_domain .section_header {
   top: 0;
+  right: 0;
+  left: 0;
   position: absolute;
   z-index: 200; }
   .section_domain .section_header.is_pinned {
-    position: fixed;
-    top: 0; }
+    top: 0;
+    position: fixed; }
 
 /*
  * Show and Hide class functions

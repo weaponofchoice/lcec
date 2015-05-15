@@ -33,14 +33,25 @@
   }
 }
 
+// Max width
+.section_domain{
+  .section_header,
+  .bottom > *{
+    max-width: 650px;
+    margin: auto;
+  }
+}
+
 // domain header
 .section_domain .section_header{
   top: 0;
+  right: 0;
+  left: 0;
   position: absolute;
   z-index: $zIndex-domainHeader;
   
   &.is_pinned{
-    position: fixed;
     top: 0;
+    position: fixed;
   }
 }
