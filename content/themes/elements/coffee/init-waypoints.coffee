@@ -1,13 +1,16 @@
 $ ->
-  anchor = $('.has_anchor')
-  anchor_last = anchor.last()
+  # domains
+  domain = $('.section_domain')
+  bottom = $('.section_domain .bottom')
   
-  waypoints = anchor.waypoint((direction) ->
-    $('section').removeClass "anchor_current"
-    $(this.element).addClass "anchor_current"
-  )
-  
-  waypoints = anchor_last.waypoint(((direction) ->
-    $('section').removeClass "anchor_current"
-    $(this.element).addClass "anchor_current"
-  ), offset: 'bottom-in-view')
+  Pace.on 'done', ->
+    waypoints = domain.waypoint((direction) ->
+      top = $(this.element).children('.top')
+      header = $(this.element).children('.section_header')
+      top.toggleClass "is_pinned"
+      header.toggleClass "is_pinned"
+    )
+    
+    waypoints = bottom.waypoint((direction) ->
+      $(this.element).toggleClass "is_pinned"
+    )

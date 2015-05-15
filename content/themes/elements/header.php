@@ -19,21 +19,23 @@
   <!-- LINK tags -->
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app.css">
   
+  <!-- Fonts from Typekit -->
+  <script src="//use.typekit.net/jif1vmt.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+  
   <!-- WP_HEAD() -->
   <?php wp_head(); ?>
 </head>
 
 <body class="is-loading">
   <!-- Header -->
-  <header>
+  <!-- <header>
     <a class="link-logo" href="<?php echo home_url(); ?>">
       <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo.svg">
     </a>
-    
+
     <?php include( 'includes/nav.php' ); ?>
-    
-    <!-- <a class="trigger trigger-menu"><i></i></a> -->
-  </header>
+  </header> -->
   
   <?php
   // Hero section must be placed before main

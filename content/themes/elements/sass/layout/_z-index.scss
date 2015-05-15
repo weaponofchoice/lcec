@@ -14,9 +14,12 @@ $zIndex10:  1000;
 $zIndex11:  1100;
 
 // zIndex implementations
-$zIndex-main:         $zIndex9;
+$zIndex-domainTop:    $zIndex1;
+$zIndex-domainBottom: $zIndex1;
 
-$zIndex-parallax:     $zIndex10;
+$zIndex-domainHeader: $zIndex2;
+
+$zIndex-main:         $zIndex9;
 
 $zIndex-header:       $zIndex11;
 $zIndex-footer:       $zIndex11;

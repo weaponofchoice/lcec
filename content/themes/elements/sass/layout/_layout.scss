@@ -9,7 +9,6 @@ header{
   padding-right: $side-margin;
 }
 
-main,
 footer{
   padding-left: $side-margin - ($column-gutter / 2);
   padding-right: $side-margin - ($column-gutter / 2);
@@ -21,7 +20,6 @@ footer{
     padding-right: $side-margin-small;
   }
   
-  main,
   footer{
     padding-left: $side-margin-small - ($column-gutter / 2);
     padding-right: $side-margin-small - ($column-gutter / 2);
