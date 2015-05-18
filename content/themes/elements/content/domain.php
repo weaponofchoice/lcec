@@ -17,6 +17,8 @@ $domain_c_link_text = get_sub_field( 'domain_c_link_text' );
   </div>
   
   <div class="bottom">
-    <?php echo $domain_c_text; ?>
+    <div>
+      <?php echo $domain_c_text; ?>
+    </div>
   </div>
 </section>

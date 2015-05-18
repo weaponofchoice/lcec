@@ -1775,6 +1775,14 @@ body.is-mobile .section-hero .section-hero-banner {
   .section_domain .bottom {
     bottom: 0;
     background: rgba(32, 45, 94, 0.8); }
+    .section_domain .bottom > div {
+      bottom: 35px;
+      right: 0;
+      left: 0;
+      margin: auto;
+      position: absolute; }
+      .section_domain .bottom > div p {
+        margin-bottom: 1em; }
 
 .section_domain .section_header,
 .section_domain .bottom > * {
@@ -1782,11 +1790,13 @@ body.is-mobile .section-hero .section-hero-banner {
   margin: auto; }
 
 .section_domain .section_header {
-  top: 0;
+  top: 35px;
   right: 0;
   left: 0;
   position: absolute;
   z-index: 200; }
+  .section_domain .section_header p {
+    margin-bottom: 1em; }
 
 /*
  * Show and Hide class functions
@@ -2128,14 +2138,14 @@ body.is-mobile.is-loading > * {
   left: 0;
   position: fixed; }
 .section_domain .section_header.is_pinned {
-  top: 0;
   position: fixed; }
 
 .section_domain.is_scrolled {
   height: 100vh;
   margin-top: 100vh; }
   .section_domain.is_scrolled .top,
-  .section_domain.is_scrolled .bottom,
-  .section_domain.is_scrolled .section_header {
+  .section_domain.is_scrolled .bottom {
     top: 0 !important;
+    position: absolute !important; }
+  .section_domain.is_scrolled .section_header {
     position: absolute !important; }

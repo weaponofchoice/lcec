@@ -25,6 +25,18 @@
     bottom: 0;
     
     background: $blue-transparent;
+    
+    > div{
+      bottom: 35px;
+      right: 0;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      
+      p{
+        margin-bottom: 1em;
+      }
+    }
   }
 }
 
@@ -39,9 +51,13 @@
 
 // domain header
 .section_domain .section_header{
-  top: 0;
+  top: 35px;
   right: 0;
   left: 0;
   position: absolute;
   z-index: $zIndex-domainHeader;
+  
+  p{
+    margin-bottom: 1em;
+  }
 }
