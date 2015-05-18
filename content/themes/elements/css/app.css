@@ -1329,7 +1329,7 @@ h1, h2, h3, p, a {
     font-weight: 700; }
 
 h2 {
-  font-size: 5.625rem;
+  font-size: 5rem;
   font-weight: 700; }
 
 h3 {
@@ -1608,9 +1608,6 @@ section {
   section .section_header {
     margin-bottom: 1.875rem; }
 
-main section:first-child {
-  padding-top: 7.5rem; }
-
 main section:last-child {
   padding-bottom: 7.5rem; }
 
@@ -1687,15 +1684,35 @@ body.is-mobile .section-hero .section-hero-banner {
   display: inline-block;
   text-align: left; }
 
-.section_grid ul {
-  width: 100%; }
-  .section_grid ul li {
-    margin-bottom: 50px; }
-    .section_grid ul li > * {
-      margin-bottom: 15px; }
-    .section_grid ul li img {
-      min-width: 100%;
-      display: block; }
+.section_grid .section_header {
+  top: 35px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  z-index: 1; }
+.section_grid .section_body ul {
+  width: 100%;
+  height: 500px; }
+  .section_grid .section_body ul li {
+    height: 100%;
+    padding: 0; }
+
+.section_grid ul li {
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center center !important; }
+  .section_grid ul li .mask {
+    width: 100%;
+    height: 100%;
+    background: rgba(32, 45, 94, 0.8); }
+  .section_grid ul li p {
+    bottom: 35px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    padding: 0 35px; }
 
 @media only screen and (min-width: 62.563em) {
   .l-grid-4 li:nth-last-child(-n + 4) {

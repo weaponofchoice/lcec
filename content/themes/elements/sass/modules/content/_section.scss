@@ -16,10 +16,6 @@ section{
 }
 
 // First and last sections get extra padding
-main section:first-child{
-  padding-top: $section-spacing * 2;
-}
-
 main section:last-child{
   padding-bottom: $section-spacing * 2;
 }

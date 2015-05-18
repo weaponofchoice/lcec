@@ -3,12 +3,12 @@ $grid_title = get_sub_field( 'grid_title' );
 $grid_item = get_sub_field( 'grid_item' );
 
 // Output
-echo '<section class="section_grid">';
+echo '<section class="section_grid has_no-padTop">';
   
   // Grid header
-  if( $grid_title ): 
+  if( $grid_title ):
     echo '<div class="section_header row">';
-      echo '<h2 class="s-4 columns">' . $grid_title . '</h2>';
+      echo '<h2 class="s-4 columns is_white">' . $grid_title . '</h2>';
     echo '</div>';
   endif;
   
@@ -20,12 +20,12 @@ echo '<section class="section_grid">';
         while( have_rows('grid_item') ): the_row();
           $image = get_sub_field( 'grid_item_image' );
           $title = get_sub_field( 'grid_item_title' );
-          
-          echo '<li>';
-            echo '<div class="mask"></div>';
-            echo '<img src="' . $image['sizes']['medium'] . '" width="' . $image['width'] . '" height="' . $image['height'] . '">';
-            echo '<p>' . $title . '</p>';
-          echo '</li>';
+          ?>
+          <li style="background:url('<?php echo $image['sizes']['medium']; ?>')">
+            <div class="mask"></div>
+            <p class="is_white is_aligned-center"><?php echo $title; ?></p>
+          </li>
+          <?php
         endwhile;
         
       echo '</ul>';
