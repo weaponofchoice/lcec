@@ -12,7 +12,7 @@ if( have_rows('page') ):
     elseif( get_row_layout() == 'domain' ):
       include( locate_template('content/domain.php') );
     elseif( get_row_layout() == 'grid' ):
-      include( locate_template('content/gridSec.php') );
+      include( locate_template('content/grid.php') );
     endif;
     
   endwhile;
