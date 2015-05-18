@@ -2,21 +2,17 @@
 get_header();
 
 // Loop into ACF groups
-if( have_rows('page') ): $i_anchor = 1; $i_par = 0;
+if( have_rows('page') ):
   while( have_rows('page') ): the_row();
     
     // Hero section is placed before main
     
     if( get_row_layout() == 'text' ):
-      include( locate_template('content/text.php') ); $i_anchor++;
-    elseif( get_row_layout() == 'image' ):
-      include( locate_template('content/image.php') );
+      include( locate_template('content/text.php') );
     elseif( get_row_layout() == 'domain' ):
       include( locate_template('content/domain.php') );
-    elseif( get_row_layout() == 'grid_primary' ):
-      include( locate_template('content/gridPri.php') ); $i_anchor++;
-    elseif( get_row_layout() == 'grid_secondary' ):
-      include( locate_template('content/gridSec.php') ); $i_anchor++;
+    elseif( get_row_layout() == 'grid' ):
+      include( locate_template('content/gridSec.php') );
     endif;
     
   endwhile;
