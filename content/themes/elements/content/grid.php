@@ -21,7 +21,7 @@ echo '<section class="section_grid has_no-padTop">';
           $image = get_sub_field( 'grid_item_image' );
           $title = get_sub_field( 'grid_item_title' );
           ?>
-          <li style="background:url('<?php echo $image['sizes']['medium']; ?>')">
+          <li class="fadeIn-up" style="background:url('<?php echo $image['sizes']['medium']; ?>')">
             <div class="mask"></div>
             <p class="is_white is_aligned-center"><?php echo $title; ?></p>
           </li>

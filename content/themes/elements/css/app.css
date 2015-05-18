@@ -2149,3 +2149,57 @@ body.is-mobile.is-loading > * {
     position: absolute !important; }
   .section_domain.is_scrolled .section_header {
     position: absolute !important; }
+
+.fadeIn-up {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
+  -ms-transition: 0.8s;
+  -o-transition: 0.8s;
+  transition: 0.8s;
+  -moz-transform: translateY(30px);
+  -o-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  -webkit-transform: translateY(30px);
+  transform: translateY(30px); }
+  .fadeIn-up.animated {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: 0.8s;
+    -moz-transition: 0.8s;
+    -ms-transition: 0.8s;
+    -o-transition: 0.8s;
+    transition: 0.8s;
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+
+.fadeIn-left {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
+  -ms-transition: 0.8s;
+  -o-transition: 0.8s;
+  transition: 0.8s;
+  -moz-transform: translateX(-30px);
+  -o-transform: translateX(-30px);
+  -ms-transform: translateX(-30px);
+  -webkit-transform: translateX(-30px);
+  transform: translateX(-30px); }
+  .fadeIn-left.animated {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: 0.8s;
+    -moz-transition: 0.8s;
+    -ms-transition: 0.8s;
+    -o-transition: 0.8s;
+    transition: 0.8s;
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0); }
