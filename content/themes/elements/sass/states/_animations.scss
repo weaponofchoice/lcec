@@ -1,0 +1,19 @@
+.fadeIn-up{
+  @include hide( .8s );
+  @include transform( translateY(30px) );
+  
+  &.animated{
+    @include show( .8s );
+    @include transform( translateY(0) );
+  }
+}
+
+.fadeIn-left{
+  @include hide( .8s );
+  @include transform( translateX(-30px) );
+  
+  &.animated{
+    @include show( .8s );
+    @include transform( translateX(0) );
+  }
+}

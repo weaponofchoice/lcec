@@ -21,7 +21,7 @@ $ ->
       header = $(this.element).children('.section_header')
       
       top.toggleClass "is_pinned"
-      header.toggleClass "is_pinned"
+      header.toggleClass "is_pinned animated"
     )
     
     waypoints = bottom.waypoint((direction) ->

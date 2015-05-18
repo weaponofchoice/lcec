@@ -7,7 +7,7 @@ $domain_c_link = get_sub_field( 'domain_c_link' );
 $domain_c_link_text = get_sub_field( 'domain_c_link_text' );
 ?>
 <section class="section_domain">
-  <div class="section_header">
+  <div class="section_header fadeIn-left">
     <p><?php echo $domain_c_caption; ?></p>
     <h2><?php echo $domain_c_title; ?></h2>
   </div>
