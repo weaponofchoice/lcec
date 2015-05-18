@@ -25,5 +25,6 @@ $ ->
     )
     
     waypoints = bottom.waypoint((direction) ->
-      $(this.element).toggleClass "is_pinned"
+      domain = $(this.element).parent('.section_domain')
+      domain.toggleClass "is_scrolled"
     )

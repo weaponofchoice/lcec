@@ -15,12 +15,6 @@
     
     background-size: cover !important;
     background-repeat: no-repeat !important;
-    
-    &.is_pinned{
-      top: 0;
-      left: 0;
-      position: fixed;
-    }
   }
   
   .top{
@@ -50,9 +44,4 @@
   left: 0;
   position: absolute;
   z-index: $zIndex-domainHeader;
-  
-  &.is_pinned{
-    top: 0;
-    position: fixed;
-  }
 }

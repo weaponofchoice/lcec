@@ -1770,11 +1770,6 @@ body.is-mobile .section-hero .section-hero-banner {
     width: 100%;
     background-size: cover !important;
     background-repeat: no-repeat !important; }
-    .section_domain .top.is_pinned,
-    .section_domain .bottom.is_pinned {
-      top: 0;
-      left: 0;
-      position: fixed; }
   .section_domain .top {
     top: 0; }
   .section_domain .bottom {
@@ -1792,9 +1787,6 @@ body.is-mobile .section-hero .section-hero-banner {
   left: 0;
   position: absolute;
   z-index: 200; }
-  .section_domain .section_header.is_pinned {
-    top: 0;
-    position: fixed; }
 
 /*
  * Show and Hide class functions
@@ -2130,3 +2122,20 @@ body.is-mobile.is-loading > * {
 @media only screen and (max-width: 31.25em) {
   .is_fullwidth {
     margin-left: -1.875rem; } }
+.section_domain .top.is_pinned,
+.section_domain .bottom.is_pinned {
+  top: 0;
+  left: 0;
+  position: fixed; }
+.section_domain .section_header.is_pinned {
+  top: 0;
+  position: fixed; }
+
+.section_domain.is_scrolled {
+  height: 100vh;
+  margin-top: 100vh; }
+  .section_domain.is_scrolled .top,
+  .section_domain.is_scrolled .bottom,
+  .section_domain.is_scrolled .section_header {
+    top: 0 !important;
+    position: absolute !important; }
