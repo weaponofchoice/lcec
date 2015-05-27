@@ -8,7 +8,7 @@
 <!--[if IE 9]>    <html class="no-js lt-ie10" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
-  <title>YOUR SITE</title>
+  <title>LCec<?php if(! is_front_page() ){ echo ' – ' . get_the_title(); } ?></title>
   
   <!-- META TAGS -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
