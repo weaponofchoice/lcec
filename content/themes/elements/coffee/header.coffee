@@ -1,9 +1,17 @@
-Pace.on 'done', ->
+$ ->
+  header = $('header')
+  scrolled = $(window).scrollTop()
+  
+  if scrolled > 120
+    header.addClass "shrunk"
+  else
+    header.removeClass "shrunk"
+  
   $(window).scroll ->
     header = $('header')
-    value = $(this).scrollTop()
+    scrolled = $(this).scrollTop()
     
-    if value > 120
+    if scrolled > 120
       header.addClass "shrunk"
     else
       header.removeClass "shrunk"
