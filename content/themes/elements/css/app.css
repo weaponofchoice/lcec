@@ -1640,20 +1640,42 @@ main section:last-child {
   margin: auto; }
 
 .section_accordion .section_header > a {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flex;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 50%;
   float: left;
-  display: inline-block; }
+  padding-bottom: 3.75rem; }
   .section_accordion .section_header > a img {
+    float: left;
     width: 50px;
-    float: left; }
+    margin-right: 1em; }
 
 .section_accordion .section_body {
   background: #003363; }
   .section_accordion .section_body * {
     color: white; }
   .section_accordion .section_body > div {
+    top: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
     max-width: 600px;
-    margin: auto; }
+    margin: auto;
+    padding: 3.75rem 0; }
+    .section_accordion .section_body > div .inner {
+      top: 3.75rem;
+      position: absolute; }
 
 /*
  * Show and Hide class functions

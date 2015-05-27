@@ -5,13 +5,18 @@
 }
 
 .section_accordion .section_header > a{
+  @include flex;
+  @include align-items( center );
+  
   width: 50%;
   float: left;
-  display: inline-block;
+  padding-bottom: $section-spacing;
   
   img{
-    width: 50px;
     float: left;
+    
+    width: 50px;
+    margin-right: 1em;
   }
 }
 
@@ -23,7 +28,18 @@
   }
   
   > div{
+    top: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    
     max-width: 600px;
     margin: auto;
+    padding: $section-spacing 0;
+    
+    .inner{
+      top: $section-spacing;
+      position: absolute;
+    }
   }
 }

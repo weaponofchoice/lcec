@@ -8,7 +8,7 @@
         $item_image = $item['accordion_c_single_icon'];
         $item_title = $item['accordion_c_single_title'];
         ?>
-        <a class="nonactive" data-count="<?php echo $i; ?>">
+        <a data-count="<?php echo $i; ?>">
           <img src="<?php echo $item_image['url']; ?>">
           <p><?php echo $item_title; ?></p>
         </a>

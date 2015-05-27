@@ -5,6 +5,17 @@ if $('.section_accordion').length > 0
   
   delay = (ms, func) -> setTimeout func, ms
   
+  # Check content height
+  t = 0
+  t_elem = undefined
+  content.each ->
+    if $(this).outerHeight() > t
+      t_elem = $(this)
+      t = $(this).outerHeight()
+      
+  container.css "height", t
+  
+  # Open and close function
   tab.click ->
     tab_count = $(this).attr "data-count"
     match = $('.section_accordion .section_body > div.' + tab_count)
@@ -27,3 +38,15 @@ if $('.section_accordion').length > 0
       $(this).addClass "active"
       
       delay 500, -> match.addClass "active"
+      
+  # Window resize function
+  $(window).on "resize", ->
+    # Check content height
+    t = 0
+    t_elem = undefined
+    content.each ->
+      if $(this).outerHeight() > t
+        t_elem = $(this)
+        t = $(this).outerHeight()
+      
+    container.css "height", t
