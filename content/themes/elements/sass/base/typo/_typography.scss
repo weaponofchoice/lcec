@@ -15,8 +15,9 @@ h1{
 h2{
   @extend h1;
   
-  font-size: rem-calc(80);
+  font-size: rem-calc(70);
   font-weight: 700;
+  line-height: 1;
 }
 
 h3{

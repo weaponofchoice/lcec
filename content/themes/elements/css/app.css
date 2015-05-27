@@ -1330,8 +1330,9 @@ h1, h2, h3, p, a {
     font-weight: 700; }
 
 h2 {
-  font-size: 5rem;
-  font-weight: 700; }
+  font-size: 4.375rem;
+  font-weight: 700;
+  line-height: 1; }
 
 h3 {
   font-size: 2.25rem; }
