@@ -1475,7 +1475,7 @@ nav ul {
   display: inline; }
   nav ul li {
     display: inline-block;
-    padding-right: 1em; }
+    padding-right: 2em; }
     nav ul li a {
       text-decoration: none; }
 
@@ -1637,6 +1637,7 @@ main section:last-child {
     margin-bottom: 1em; }
 
 .section_accordion .section_header {
+  max-width: 650px;
   margin: auto; }
 
 .section_accordion .section_header > a {
