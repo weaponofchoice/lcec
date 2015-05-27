@@ -30,9 +30,9 @@
 <body class="is-loading">
   <!-- Header -->
   <header>
+    <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg"></a>
+    
     <nav>
-      <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg"></a>
-      
       <?php
       $nav = array(
         'theme_location'  => 'menu_primary',
