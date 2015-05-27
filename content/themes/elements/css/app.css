@@ -1881,6 +1881,9 @@ section.has_extra-padBottom,
 .section_image .section_body.is_positioned-right {
   text-align: right; }
 
+.section_text.has_bg {
+  background-color: #f1f1f1; }
+
 h1.is_italic, h2.is_italic, h3.is_italic, p.is_italic, a.is_italic {
   font-style: italic; }
 h1.is_underlined, h2.is_underlined, h3.is_underlined, p.is_underlined, a.is_underlined {
