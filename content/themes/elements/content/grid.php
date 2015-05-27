@@ -23,7 +23,10 @@ echo '<section class="section_grid has_no-pad">';
           ?>
           <li class="fadeIn-up" style="background:url('<?php echo $image['sizes']['medium']; ?>')">
             <div class="mask"></div>
-            <p class="is_white is_aligned-center"><?php echo $title; ?></p>
+            
+            <?php if( $title ): ?>
+              <p class="is_white is_aligned-center"><?php echo $title; ?></p>
+            <?php endif; ?>
           </li>
           <?php
         endwhile;
