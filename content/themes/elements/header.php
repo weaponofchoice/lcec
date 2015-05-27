@@ -23,6 +23,9 @@
   <script src="//use.typekit.net/jif1vmt.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
   
+  <!-- Required for Google Maps -->
+  <script src='http://maps.googleapis.com/maps/api/js?sensor=false' type='text/javascript'></script>
+  
   <!-- WP_HEAD() -->
   <?php wp_head(); ?>
 </head>

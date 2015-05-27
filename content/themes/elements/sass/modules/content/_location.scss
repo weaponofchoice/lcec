@@ -1,0 +1,24 @@
+.section_location{
+  .section_header{
+    max-width: 650px;
+    margin: auto;
+    padding-bottom: $section-spacing;
+    
+    h3{
+      padding-bottom: .5em;
+      margin-bottom: .5em;
+      
+      border-bottom: thin dotted $blue;
+    }
+  }
+  
+  .section_body{
+    -webkit-filter: grayscale(1);
+    
+    #map{
+      width: 100%;
+      height: 0;
+      padding-bottom: 50%;
+    }
+  }
+}
