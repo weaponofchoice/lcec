@@ -2,7 +2,7 @@
   .top,
   .bottom{
     &.is_pinned{
-      top: 0;
+      top: 100px;
       left: 0;
       position: fixed;
     }

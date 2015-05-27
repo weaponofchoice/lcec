@@ -3,7 +3,7 @@ $grid_title = get_sub_field( 'grid_title' );
 $grid_item = get_sub_field( 'grid_item' );
 
 // Output
-echo '<section class="section_grid has_no-padTop">';
+echo '<section class="section_grid has_no-pad">';
   
   // Grid header
   if( $grid_title ):

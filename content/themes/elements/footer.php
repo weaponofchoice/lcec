@@ -1,9 +1,9 @@
   </main>
   
   <!-- Footer -->
-  <!-- <footer>
+  <footer id="contact">
 
-  </footer> -->
+  </footer>
   
   <!-- Scripts -->
   <?php wp_footer(); ?>

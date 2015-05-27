@@ -1,19 +1,16 @@
 $ ->
-  hero = $('.section-hero')
-  hero_banner = $('.section-hero-banner')
+  header = $('header')
   
   # Determine heights
-  hero_height = window.innerHeight - 100
+  header_h = header.outerHeight()
   
   # Apply heights
-  hero.css "height", hero_height
-  hero_banner.css "height", hero_height
+  $('main').css "margin-top", header_h
   
   $(window).on "resize", ->
     
     # Re-determine heights
-    hero_height = window.innerHeight - 100
-  
+    header_h = header.outerHeight()
+    
     # Re-apply heights
-    hero.css "height", hero_height
-    hero_banner.css "height", hero_height
+    $('main').css "margin-top", header_h

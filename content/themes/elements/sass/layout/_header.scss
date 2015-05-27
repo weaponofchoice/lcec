@@ -1,15 +1,13 @@
 header {
-  @include flex;
-  @include align-items( center );
-  @include justify-content( space-between );
-  
+  top: 0;
   left: 0;
   position: fixed;
   z-index: $zIndex-header;
   
   width: 100%;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  height: 100px;
+  
+  background: $white;
   
   .link-logo {
     width: 50px;
