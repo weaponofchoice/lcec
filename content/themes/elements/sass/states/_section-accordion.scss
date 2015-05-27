@@ -1,0 +1,34 @@
+.section_accordion{
+  .section_header > a,
+  .section_body > div{
+    @include transition( all .5s );
+  }
+  
+  // FOLDED
+  .section_header > a{
+    opacity: .5;
+  }
+  
+  .section_body{
+    max-height: 0;
+    @include transition( max-height .5s );
+  }
+  
+  .section_body > div{
+    @include hide( .5s )
+  }
+  
+  // UNFOLDED
+  .section_header > a.active{
+    opacity: 1;
+  }
+  
+  .section_body.active{
+    max-height: 1000px;
+    @include transition( max-height .5s );
+  }
+  
+  .section_body > div.active{
+    @include show( .5s );
+  }
+}

@@ -3,16 +3,17 @@
     <?php
     $items = get_sub_field( 'accordion_index' );
     
-    if( $items ):
+    if( $items ): $i = 1;
       foreach( $items as $item ):
         $item_image = $item['accordion_c_single_icon'];
         $item_title = $item['accordion_c_single_title'];
         ?>
-        <div>
+        <a class="nonactive" data-count="<?php echo $i; ?>">
           <img src="<?php echo $item_image['url']; ?>">
           <p><?php echo $item_title; ?></p>
-        </div>
+        </a>
         <?php
+        $i++;
       endforeach; 
     endif;
     ?>
@@ -22,14 +23,15 @@
     <?php
     $items = get_sub_field( 'accordion_index' );
     
-    if( $items ):
+    if( $items ): $i = 1;
       foreach( $items as $item ):
         $item_text = $item['accordion_c_single_text'];
         ?>
-        <div>
+        <div class="<?php echo $i; ?>" data-count="<?php echo $i; ?>">
           <?php echo $item_text; ?>
         </div>
         <?php
+        $i++;
       endforeach; 
     endif;
     ?>

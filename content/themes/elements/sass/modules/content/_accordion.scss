@@ -1,0 +1,29 @@
+.section_accordion{
+  .section_header{
+    margin: auto;
+  }
+}
+
+.section_accordion .section_header > a{
+  width: 50%;
+  float: left;
+  display: inline-block;
+  
+  img{
+    width: 50px;
+    float: left;
+  }
+}
+
+.section_accordion .section_body{
+  background: $blue;
+  
+  *{
+    color: $white;
+  }
+  
+  > div{
+    max-width: 600px;
+    margin: auto;
+  }
+}

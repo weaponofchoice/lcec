@@ -32,7 +32,8 @@
   "modules/content/_section",
   "modules/content/_text",
   "modules/content/_grid",
-  "modules/content/_domain";
+  "modules/content/_domain",
+  "modules/content/_accordion";
   
 // STATE
 @import
@@ -41,6 +42,7 @@
   "states/_section",
   "states/_section-image",
   "states/_section-text",
+  "states/_section-accordion",
   "states/_typography",
   "states/_resizing",
   "states/_fullwidth",

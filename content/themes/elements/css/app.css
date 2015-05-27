@@ -1636,6 +1636,25 @@ main section:last-child {
   .section_domain .section_header p {
     margin-bottom: 1em; }
 
+.section_accordion .section_header {
+  margin: auto; }
+
+.section_accordion .section_header > a {
+  width: 50%;
+  float: left;
+  display: inline-block; }
+  .section_accordion .section_header > a img {
+    width: 50px;
+    float: left; }
+
+.section_accordion .section_body {
+  background: #003363; }
+  .section_accordion .section_body * {
+    color: white; }
+  .section_accordion .section_body > div {
+    max-width: 600px;
+    margin: auto; }
+
 /*
  * Show and Hide class functions
  */
@@ -1904,6 +1923,48 @@ section.has_extra-padBottom,
     background-color: white; }
   .section_text.is_connected.has_bg .section_body:after {
     background-color: #f1f1f1; }
+
+.section_accordion .section_header > a,
+.section_accordion .section_body > div {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s; }
+.section_accordion .section_header > a {
+  opacity: .5; }
+.section_accordion .section_body {
+  max-height: 0;
+  -webkit-transition: max-height 0.5s;
+  -moz-transition: max-height 0.5s;
+  -ms-transition: max-height 0.5s;
+  -o-transition: max-height 0.5s;
+  transition: max-height 0.5s; }
+.section_accordion .section_body > div {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s; }
+.section_accordion .section_header > a.active {
+  opacity: 1; }
+.section_accordion .section_body.active {
+  max-height: 1000px;
+  -webkit-transition: max-height 0.5s;
+  -moz-transition: max-height 0.5s;
+  -ms-transition: max-height 0.5s;
+  -o-transition: max-height 0.5s;
+  transition: max-height 0.5s; }
+.section_accordion .section_body > div.active {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s; }
 
 h1.is_italic, h2.is_italic, h3.is_italic, p.is_italic, a.is_italic {
   font-style: italic; }
