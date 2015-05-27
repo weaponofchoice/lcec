@@ -1884,6 +1884,24 @@ section.has_extra-padBottom,
 
 .section_text.has_bg {
   background-color: #f1f1f1; }
+.section_text.is_connected {
+  overflow: visible; }
+  .section_text.is_connected .section_body:after {
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    content: '';
+    left: -15px;
+    bottom: calc(-60px - 15px - 1em);
+    position: absolute;
+    z-index: 900;
+    width: 30px;
+    height: 30px;
+    background-color: white; }
+  .section_text.is_connected.has_bg .section_body:after {
+    background-color: #f1f1f1; }
 
 h1.is_italic, h2.is_italic, h3.is_italic, p.is_italic, a.is_italic {
   font-style: italic; }

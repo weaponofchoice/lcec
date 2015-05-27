@@ -2,4 +2,29 @@
   &.has_bg{
     background-color: $grey-light;
   }
+  
+  &.is_connected{
+    overflow: visible;
+    
+    .section_body:after{
+      @include transform( rotate(45deg) );
+      
+      content: '';
+      left: -15px;
+      bottom: calc(-60px - 15px - 1em);
+      position: absolute;
+      z-index: $zIndex-textConnect;
+      
+      width: 30px;
+      height: 30px;
+      
+      background-color: $white;
+    }
+    
+    &.has_bg{
+      .section_body:after{
+        background-color: $grey-light;
+      }
+    }
+  }
 }
