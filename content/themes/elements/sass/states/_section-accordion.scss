@@ -11,19 +11,6 @@
     
     &:after{
       @include hide( .5s );
-      @include transform( rotate(45deg) );
-      
-      content: '';
-      right: 0;
-      bottom: -15px;
-      left: 0;
-      position: absolute;
-      
-      width: 30px;
-      height: 30px;
-      margin: auto;
-      
-      background-color: $blue;
     }
   }
   

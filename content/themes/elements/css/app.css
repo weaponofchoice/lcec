@@ -1636,9 +1636,11 @@ main section:last-child {
   .section_domain .section_header p {
     margin-bottom: 1em; }
 
-.section_accordion .section_header {
-  max-width: 650px;
-  margin: auto; }
+.section_accordion {
+  padding-bottom: 0; }
+  .section_accordion .section_header {
+    max-width: 650px;
+    margin: auto; }
 
 .section_accordion .section_header > a {
   display: -webkit-box;
@@ -1661,6 +1663,21 @@ main section:last-child {
     float: left;
     width: 50px;
     margin-right: 1em; }
+  .section_accordion .section_header > a:after {
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    content: '';
+    right: 0;
+    bottom: -15px;
+    left: -50px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    background-color: #003363; }
 
 .section_accordion .section_body {
   background: #003363; }
@@ -1964,21 +1981,7 @@ section.has_extra-padBottom,
     -moz-transition: 0.5s;
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
-    transition: 0.5s;
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-    content: '';
-    right: 0;
-    bottom: -15px;
-    left: 0;
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    margin: auto;
-    background-color: #003363; }
+    transition: 0.5s; }
 .section_accordion .section_body {
   max-height: 0;
   -webkit-transition: max-height 0.5s;
