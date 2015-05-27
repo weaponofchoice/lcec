@@ -9,6 +9,8 @@ if( have_rows('page') ):
     
     if( get_row_layout() == 'text' ):
       include( locate_template('content/text.php') );
+    elseif( get_row_layout() == 'accordion' ):
+      include( locate_template('content/accordion.php') );
     elseif( get_row_layout() == 'domain' ):
       include( locate_template('content/domain.php') );
     elseif( get_row_layout() == 'grid' ):
