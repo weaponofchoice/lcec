@@ -1341,7 +1341,7 @@ p {
   font-size: 1.125rem; }
 
 a {
-  color: black;
+  color: #003363;
   cursor: pointer;
   text-decoration: none; }
 
@@ -1480,7 +1480,9 @@ nav ul {
       text-decoration: none; }
 
 .link-arrow {
-  display: block; }
+  display: block;
+  float: left;
+  clear: both; }
   .link-arrow img {
     width: 30px;
     margin-left: .5em;

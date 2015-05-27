@@ -13,7 +13,19 @@ $text_c_text = get_sub_field( 'text_c_text' );
     <p><?php echo $text_c_caption; ?></p>
     <h3><?php echo $text_c_title; ?></h3>
     <div>
-      <?php echo $text_c_text; ?>
+      <?php
+      echo $text_c_text;
+      
+      if( have_rows('text_c_links') ):
+        while( have_rows('text_c_links') ): the_row();
+          $text_c_link = get_sub_field( 'text_c_links_link' );
+          $text_c_link_text = get_sub_field( 'text_c_links_text' );
+          ?>
+          <a class="link-arrow is_bold" href="<?php echo $text_c_link; ?>"><?php echo $text_c_link_text; ?><img src="<?php echo get_template_directory_uri(); ?>/img/arrow-pri-blue.svg"><br></a>
+          <?php
+        endwhile;
+      endif;
+      ?>
     </div>
   </div>
 </section>
