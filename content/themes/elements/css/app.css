@@ -1324,7 +1324,8 @@ h1, h2, h3, p, a {
   font-style: normal;
   font-size: 16px;
   font-weight: 300;
-  color: #003363; }
+  color: #003363;
+  -webkit-font-smoothing: antialiased; }
   h1.is_bold, h2.is_bold, h3.is_bold, p.is_bold, a.is_bold {
     font-weight: 700; }
 

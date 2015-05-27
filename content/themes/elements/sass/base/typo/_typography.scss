@@ -4,6 +4,8 @@
   font-size: 16px;
   font-weight: 300;
   color: $blue;
+  
+  -webkit-font-smoothing: antialiased;
 }
 
 h1{
@@ -32,7 +34,7 @@ p{
 a{
   @extend %base;
   
-  color: black;
+  color: $black;
   cursor: pointer;
   text-decoration: none;
 }
