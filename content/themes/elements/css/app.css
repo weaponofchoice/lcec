@@ -1947,6 +1947,7 @@ section.has_extra-padBottom,
     background-color: #f1f1f1; }
 
 .section_accordion .section_header > a,
+.section_accordion .section_header > a:after,
 .section_accordion .section_body > div {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -1955,6 +1956,28 @@ section.has_extra-padBottom,
   transition: all 0.5s; }
 .section_accordion .section_header > a {
   opacity: .5; }
+  .section_accordion .section_header > a:after {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    content: '';
+    right: 0;
+    bottom: -15px;
+    left: 0;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    background-color: #003363; }
 .section_accordion .section_body {
   max-height: 0;
   -webkit-transition: max-height 0.5s;
@@ -1972,6 +1995,14 @@ section.has_extra-padBottom,
   transition: 0.5s; }
 .section_accordion .section_header > a.active {
   opacity: 1; }
+  .section_accordion .section_header > a.active:after {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s; }
 .section_accordion .section_body.active {
   max-height: 1000px;
   -webkit-transition: max-height 0.5s;

@@ -1,5 +1,6 @@
 .section_accordion{
   .section_header > a,
+  .section_header > a:after,
   .section_body > div{
     @include transition( all .5s );
   }
@@ -7,6 +8,23 @@
   // FOLDED
   .section_header > a{
     opacity: .5;
+    
+    &:after{
+      @include hide( .5s );
+      @include transform( rotate(45deg) );
+      
+      content: '';
+      right: 0;
+      bottom: -15px;
+      left: 0;
+      position: absolute;
+      
+      width: 30px;
+      height: 30px;
+      margin: auto;
+      
+      background-color: $blue;
+    }
   }
   
   .section_body{
@@ -21,6 +39,10 @@
   // UNFOLDED
   .section_header > a.active{
     opacity: 1;
+    
+    &:after{
+      @include show( .5s );
+    }
   }
   
   .section_body.active{
