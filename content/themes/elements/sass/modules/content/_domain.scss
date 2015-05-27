@@ -12,22 +12,23 @@
     position: absolute;
     
     width: 100%;
+    height: 100vh;
     
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   
   .top{
     top: 0;
   }
-    
+  
   .bottom{
     bottom: 0;
     
     background: $blue-transparent;
     
     > div{
-      bottom: 35px;
+      bottom: 60px;
       right: 0;
       left: 0;
       margin: auto;
@@ -51,12 +52,12 @@
 
 // domain header
 .section_domain .section_header{
-  top: 35px;
+  top: 60px;
   right: 0;
   left: 0;
   position: absolute;
   z-index: $zIndex-domainHeader;
-  
+
   p{
     margin-bottom: 1em;
   }

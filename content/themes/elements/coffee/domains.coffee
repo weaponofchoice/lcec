@@ -3,23 +3,10 @@ $ ->
   domain = $('.section_domain')
   top = $('.section_domain .top')
   bottom = $('.section_domain .bottom')
-  header = $('header')
   
-  # Determine height
-  viewport_h = window.innerHeight
-  header_h = header.outerHeight()
+  # Determine height(s)
+  header_h = 60
   
-  # Apply heights
-  top.css "height", viewport_h - 100
-  bottom.css "height", viewport_h - 100
-  domain.css "height", top.outerHeight() + bottom.outerHeight()
-  
-  # top.each ->
-#     $(this).css "height", viewport_h - header_h
-#
-#   bottom.each ->
-#     $(this).css "height", viewport_h - header_h
-#
   Pace.on 'done', ->
     waypoints = domain.waypoint(((direction) ->
       top = $(this.element).children('.top')

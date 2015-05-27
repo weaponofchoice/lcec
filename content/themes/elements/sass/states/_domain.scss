@@ -2,14 +2,17 @@
   .top,
   .bottom{
     &.is_pinned{
-      top: 100px;
+      top: 60px;
       left: 0;
       position: fixed;
+      
+      height: 100%;
     }
   }
-  
+
   .section_header{
     &.is_pinned{
+      top: 120px;
       position: fixed;
     }
   }
@@ -18,14 +21,17 @@
 .section_domain.is_scrolled{
   height: 100vh;
   margin-top: 100vh;
-  
+
   .top,
   .bottom{
     top: 0 !important;
     position: absolute !important;
+    
+    height: 100vh;
   }
-  
+
   .section_header{
+    top: 60px;
     position: absolute !important;
   }
 }
