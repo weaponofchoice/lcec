@@ -1475,6 +1475,13 @@ nav ul {
     nav ul li a {
       text-decoration: none; }
 
+.link-arrow {
+  display: block; }
+  .link-arrow img {
+    width: 30px;
+    margin-left: .5em;
+    vertical-align: middle; }
+
 section {
   height: auto;
   overflow: hidden;
@@ -1607,8 +1614,6 @@ main section:last-child {
       position: absolute; }
       .section_domain .bottom > div p {
         margin-bottom: 1em; }
-      .section_domain .bottom > div a {
-        float: right; }
 
 .section_domain .section_header,
 .section_domain .bottom > * {
