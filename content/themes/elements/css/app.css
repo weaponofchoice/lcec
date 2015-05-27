@@ -1320,12 +1320,10 @@ ul {
 
 h1, h2, h3, p, a {
   font-family: 'nimbus-sans', sans-serif;
-  font-weight: 300;
   font-style: normal;
   font-size: 16px;
-  font-weight: normal;
-  line-height: 1;
-  color: #202d5e; }
+  font-weight: 300;
+  color: #003363; }
   h1.is_bold, h2.is_bold, h3.is_bold, p.is_bold, a.is_bold {
     font-weight: 700; }
 
@@ -1497,15 +1495,18 @@ main section:last-child {
   .section_header h2 {
     margin-bottom: 0.9375rem; }
 
-.section_text {
-  text-align: center; }
-  .section_text .section_body {
-    max-width: 650px;
-    margin: auto; }
-    .section_text .section_body h3,
-    .section_text .section_body p,
-    .section_text .section_body a {
-      margin-bottom: 1em; }
+.section_text .section_body {
+  max-width: 650px;
+  margin: auto; }
+  .section_text .section_body > p {
+    margin-bottom: 1em;
+    color: #b4b4c8; }
+  .section_text .section_body h3 {
+    padding-bottom: .5em;
+    margin-bottom: .5em;
+    border-bottom: thin dotted #003363; }
+  .section_text .section_body div p {
+    margin-bottom: 1em; }
 
 .section_grid .section_header {
   top: 35px;

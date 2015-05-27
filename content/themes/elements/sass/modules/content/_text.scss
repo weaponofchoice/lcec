@@ -1,13 +1,25 @@
 .section_text{
-  text-align: center;
-  
   .section_body{
     max-width: 650px;
     margin: auto;
     
-    h3,
-    p,
-    a{
+    // Caption
+    > p{
+      margin-bottom: 1em;
+      
+      color: $blue-light;
+    }
+    
+    // Title
+    h3{
+      padding-bottom: .5em;
+      margin-bottom: .5em;
+      
+      border-bottom: thin dotted $blue;
+    }
+    
+    // Text
+    div p{
       margin-bottom: 1em;
     }
   }
