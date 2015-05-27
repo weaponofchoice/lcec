@@ -30,7 +30,20 @@
 <body class="is-loading">
   <!-- Header -->
   <header>
-    <a href="#contact">Contact</a>
+    <nav>
+      <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg"></a>
+      
+      <?php
+      $nav = array(
+        'theme_location'  => 'menu_primary',
+        'container' => ' ',
+        'items_wrap' => '<ul>%3$s</ul>'
+      );
+    
+      wp_nav_menu( $nav );
+      ?>
+      <!-- <?php do_action('icl_language_selector'); ?> -->
+    </nav>
   </header>
   
   <!-- Main content -->
