@@ -5,8 +5,6 @@ get_header();
 if( have_rows('page') ):
   while( have_rows('page') ): the_row();
     
-    // Hero section is placed before main
-    
     if( get_row_layout() == 'text' ):
       include( locate_template('content/text.php') );
     elseif( get_row_layout() == 'accordion' ):
@@ -18,6 +16,10 @@ if( have_rows('page') ):
     endif;
     
   endwhile;
+endif;
+
+if( have_rows('team_members') ):
+  include( locate_template('content/team.php') );
 endif;
 
 get_footer();

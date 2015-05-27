@@ -1695,6 +1695,42 @@ main section:last-child {
       top: 3.75rem;
       position: absolute; }
 
+.section_team {
+  padding-top: 0; }
+  .section_team .section_body {
+    max-width: 650px;
+    margin: auto; }
+    .section_team .section_body > div {
+      display: -webkit-box;
+      /* OLD - iOS 6-, Safari 3.1-6 */
+      display: -moz-box;
+      /* OLD - Firefox 19- (buggy but mostly works) */
+      display: -ms-flex;
+      /* TWEENER - IE 10 */
+      display: -webkit-flex;
+      /* NEW - Chrome */
+      display: flex;
+      /* NEW, Spec - Opera 12.1, Firefox 20+ */
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      margin-bottom: 50px; }
+      .section_team .section_body > div:first-child {
+        padding-top: 3.75rem;
+        border-top: thin dotted #003363; }
+      .section_team .section_body > div div:first-child {
+        float: left;
+        width: 150px;
+        height: 150px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        border-radius: 100%;
+        -webkit-filter: grayscale(1); }
+      .section_team .section_body > div div:last-child {
+        float: left;
+        padding-left: 2em; }
+
 /*
  * Show and Hide class functions
  */

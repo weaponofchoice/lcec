@@ -1,0 +1,42 @@
+.section_team{
+  padding-top: 0;
+  
+  .section_body{
+    max-width: 650px;
+    margin: auto;
+    
+    > div{
+      @include flex;
+      @include align-items( center );
+      
+      margin-bottom: 50px;
+      
+      &:first-child{
+        padding-top: $section-spacing;
+        
+        border-top: thin dotted $blue;
+      }
+      
+      // Image
+      div:first-child{
+        float: left;
+        
+        width: 150px;
+        height: 150px;
+        
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        border-radius: 100%;
+        -webkit-filter: grayscale(1);
+      }
+      
+      // Information
+      div:last-child{
+        float: left;
+        
+        padding-left: 2em;
+      }
+    }
+  }
+}
