@@ -1538,7 +1538,7 @@ main section:last-child {
   .section_grid ul li .mask {
     width: 100%;
     height: 100%;
-    background: rgba(32, 45, 94, 0.8); }
+    background: rgba(0, 51, 99, 0.8); }
   .section_grid ul li p {
     bottom: 35px;
     right: 0;
@@ -1608,7 +1608,7 @@ main section:last-child {
     top: 0; }
   .section_domain .bottom {
     bottom: 0;
-    background: rgba(32, 45, 94, 0.8); }
+    background: rgba(0, 51, 99, 0.8); }
     .section_domain .bottom > div {
       bottom: 60px;
       right: 0;
