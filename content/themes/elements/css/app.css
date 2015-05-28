@@ -1800,7 +1800,7 @@ main section:last-child {
   .section_domain .section_header p, .section_domain .section_header div.wpcf7-response-output, .section_domain .section_header input, .section_domain .section_header button {
     margin-bottom: 1em; }
 
-@media only screen and (max-width: 56.25em) {
+@media screen and (max-width: 1024px) {
   .section_domain {
     position: relative !important;
     height: auto !important;
