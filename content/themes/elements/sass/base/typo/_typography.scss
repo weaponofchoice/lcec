@@ -41,6 +41,7 @@ a{
 }
 
 @media #{$small-only}{
-  h2{ font-size: rem-calc(45); }
+  h2{ font-size: rem-calc(40); }
   h3{ font-size: rem-calc(24); }
+  p{ font-size: rem-calc(16); }
 }

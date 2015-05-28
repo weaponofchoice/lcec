@@ -1,10 +1,13 @@
 .section_domain{
   padding: 0;
   width: 100%;
-  height: calc(200vh - 60px);
   
   *{
     color: $white;
+  }
+  
+  .section_header{
+    z-index: $zIndex-domainHeader;
   }
   
   .top,
@@ -12,7 +15,6 @@
     position: absolute;
     
     width: 100%;
-    height: calc(100vh - 60px);
     
     background-size: cover;
     background-repeat: no-repeat;
@@ -20,10 +22,13 @@
   
   .top{
     top: 0;
+    
+    z-index: $zIndex-domainTop;
   }
   
   .bottom{
     bottom: 0;
+    z-index: $zIndex-domainBottom;
     
     background: $blue-transparent;
     
@@ -57,5 +62,49 @@
 
   p{
     margin-bottom: 1em;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .section_domain{
+    position: relative !important;
+    
+    height: auto !important;
+    margin-top: 0 !important;
+    margin-bottom: 50px;
+    padding: 60px 0;
+    
+    background-color: $blue;
+    
+    .section_header{
+      top: 0 !important;
+      position: relative !important;
+      
+      margin-bottom: 60px;
+    }
+    
+    .top,
+    .bottom{
+      position: relative !important;
+      
+      height: auto !important;
+      overflow: hidden;
+    }
+    
+    .bottom > div{
+      bottom: 0;
+      position: relative;
+      
+      height: auto;
+      overflow: hidden;
+    }
+  }
+  
+  .section_domain.is_scrolled{
+    div.section_header,
+    div.top,
+    div.bottom{
+      position: relative !important;
+    }
   }
 }
