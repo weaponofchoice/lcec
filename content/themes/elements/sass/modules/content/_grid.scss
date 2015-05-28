@@ -7,12 +7,20 @@
   }
   
   .section_header{
-    top: 35px;
+    top: 50%;
     right: 0;
     left: 0;
     margin: auto;
     position: absolute;
     z-index: 1;
+    
+    &.animated{
+      @include transform( translateY(-100%) );
+    }
+    
+    h2{
+      margin-bottom: 0;
+    }
   }
   
   .section_body{
@@ -93,6 +101,12 @@
 
 @media #{$medium-down}{
   .section_grid{
+    .section_header{
+      &.animated{
+        @include transform( translateY(-50%) );
+      }
+    }
+    
     .section_body{
       ul{
         li{
