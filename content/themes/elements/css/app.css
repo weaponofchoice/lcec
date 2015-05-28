@@ -1880,6 +1880,11 @@ main section:last-child {
 .section_contact {
   padding-top: 0; }
 
+.section_clients .section_body {
+  max-width: none; }
+  .section_clients .section_body ul li {
+    padding: 0; }
+
 /*
  * Show and Hide class functions
  */

@@ -18,5 +18,9 @@ if( have_rows('page') ):
   endwhile;
 endif;
 
+if( have_rows('clients') ):
+  include( locate_template('content/clients.php') );
+endif;
+
 get_footer();
 ?>
