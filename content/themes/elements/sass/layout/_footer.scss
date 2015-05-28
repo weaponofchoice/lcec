@@ -1,25 +1,33 @@
 footer{
   z-index: $zIndex-footer;
   
-  padding: 50px;
+  padding: 20px;
   
   background: $white;
-  text-align: center;
+  border-bottom: 20px solid $blue;
   
-  > img{
-    max-width: 250px;
-    margin-bottom: 50px;
+  > div{
+    max-width: 1400px !important;
+    margin: auto;
+    
+    div:first-child{
+      img{
+        max-width: 250px;
+      }
+    }
+  
+    p{
+      margin-bottom: 1em;
+    }
   }
-  
-  p{
-    margin-bottom: 1em;
-  }
-  
-  ul{
-    li{
-      width: 35px;
-      padding: 0 .5em;
-      display: inline-block;
+}
+
+@media #{$small-only}{
+  footer{
+    > div{
+      div{
+        margin-bottom: 20px;
+      }
     }
   }
 }
