@@ -21,7 +21,7 @@ echo '<section class="section_grid has_no-pad">';
           $image = get_sub_field( 'grid_item_image' );
           $title = get_sub_field( 'grid_item_title' );
           ?>
-          <li style="background:url('<?php echo $image['sizes']['medium']; ?>')">
+          <li style="background-image:url('<?php echo $image['sizes']['large']; ?>')">
             <div class="mask"></div>
             
             <?php if( $title ): ?>

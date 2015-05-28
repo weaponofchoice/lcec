@@ -1804,9 +1804,11 @@ main section:last-child {
     height: 0;
     padding-bottom: 50%; }
 
-.section_contact .section_body {
-  max-width: 650px;
-  margin: auto; }
+.section_contact {
+  padding-top: 0; }
+  .section_contact .section_body {
+    max-width: 650px;
+    margin: auto; }
 
 /*
  * Show and Hide class functions
