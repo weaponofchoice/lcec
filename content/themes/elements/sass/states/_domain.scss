@@ -5,8 +5,6 @@
       top: 60px;
       left: 0;
       position: fixed;
-      
-      height: calc(100vh - 60px);
     }
   }
 
@@ -19,15 +17,10 @@
 }
 
 .section_domain.is_scrolled{
-  height: calc(100vh - 60px);
-  margin-top: 100vh;
-
   .top,
   .bottom{
     top: 0 !important;
     position: absolute !important;
-    
-    height: calc(100vh - 60px);
   }
 
   .section_header{
