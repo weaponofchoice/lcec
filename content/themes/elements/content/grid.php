@@ -8,7 +8,7 @@ echo '<section class="section_grid has_no-pad">';
   // Grid header
   if( $grid_title ):
     echo '<div class="section_header row fadeIn-up">';
-      echo '<h2 class="s-4 columns is_white">' . $grid_title . '</h2>';
+      echo '<h2 class="s-4 columns is_white is_aligned-center">' . $grid_title . '</h2>';
     echo '</div>';
   endif;
   
