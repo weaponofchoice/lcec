@@ -1598,14 +1598,14 @@ main section:last-child {
 .section_domain {
   padding: 0;
   width: 100%;
-  height: 200vh; }
+  height: calc(200vh - 60px); }
   .section_domain * {
     color: white; }
   .section_domain .top,
   .section_domain .bottom {
     position: absolute;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 60px);
     background-size: cover;
     background-repeat: no-repeat; }
   .section_domain .top {
@@ -2144,19 +2144,19 @@ body.is-mobile.is-loading > * {
   top: 60px;
   left: 0;
   position: fixed;
-  height: 100%; }
+  height: calc(100vh - 60px); }
 .section_domain .section_header.is_pinned {
   top: 120px;
   position: fixed; }
 
 .section_domain.is_scrolled {
-  height: 100vh;
+  height: calc(100vh - 60px);
   margin-top: 100vh; }
   .section_domain.is_scrolled .top,
   .section_domain.is_scrolled .bottom {
     top: 0 !important;
     position: absolute !important;
-    height: 100vh; }
+    height: calc(100vh - 60px); }
   .section_domain.is_scrolled .section_header {
     top: 60px;
     position: absolute !important; }
