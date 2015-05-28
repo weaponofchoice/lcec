@@ -1530,7 +1530,7 @@ div.wpcf7-response-output {
 input {
   width: 100%;
   height: 50px;
-  padding: 0 30px;
+  padding: 0 1em;
   background-color: #f1f1f1;
   outline: none;
   border: none; }
