@@ -1607,7 +1607,9 @@ input {
   padding: 0 1em;
   background-color: #f1f1f1;
   outline: none;
-  border: none; }
+  border: none;
+  border-radius: 0;
+  -webkit-appearance: none; }
 
 button,
 input[type="submit"] {
@@ -1616,7 +1618,8 @@ input[type="submit"] {
   background-color: #003363;
   color: white;
   outline: none;
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-appearance: none; }
 
 img.ajax-loader {
   width: 16px; }

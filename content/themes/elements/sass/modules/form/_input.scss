@@ -8,4 +8,7 @@ input{
   background-color: $grey-light;
   outline: none;
   border: none;
+  border-radius: 0;
+  
+  -webkit-appearance: none;
 }
