@@ -1640,11 +1640,13 @@ main section:last-child {
   position: absolute;
   z-index: 1; }
 .section_grid .section_body ul {
-  width: 100%;
-  height: 500px; }
+  width: 100%; }
   .section_grid .section_body ul li {
-    height: 100%;
-    padding: 0; }
+    height: 0;
+    padding: 0;
+    padding-bottom: 40%; }
+    .section_grid .section_body ul li .mask {
+      padding-bottom: 200%; }
 
 .section_grid ul li {
   background-repeat: no-repeat !important;
@@ -1704,14 +1706,17 @@ main section:last-child {
     margin-bottom: 0; }
 
 @media only screen and (max-width: 56.25em) {
-  .section_grid .section_header {
-    top: 0;
-    position: relative;
-    padding: 30px 15px; }
-    .section_grid .section_header h2 {
-      color: #003363; }
   .section_grid .section_body ul li {
-    height: 50%; } }
+    padding-bottom: 50%; }
+    .section_grid .section_body ul li:nth-child(3), .section_grid .section_body ul li:nth-child(4) {
+      display: none; }
+    .section_grid .section_body ul li .mask {
+      padding-bottom: 100%; }
+    .section_grid .section_body ul li p, .section_grid .section_body ul li div.wpcf7-response-output, .section_grid .section_body ul li input, .section_grid .section_body ul li button {
+      display: none; } }
+@media screen and (min-width: 1500px) {
+  .section_grid .section_body ul li {
+    padding-bottom: 30%; } }
 .section_domain {
   padding: 0;
   width: 100%;
