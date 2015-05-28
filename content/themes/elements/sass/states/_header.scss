@@ -2,4 +2,14 @@ header{
   &.shrunk{
     height: 60px;
   }
+  
+  &.nav-active{
+    .nav-open{
+      display: none;
+    }
+    
+    .nav-close{
+      display: block;
+    }
+  }
 }

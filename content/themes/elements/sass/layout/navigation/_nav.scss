@@ -17,3 +17,27 @@ nav ul{
     
   }
 }
+
+@media #{$small-only}{
+  nav{
+    @include transition( .2s );
+    @include transform( translateY(-100%) );
+    
+    top: 0;
+    left: 0;
+    position: absolute;
+    
+    width: 100%;
+    padding: 60px;
+    background: $white;
+    
+    ul{
+      display: block;
+      
+      li{
+        display: block;
+        padding: 1em 0;
+      }
+    }
+  }
+}

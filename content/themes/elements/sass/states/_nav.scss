@@ -1,0 +1,5 @@
+nav{
+  &.is-active{
+    @include transform( translateY(0) );
+  }
+}

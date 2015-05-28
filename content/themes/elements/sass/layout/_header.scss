@@ -24,3 +24,22 @@ header{
     }
   }
 }
+
+// Nav triggers for smaller screens
+header{
+  .nav-open,
+  .nav-close{
+    width: 25px;
+    display: none;
+  }
+}
+
+@media #{$small-only}{
+  header{
+    height: 60px;
+    
+    .nav-open{
+      display: block;
+    }
+  }
+}

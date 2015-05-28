@@ -47,6 +47,9 @@
       ?>
       <!-- <?php do_action('icl_language_selector'); ?> -->
     </nav>
+    
+    <a class="nav-open"><img src="<?php echo get_template_directory_uri(); ?>/img/nav-open.svg"></a>
+    <a class="nav-close"><img src="<?php echo get_template_directory_uri(); ?>/img/nav-close.svg"></a>
   </header>
   
   <!-- Main content -->
