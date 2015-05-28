@@ -1541,7 +1541,8 @@ input[type="submit"] {
   padding: 0 80px;
   background-color: #003363;
   color: white;
-  outline: none; }
+  outline: none;
+  cursor: pointer; }
 
 img.ajax-loader {
   width: 16px; }
