@@ -1385,6 +1385,9 @@ main {
   margin-top: 120px;
   background: white; }
 
+@media only screen and (max-width: 43.75em) {
+  main {
+    margin-top: 60px; } }
 header {
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */

@@ -9,3 +9,9 @@ main{
   
   background: $white;
 }
+
+@media #{$small-only}{
+  main{
+    margin-top: 60px;
+  }
+}
