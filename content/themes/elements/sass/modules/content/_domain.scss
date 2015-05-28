@@ -65,7 +65,7 @@
   }
 }
 
-@media #{$medium-down}{
+@media screen and (max-width: 1024px){
   .section_domain{
     position: relative !important;
     
