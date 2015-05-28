@@ -53,7 +53,11 @@
       wp_nav_menu( $nav );
       include_once('includes/lang.php');
       ?>
-      <!-- <?php do_action('icl_language_selector'); ?> -->
+      <div class="address">
+        <p>+31 168 382 411</p>
+        <p>Plaza 8b<br>4782 SK Moerdijk<br>Nederland</p>
+        <a class="is_bold" href="http://maps.google.com/maps?hl=nl&expIds=25657&xhr=t&cp=11&wrapid=tljp1293642618351013&um=1&ie=UTF-8&q=lc+moerdijk&fb=1&hq=lc&hnear=Moerdijk,+Nederland&cid=0,0,9635813263473567923&ei=g2sbTaWeK4vsOaW6rOAI&sa=X&oi=local_result&ct=image&resnum=2&sqi=2&ved=0CCMQnwIwAQ">Zoek route</a>
+      </div>
     </nav>
     
     <a class="nav-open"><img src="<?php echo get_template_directory_uri(); ?>/img/nav-open.svg"></a>

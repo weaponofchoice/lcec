@@ -1514,6 +1514,11 @@ nav ul {
     nav ul li a {
       text-decoration: none; }
 
+nav .address {
+  display: none; }
+  nav .address p, nav .address footer > div a, footer > div nav .address a, nav .address div.wpcf7-response-output, nav .address input, nav .address button {
+    margin-bottom: 1em; }
+
 nav ul li a:after {
   opacity: 0;
   visibility: hidden;
@@ -1564,7 +1569,16 @@ nav ul li.current-menu-item a:after {
       margin-bottom: 1em; }
       nav ul li {
         display: block;
-        padding: 1em 0; } }
+        padding: 1em 0; }
+        nav ul li a {
+          font-size: 1.5rem; }
+    nav .lang {
+      display: block;
+      margin-bottom: 50px; }
+      nav .lang a {
+        font-size: 1.5rem; }
+    nav .address {
+      display: block; } }
 .lang {
   display: inline; }
   .lang a:after {
