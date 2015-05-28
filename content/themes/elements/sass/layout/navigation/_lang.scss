@@ -1,0 +1,25 @@
+.lang{
+  display: inline;
+  
+  a:after{
+    @include hide( .3s );
+    
+    content: '';
+    
+    bottom: -10px;
+    right: 0;
+    left: 0;
+    position: absolute;
+    
+    width: 70%;
+    height: 1px;
+    margin: auto;
+    
+    background-color: $blue;
+  }
+  
+  a.current:after,
+  a:hover:after{
+    @include show( .3s );
+  }
+}

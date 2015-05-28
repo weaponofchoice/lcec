@@ -11,6 +11,14 @@ nav ul{
   }
 }
 
+nav .address{
+  display: none;
+  
+  p{
+    margin-bottom: 1em;
+  }
+}
+
 // Current and hover
 nav ul{
   li{
@@ -55,11 +63,29 @@ nav ul{
     
     ul{
       display: block;
+      margin-bottom: 1em;
       
       li{
         display: block;
         padding: 1em 0;
+        
+        a{
+          font-size: rem-calc(24);
+        }
       }
+    }
+    
+    .lang{
+      display: block;
+      margin-bottom: 50px;
+      
+      a{
+        font-size: rem-calc(24);
+      }
+    }
+    
+    .address{
+      display: block;
     }
   }
 }
