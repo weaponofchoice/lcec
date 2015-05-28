@@ -106,6 +106,15 @@ http://support.advancedcustomfields.com/
 
 == Changelog ==
 
+= 5.2.6 =
+* Core: Improved validation logic to display HTML5 validation messages
+* Core: Improved conditional logic performance for large field groups
+* Core: Removed updates menu item when not activated as a plugin (included within theme)
+* Core: Fixed various JS performance issues
+* Core: Minor fixes and improvements
+* Core: Added compatibility for saving widget in 'accessibility mode'
+* Language: Added Finnish translation - thanks to Sauli Rajala
+
 = 5.2.5 =
 * Core: Fixed JS error preventing changes to large field groups
 * Language: Added Romanian translation - thanks to Eduard Ungureanu
