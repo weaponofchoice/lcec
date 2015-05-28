@@ -1356,7 +1356,11 @@ a {
     font-size: 2.5rem; }
 
   h3 {
-    font-size: 1.5rem; } }
+    font-size: 1.5rem; }
+
+  p, div.wpcf7-response-output, input, button,
+  input[type="submit"] {
+    font-size: 1rem; } }
 html,
 body {
   height: 100% !important;
@@ -1796,6 +1800,33 @@ main section:last-child {
   .section_domain .section_header p, .section_domain .section_header div.wpcf7-response-output, .section_domain .section_header input, .section_domain .section_header button {
     margin-bottom: 1em; }
 
+@media only screen and (max-width: 56.25em) {
+  .section_domain {
+    position: relative !important;
+    height: auto !important;
+    margin-top: 0 !important;
+    margin-bottom: 50px;
+    padding: 60px 0;
+    background-color: #003363; }
+    .section_domain .section_header {
+      top: 0 !important;
+      position: relative !important;
+      margin-bottom: 60px; }
+    .section_domain .top,
+    .section_domain .bottom {
+      position: relative !important;
+      height: auto !important;
+      overflow: hidden; }
+    .section_domain .bottom > div {
+      bottom: 0;
+      position: relative;
+      height: auto;
+      overflow: hidden; }
+
+  .section_domain.is_scrolled div.section_header,
+  .section_domain.is_scrolled div.top,
+  .section_domain.is_scrolled div.bottom {
+    position: relative !important; } }
 .section_accordion {
   padding-bottom: 0; }
 

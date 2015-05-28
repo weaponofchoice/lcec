@@ -64,3 +64,47 @@
     margin-bottom: 1em;
   }
 }
+
+@media #{$medium-down}{
+  .section_domain{
+    position: relative !important;
+    
+    height: auto !important;
+    margin-top: 0 !important;
+    margin-bottom: 50px;
+    padding: 60px 0;
+    
+    background-color: $blue;
+    
+    .section_header{
+      top: 0 !important;
+      position: relative !important;
+      
+      margin-bottom: 60px;
+    }
+    
+    .top,
+    .bottom{
+      position: relative !important;
+      
+      height: auto !important;
+      overflow: hidden;
+    }
+    
+    .bottom > div{
+      bottom: 0;
+      position: relative;
+      
+      height: auto;
+      overflow: hidden;
+    }
+  }
+  
+  .section_domain.is_scrolled{
+    div.section_header,
+    div.top,
+    div.bottom{
+      position: relative !important;
+    }
+  }
+}
