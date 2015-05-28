@@ -8,6 +8,11 @@ html{
   position: relative;
   box-sizing: inherit;
   -webkit-backface-visibility: hidden;
+  
+  &:hover,
+  &:focus{
+    -webkit-backface-visibility: hidden;
+  }
 }
 
 img{
