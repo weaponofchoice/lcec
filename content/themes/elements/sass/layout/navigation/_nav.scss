@@ -11,10 +11,32 @@ nav ul{
   }
 }
 
-// Current item
+// Current and hover
 nav ul{
-  li.anchor_current{
-    
+  li{
+    a:after{
+      @include hide( .3s );
+      
+      content: '';
+      
+      bottom: -10px;
+      right: 0;
+      left: 0;
+      position: absolute;
+      
+      width: 70%;
+      height: 1px;
+      margin: auto;
+      
+      background-color: $blue;
+    }
+  }
+  
+  li:hover,
+  li.current-menu-item{
+    a:after{
+      @include show( .3s );
+    }
   }
 }
 

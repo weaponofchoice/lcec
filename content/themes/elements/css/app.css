@@ -1506,6 +1506,33 @@ nav ul {
     nav ul li a {
       text-decoration: none; }
 
+nav ul li a:after {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  content: '';
+  bottom: -10px;
+  right: 0;
+  left: 0;
+  position: absolute;
+  width: 70%;
+  height: 1px;
+  margin: auto;
+  background-color: #003363; }
+nav ul li:hover a:after,
+nav ul li.current-menu-item a:after {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
+
 @media only screen and (max-width: 43.75em) {
   nav {
     -webkit-transition: 0.2s;
