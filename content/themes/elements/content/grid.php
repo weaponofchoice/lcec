@@ -15,7 +15,7 @@ echo '<section class="section_grid has_no-pad">';
   // Grid content
   if( have_rows('grid_item') ):
     echo '<div class="section_body">';
-      echo '<ul class="s-grid-1 m-grid-2 l-grid-4">';
+      echo '<ul class="s-grid-2 l-grid-4">';
         
         while( have_rows('grid_item') ): the_row();
           $image = get_sub_field( 'grid_item_image' );

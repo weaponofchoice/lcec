@@ -1651,9 +1651,15 @@ main section:last-child {
   .section_grid ul.isotope_masonry li:nth-child(n) img {
     margin-bottom: 0; }
 
-@media screen and (min-width: 1400px) {
-  .section_grid ul li {
-    width: 25%; } }
+@media only screen and (max-width: 62.5em) {
+  .section_grid .section_header {
+    top: 0;
+    position: relative;
+    padding: 30px 15px; }
+    .section_grid .section_header h2 {
+      color: #003363; }
+  .section_grid .section_body ul li {
+    height: 50%; } }
 .section_domain {
   padding: 0;
   width: 100%;
