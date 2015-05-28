@@ -24,6 +24,10 @@ footer{
         margin-bottom: 0;
       }
     }
+    
+    a{
+      @extend p;
+    }
   }
 }
 
