@@ -1554,7 +1554,11 @@ section {
   padding-bottom: 3.75rem;
   background: white; }
   section .section_header,
-  section .section_body {
+  section .section_body, section.section_domain .bottom > * {
+    max-width: 750px;
+    margin: auto;
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
     clear: both; }
   section .section_header {
     margin-bottom: 1.875rem; }
@@ -1562,24 +1566,29 @@ section {
 main section:last-child {
   padding-bottom: 7.5rem; }
 
-.section_header {
-  max-width: 650px; }
-  .section_header h2 {
-    margin-bottom: 0.9375rem; }
+.section_header h2 {
+  margin-bottom: 0.9375rem; }
 
-.section_text .section_body {
-  max-width: 650px;
-  margin: auto; }
-  .section_text .section_body > p, .section_text .section_body > div.wpcf7-response-output, .section_text .section_body > input, .section_text .section_body > button {
-    margin-bottom: 1em;
-    color: #b4b4c8; }
-  .section_text .section_body h3 {
-    padding-bottom: .5em;
-    margin-bottom: .5em;
-    border-bottom: thin dotted #003363; }
-  .section_text .section_body div p, .section_text .section_body div div.wpcf7-response-output, .section_text .section_body div input, .section_text .section_body div button {
-    margin-bottom: 1em; }
+@media only screen and (max-width: 31.25em) {
+  section .section_header,
+  section .section_body, section.section_domain .bottom > * {
+    padding-left: 1.875rem;
+    padding-right: 1.875rem; } }
+.section_text .section_body > p, .section_text .section_body > div.wpcf7-response-output, .section_text .section_body > input, .section_text .section_body > button {
+  margin-bottom: 1em;
+  color: #b4b4c8; }
+.section_text .section_body h3 {
+  padding-bottom: .5em;
+  margin-bottom: .5em;
+  border-bottom: thin dotted #003363; }
+.section_text .section_body div p, .section_text .section_body div div.wpcf7-response-output, .section_text .section_body div input, .section_text .section_body div button {
+  margin-bottom: 1em; }
 
+.section_grid .section_header,
+.section_grid .section_body {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0; }
 .section_grid .section_header {
   top: 35px;
   right: 0;
@@ -1687,9 +1696,8 @@ main section:last-child {
       .section_domain .bottom > div p, .section_domain .bottom > div div.wpcf7-response-output, .section_domain .bottom > div input, .section_domain .bottom > div button {
         margin-bottom: 1em; }
 
-.section_domain .section_header,
-.section_domain .bottom > * {
-  max-width: 650px;
+.bottom > * {
+  max-width: 750px;
   margin: auto; }
 
 .section_domain .section_header {
@@ -1703,9 +1711,6 @@ main section:last-child {
 
 .section_accordion {
   padding-bottom: 0; }
-  .section_accordion .section_header {
-    max-width: 650px;
-    margin: auto; }
 
 .section_accordion .section_header > a {
   display: -webkit-box;
@@ -1745,6 +1750,9 @@ main section:last-child {
     background-color: #003363; }
 
 .section_accordion .section_body {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
   background: #003363; }
   .section_accordion .section_body * {
     color: white; }
@@ -1753,58 +1761,59 @@ main section:last-child {
     right: 0;
     left: 0;
     position: absolute;
-    max-width: 600px;
+    max-width: 750px;
     margin: auto;
-    padding: 3.75rem 0; }
+    padding: 3.75rem 3.75rem; }
     .section_accordion .section_body > div .inner {
       top: 3.75rem;
       position: absolute; }
 
+@media only screen and (max-width: 31.25em) {
+  .section_accordion .section_body > div {
+    padding: 3.75rem 1.875rem; } }
 .section_team {
   padding-top: 0; }
-  .section_team .section_body {
-    max-width: 650px;
-    margin: auto; }
-    .section_team .section_body > div {
-      display: -webkit-box;
-      /* OLD - iOS 6-, Safari 3.1-6 */
-      display: -moz-box;
-      /* OLD - Firefox 19- (buggy but mostly works) */
-      display: -ms-flex;
-      /* TWEENER - IE 10 */
-      display: -webkit-flex;
-      /* NEW - Chrome */
-      display: flex;
-      /* NEW, Spec - Opera 12.1, Firefox 20+ */
-      -webkit-align-items: center;
-      -ms-flex-align: center;
-      align-items: center;
-      margin-bottom: 50px; }
-      .section_team .section_body > div:first-child {
-        padding-top: 3.75rem;
-        border-top: thin dotted #003363; }
-      .section_team .section_body > div div:first-child {
-        float: left;
-        width: 150px;
-        height: 150px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-        border-radius: 100%;
-        -webkit-filter: grayscale(1); }
-      .section_team .section_body > div div:last-child {
-        float: left;
-        padding-left: 2em; }
+  .section_team .section_body > div {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flex;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 50px; }
+    .section_team .section_body > div:first-child {
+      padding-top: 3.75rem;
+      border-top: thin dotted #003363; }
+    .section_team .section_body > div div:first-child {
+      float: left;
+      width: 150px;
+      height: 150px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      border-radius: 100%;
+      -webkit-filter: grayscale(1); }
+    .section_team .section_body > div div:last-child {
+      float: left;
+      padding-left: 2em; }
 
 .section_location .section_header {
-  max-width: 650px;
-  margin: auto;
   padding-bottom: 3.75rem; }
   .section_location .section_header h3 {
     padding-bottom: .5em;
     margin-bottom: .5em;
     border-bottom: thin dotted #003363; }
 .section_location .section_body {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
   -webkit-filter: grayscale(1); }
   .section_location .section_body #map {
     width: 100%;
@@ -1813,9 +1822,6 @@ main section:last-child {
 
 .section_contact {
   padding-top: 0; }
-  .section_contact .section_body {
-    max-width: 650px;
-    margin: auto; }
 
 /*
  * Show and Hide class functions

@@ -42,12 +42,9 @@
 }
 
 // Max width
-.section_domain{
-  .section_header,
-  .bottom > *{
-    max-width: 650px;
-    margin: auto;
-  }
+.bottom > *{
+  max-width: 750px;
+  margin: auto;
 }
 
 // domain header

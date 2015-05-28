@@ -1,10 +1,5 @@
 .section_accordion{
   padding-bottom: 0;
-  
-  .section_header{
-    max-width: 650px;
-    margin: auto;
-  }
 }
 
 .section_accordion .section_header > a{
@@ -40,6 +35,10 @@
 }
 
 .section_accordion .section_body{
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+  
   background: $blue;
   
   *{
@@ -52,13 +51,21 @@
     left: 0;
     position: absolute;
     
-    max-width: 600px;
+    max-width: 750px;
     margin: auto;
-    padding: $section-spacing 0;
+    padding: $section-spacing $side-margin;
     
     .inner{
       top: $section-spacing;
       position: absolute;
+    }
+  }
+}
+
+@media #{$small-only}{
+  .section_accordion .section_body{
+    > div{
+      padding: $section-spacing $side-margin-small;
     }
   }
 }

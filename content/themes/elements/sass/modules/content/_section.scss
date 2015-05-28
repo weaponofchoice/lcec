@@ -6,7 +6,12 @@ section{
   background: $white;
   
   .section_header,
-  .section_body{
+  .section_body,
+  &.section_domain .bottom > *{
+    max-width: 750px;
+    margin: auto;
+    padding-left: $side-margin;
+    padding-right: $side-margin;
     clear: both;
   }
   
@@ -21,9 +26,18 @@ main section:last-child{
 }
 
 .section_header{
-  max-width: 650px;
-  
   h2{
     margin-bottom: $section-spacing / 4;
+  }
+}
+
+@media #{$small-only}{
+  section{
+    .section_header,
+    .section_body,
+    &.section_domain .bottom > *{
+      padding-left: $side-margin-small;
+      padding-right: $side-margin-small;
+    }
   }
 }

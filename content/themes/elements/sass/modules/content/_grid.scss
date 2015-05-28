@@ -1,4 +1,11 @@
 .section_grid{
+  .section_header,
+  .section_body{
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
   .section_header{
     top: 35px;
     right: 0;

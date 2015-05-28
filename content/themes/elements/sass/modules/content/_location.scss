@@ -1,7 +1,5 @@
 .section_location{
   .section_header{
-    max-width: 650px;
-    margin: auto;
     padding-bottom: $section-spacing;
     
     h3{
@@ -13,6 +11,10 @@
   }
   
   .section_body{
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+    
     -webkit-filter: grayscale(1);
     
     #map{
