@@ -22,7 +22,7 @@ $domain_c_text = get_sub_field( 'domain_c_text' );
           $domain_c_link = get_sub_field( 'domain_c_links_link' );
           $domain_c_link_text = get_sub_field( 'domain_c_links_text' );
           ?>
-          <a class="link-arrow" href="<?php echo $domain_c_link; ?>"><?php echo $domain_c_link_text; ?><img src="<?php echo get_template_directory_uri(); ?>/img/arrow-pri.svg"></a>
+          <a class="link-arrow is_bold" href="<?php echo $domain_c_link; ?>"><?php echo $domain_c_link_text; ?><img src="<?php echo get_template_directory_uri(); ?>/img/arrow-pri.svg"></a>
           <?php
         endwhile;
       endif;
