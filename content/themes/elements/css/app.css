@@ -1560,7 +1560,8 @@ nav ul li.current-menu-item a:after {
     padding: 60px;
     background: white; }
     nav ul {
-      display: block; }
+      display: block;
+      margin-bottom: 1em; }
       nav ul li {
         display: block;
         padding: 1em 0; } }
