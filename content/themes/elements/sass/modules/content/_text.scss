@@ -15,9 +15,12 @@
       border-bottom: thin dotted $blue;
     }
     
-    // Text
-    div p{
-      margin-bottom: 1em;
+    // Text & links
+    div{
+      p,
+      a{
+        margin-bottom: 1em;
+      }
     }
   }
 }

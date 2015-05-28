@@ -1655,7 +1655,8 @@ main section:last-child {
   padding-bottom: .5em;
   margin-bottom: .5em;
   border-bottom: thin dotted #003363; }
-.section_text .section_body div p, .section_text .section_body div div.wpcf7-response-output, .section_text .section_body div input, .section_text .section_body div button {
+.section_text .section_body div p, .section_text .section_body div div.wpcf7-response-output, .section_text .section_body div input, .section_text .section_body div button,
+.section_text .section_body div a {
   margin-bottom: 1em; }
 
 .section_grid .section_header,
