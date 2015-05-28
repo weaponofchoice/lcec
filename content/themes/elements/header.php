@@ -10,14 +10,21 @@
 <head>
   <title>LCec<?php if(! is_front_page() ){ echo ' – ' . get_the_title(); } ?></title>
   
+  <link rel="canonical" href="<?php echo home_url(); ?>">
+  
   <!-- META TAGS -->
+  <meta name="description" content="LC Engineers and Consultants" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta charset="<?php bloginfo( 'charset' ); ?>" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
   
-  <!-- LINK tags -->
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app.css">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/img/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/img/favicon-32x32.png" sizes="32x32">
   
   <!-- Fonts from Typekit -->
   <script src="//use.typekit.net/jif1vmt.js"></script>

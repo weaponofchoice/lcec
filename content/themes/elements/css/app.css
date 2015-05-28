@@ -1322,7 +1322,7 @@ ul {
 .margin-b100 {
   margin-bottom: 6.25rem !important; }
 
-h1, h2, h3, p, div.wpcf7-response-output, input, button,
+h1, h2, h3, p, footer > div a, div.wpcf7-response-output, input, button,
 input[type="submit"], a {
   font-family: 'nimbus-sans', sans-serif;
   font-style: normal;
@@ -1342,7 +1342,7 @@ h2 {
 h3 {
   font-size: 2.25rem; }
 
-p, div.wpcf7-response-output, input, button,
+p, footer > div a, div.wpcf7-response-output, input, button,
 input[type="submit"] {
   font-size: 1.125rem; }
 
@@ -1358,11 +1358,12 @@ a {
   h3 {
     font-size: 1.5rem; }
 
-  p, div.wpcf7-response-output, input, button,
+  p, footer > div a, div.wpcf7-response-output, input, button,
   input[type="submit"] {
     font-size: 1rem; } }
 html,
 body {
+  width: 100%;
   height: 100% !important;
   min-height: 100%;
   background-color: #003363; }
@@ -1454,10 +1455,10 @@ footer {
     margin: auto; }
     footer > div div:first-child img {
       max-width: 250px; }
-    footer > div p, footer > div div.wpcf7-response-output, footer > div input, footer > div button,
+    footer > div p, footer > div a, footer > div div.wpcf7-response-output, footer > div input, footer > div button,
     footer > div input[type="submit"] {
       margin-bottom: 1em; }
-      footer > div p:last-child, footer > div div.wpcf7-response-output:last-child, footer > div input:last-child, footer > div button:last-child {
+      footer > div p:last-child, footer > div a:last-child, footer > div div.wpcf7-response-output:last-child, footer > div input:last-child, footer > div button:last-child {
         margin-bottom: 0; }
 
 @media only screen and (max-width: 43.75em) {
@@ -1657,14 +1658,14 @@ main section:last-child {
   section .section_body, section.section_domain .bottom > * {
     padding-left: 1.875rem;
     padding-right: 1.875rem; } }
-.section_text .section_body > p, .section_text .section_body > div.wpcf7-response-output, .section_text .section_body > input, .section_text .section_body > button {
+.section_text .section_body > p, .section_text footer > div .section_body > a, footer > div .section_text .section_body > a, .section_text .section_body > div.wpcf7-response-output, .section_text .section_body > input, .section_text .section_body > button {
   margin-bottom: 1em;
   color: #b4b4c8; }
 .section_text .section_body h3 {
   padding-bottom: .5em;
   margin-bottom: .5em;
   border-bottom: thin dotted #003363; }
-.section_text .section_body div p, .section_text .section_body div div.wpcf7-response-output, .section_text .section_body div input, .section_text .section_body div button,
+.section_text .section_body div p, .section_text .section_body footer > div a, .section_text .section_body div div.wpcf7-response-output, .section_text .section_body div input, .section_text .section_body div button,
 .section_text .section_body div a {
   margin-bottom: 1em; }
 
@@ -1697,7 +1698,7 @@ main section:last-child {
     width: 100%;
     height: 100%;
     background: rgba(0, 51, 99, 0.8); }
-  .section_grid ul li p, .section_grid ul li div.wpcf7-response-output, .section_grid ul li input, .section_grid ul li button {
+  .section_grid ul li p, .section_grid ul li footer > div a, footer > div .section_grid ul li a, .section_grid ul li div.wpcf7-response-output, .section_grid ul li input, .section_grid ul li button {
     bottom: 35px;
     right: 0;
     left: 0;
@@ -1753,7 +1754,7 @@ main section:last-child {
       display: none; }
     .section_grid .section_body ul li .mask {
       padding-bottom: 100%; }
-    .section_grid .section_body ul li p, .section_grid .section_body ul li div.wpcf7-response-output, .section_grid .section_body ul li input, .section_grid .section_body ul li button {
+    .section_grid .section_body ul li p, .section_grid .section_body ul li footer > div a, footer > div .section_grid .section_body ul li a, .section_grid .section_body ul li div.wpcf7-response-output, .section_grid .section_body ul li input, .section_grid .section_body ul li button {
       display: none; } }
 @media screen and (min-width: 1500px) {
   .section_grid .section_body ul li {
@@ -1784,7 +1785,7 @@ main section:last-child {
       left: 0;
       margin: auto;
       position: absolute; }
-      .section_domain .bottom > div p, .section_domain .bottom > div div.wpcf7-response-output, .section_domain .bottom > div input, .section_domain .bottom > div button {
+      .section_domain .bottom > div p, .section_domain .bottom > div footer > div a, footer > div .section_domain .bottom > div a, .section_domain .bottom > div div.wpcf7-response-output, .section_domain .bottom > div input, .section_domain .bottom > div button {
         margin-bottom: 1em; }
 
 .bottom > * {
@@ -1797,7 +1798,7 @@ main section:last-child {
   left: 0;
   position: absolute;
   z-index: 800; }
-  .section_domain .section_header p, .section_domain .section_header div.wpcf7-response-output, .section_domain .section_header input, .section_domain .section_header button {
+  .section_domain .section_header p, .section_domain .section_header footer > div a, footer > div .section_domain .section_header a, .section_domain .section_header div.wpcf7-response-output, .section_domain .section_header input, .section_domain .section_header button {
     margin-bottom: 1em; }
 
 @media screen and (max-width: 1024px) {
@@ -1943,6 +1944,8 @@ main section:last-child {
       width: 100%;
       height: 0;
       padding-bottom: 50%; }
+      .section_location .section_body #map img {
+        max-width: none; }
 
 .section_contact {
   padding-top: 0; }
@@ -2308,7 +2311,7 @@ h1.is_black, h2.is_black, h3.is_black, p.is_black, div.is_black.wpcf7-response-o
 h1.is_white, h2.is_white, h3.is_white, p.is_white, div.is_white.wpcf7-response-output, input.is_white, button.is_white, a.is_white {
   color: white; }
 
-p.is_small, div.is_small.wpcf7-response-output, input.is_small, button.is_small {
+p.is_small, footer > div a.is_small, div.is_small.wpcf7-response-output, input.is_small, button.is_small {
   font-size: 15px; }
 
 body > * {
