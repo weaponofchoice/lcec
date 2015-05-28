@@ -2082,7 +2082,7 @@ section.has_extra-padBottom,
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     content: '';
-    left: -15px;
+    left: 45px;
     bottom: calc(-60px - 15px - 1em);
     position: absolute;
     z-index: 900;
