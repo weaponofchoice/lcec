@@ -1361,7 +1361,7 @@ html,
 body {
   height: 100% !important;
   min-height: 100%;
-  background: white; }
+  background-color: #003363; }
 
 header {
   padding-left: 3.75rem;
@@ -2286,10 +2286,11 @@ body > * {
   transition: 0.5s; }
 
 body.is-loading {
-  height: auto !important;
+  position: fixed;
   background: url("../img/logo.svg") center center no-repeat;
   background-size: 200px;
-  background-attachment: fixed; }
+  background-attachment: fixed;
+  background-color: white; }
   body.is-loading > * {
     opacity: 0;
     visibility: hidden;

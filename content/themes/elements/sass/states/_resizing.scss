@@ -5,10 +5,12 @@ body{
 }
 
 body.is-loading{
-  height: auto !important;
+  position: fixed;
+  
   background: url('../img/logo.svg') center center no-repeat;
   background-size: 200px;
   background-attachment: fixed;
+  background-color: $white;
   
   > *{
     @include hide( 0s );
