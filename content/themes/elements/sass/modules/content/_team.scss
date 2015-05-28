@@ -18,6 +18,7 @@
       div:first-child{
         float: left;
         
+        min-width: 150px;
         width: 150px;
         height: 150px;
         
@@ -33,6 +34,21 @@
         float: left;
         
         padding-left: 2em;
+      }
+    }
+  }
+}
+
+@media #{$small-only}{
+  .section_team{
+    .section_body{
+      > div{
+        // Image
+        div:first-child{
+          min-width: 100px;
+          width: 100px;
+          height: 100px;
+        }
       }
     }
   }

@@ -39,3 +39,8 @@ a{
   cursor: pointer;
   text-decoration: none;
 }
+
+@media #{$small-only}{
+  h2{ font-size: rem-calc(45); }
+  h3{ font-size: rem-calc(24); }
+}
