@@ -1,0 +1,11 @@
+input{
+  @extend p;
+  
+  width: 100%;
+  height: 50px;
+  padding: 0 30px;
+  
+  background-color: $grey-light;
+  outline: none;
+  border: none;
+}

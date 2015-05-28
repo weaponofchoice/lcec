@@ -1,0 +1,53 @@
+form{
+  .form-row{
+    width: 100%;
+    margin-bottom: 30px;
+    
+    label{
+      width: 20%;
+      display: inline-block;
+    }
+    
+    span{
+      width: calc(80% - 30px);
+      margin-left: 30px;
+      display: inline-block;
+    }
+  }
+  
+  .form-row.form-submit{
+    margin-bottom: 0;
+    
+    text-align: center;
+  }
+}
+
+// Errors
+.form-row span[role="alert"]{
+  display: none !important;
+}
+
+.form-row input[aria-invalid="true"]{
+  border: thin solid $red !important;
+}
+
+div.wpcf7-response-output{
+  @extend p;
+  
+  width: 100%;
+  height: 50px;
+  padding: 0 1em !important;
+  margin: 30px 0 !important;
+  
+  background-color: $red;
+  border: none !important;
+  color: $white;
+  text-align: center;
+  line-height: 50px;
+}
+
+// Succes message
+.wpcf7-mail-sent-ok{
+  color: $blue !important;
+  background-color: $grey-light !important;
+}

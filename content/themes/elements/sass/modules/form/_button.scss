@@ -1,0 +1,16 @@
+button,
+input[type="submit"]{
+  @extend p;
+  @extend .is_bold;
+  
+  width: auto;
+  padding: 0 80px;
+  
+  background-color: $blue;
+  color: $white;
+  outline: none;
+}
+
+img.ajax-loader{
+  width: 16px;
+}

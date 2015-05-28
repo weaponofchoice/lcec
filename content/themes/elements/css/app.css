@@ -1319,14 +1319,16 @@ ul {
 .margin-b100 {
   margin-bottom: 6.25rem !important; }
 
-h1, h2, h3, p, a {
+h1, h2, h3, p, div.wpcf7-response-output, input, button,
+input[type="submit"], a {
   font-family: 'nimbus-sans', sans-serif;
   font-style: normal;
   font-size: 16px;
   font-weight: 300;
   color: #003363;
   -webkit-font-smoothing: antialiased; }
-  h1.is_bold, h2.is_bold, h3.is_bold, p.is_bold, a.is_bold {
+  h1.is_bold, h2.is_bold, h3.is_bold, p.is_bold, div.is_bold.wpcf7-response-output, input.is_bold,
+  input[type="submit"], button, a.is_bold {
     font-weight: 700; }
 
 h2 {
@@ -1337,7 +1339,8 @@ h2 {
 h3 {
   font-size: 2.25rem; }
 
-p {
+p, div.wpcf7-response-output, input, button,
+input[type="submit"] {
   font-size: 1.125rem; }
 
 a {
@@ -1422,7 +1425,8 @@ footer {
   footer > img {
     max-width: 250px;
     margin-bottom: 50px; }
-  footer p {
+  footer p, footer div.wpcf7-response-output, footer input, footer button,
+  footer input[type="submit"] {
     margin-bottom: 1em; }
   footer ul li {
     width: 35px;
@@ -1488,6 +1492,60 @@ nav ul {
     margin-left: .5em;
     vertical-align: middle; }
 
+form .form-row {
+  width: 100%;
+  margin-bottom: 30px; }
+  form .form-row label {
+    width: 20%;
+    display: inline-block; }
+  form .form-row span {
+    width: calc(80% - 30px);
+    margin-left: 30px;
+    display: inline-block; }
+form .form-row.form-submit {
+  margin-bottom: 0;
+  text-align: center; }
+
+.form-row span[role="alert"] {
+  display: none !important; }
+
+.form-row input[aria-invalid="true"] {
+  border: thin solid #ff2d46 !important; }
+
+div.wpcf7-response-output {
+  width: 100%;
+  height: 50px;
+  padding: 0 1em !important;
+  margin: 30px 0 !important;
+  background-color: #ff2d46;
+  border: none !important;
+  color: white;
+  text-align: center;
+  line-height: 50px; }
+
+.wpcf7-mail-sent-ok {
+  color: #003363 !important;
+  background-color: #f1f1f1 !important; }
+
+input {
+  width: 100%;
+  height: 50px;
+  padding: 0 30px;
+  background-color: #f1f1f1;
+  outline: none;
+  border: none; }
+
+button,
+input[type="submit"] {
+  width: auto;
+  padding: 0 80px;
+  background-color: #003363;
+  color: white;
+  outline: none; }
+
+img.ajax-loader {
+  width: 16px; }
+
 section {
   height: auto;
   overflow: hidden;
@@ -1511,14 +1569,14 @@ main section:last-child {
 .section_text .section_body {
   max-width: 650px;
   margin: auto; }
-  .section_text .section_body > p {
+  .section_text .section_body > p, .section_text .section_body > div.wpcf7-response-output, .section_text .section_body > input, .section_text .section_body > button {
     margin-bottom: 1em;
     color: #b4b4c8; }
   .section_text .section_body h3 {
     padding-bottom: .5em;
     margin-bottom: .5em;
     border-bottom: thin dotted #003363; }
-  .section_text .section_body div p {
+  .section_text .section_body div p, .section_text .section_body div div.wpcf7-response-output, .section_text .section_body div input, .section_text .section_body div button {
     margin-bottom: 1em; }
 
 .section_grid .section_header {
@@ -1543,7 +1601,7 @@ main section:last-child {
     width: 100%;
     height: 100%;
     background: rgba(0, 51, 99, 0.8); }
-  .section_grid ul li p {
+  .section_grid ul li p, .section_grid ul li div.wpcf7-response-output, .section_grid ul li input, .section_grid ul li button {
     bottom: 35px;
     right: 0;
     left: 0;
@@ -1619,7 +1677,7 @@ main section:last-child {
       left: 0;
       margin: auto;
       position: absolute; }
-      .section_domain .bottom > div p {
+      .section_domain .bottom > div p, .section_domain .bottom > div div.wpcf7-response-output, .section_domain .bottom > div input, .section_domain .bottom > div button {
         margin-bottom: 1em; }
 
 .section_domain .section_header,
@@ -1633,7 +1691,7 @@ main section:last-child {
   left: 0;
   position: absolute;
   z-index: 200; }
-  .section_domain .section_header p {
+  .section_domain .section_header p, .section_domain .section_header div.wpcf7-response-output, .section_domain .section_header input, .section_domain .section_header button {
     margin-bottom: 1em; }
 
 .section_accordion {
@@ -1745,6 +1803,10 @@ main section:last-child {
     width: 100%;
     height: 0;
     padding-bottom: 50%; }
+
+.section_contact .section_body {
+  max-width: 650px;
+  margin: auto; }
 
 /*
  * Show and Hide class functions
@@ -2074,30 +2136,31 @@ section.has_extra-padBottom,
   -o-transition: 0.5s;
   transition: 0.5s; }
 
-h1.is_italic, h2.is_italic, h3.is_italic, p.is_italic, a.is_italic {
+h1.is_italic, h2.is_italic, h3.is_italic, p.is_italic, div.is_italic.wpcf7-response-output, input.is_italic, button.is_italic, a.is_italic {
   font-style: italic; }
-h1.is_underlined, h2.is_underlined, h3.is_underlined, p.is_underlined, a.is_underlined {
+h1.is_underlined, h2.is_underlined, h3.is_underlined, p.is_underlined, div.is_underlined.wpcf7-response-output, input.is_underlined, button.is_underlined, a.is_underlined {
   text-decoration: underline; }
-h1.is_capitalized, h2.is_capitalized, h3.is_capitalized, p.is_capitalized, a.is_capitalized {
+h1.is_capitalized, h2.is_capitalized, h3.is_capitalized, p.is_capitalized, div.is_capitalized.wpcf7-response-output, input.is_capitalized, button.is_capitalized, a.is_capitalized {
   text-transform: capitalize; }
-h1.is_uppercase, h2.is_uppercase, h3.is_uppercase, p.is_uppercase, a.is_uppercase {
+h1.is_uppercase, h2.is_uppercase, h3.is_uppercase, p.is_uppercase, div.is_uppercase.wpcf7-response-output, input.is_uppercase, button.is_uppercase, a.is_uppercase {
   text-transform: uppercase; }
-h1.is_lowercase, h2.is_lowercase, h3.is_lowercase, p.is_lowercase, a.is_lowercase {
+h1.is_lowercase, h2.is_lowercase, h3.is_lowercase, p.is_lowercase, div.is_lowercase.wpcf7-response-output, input.is_lowercase, button.is_lowercase, a.is_lowercase {
   text-transform: lowercase; }
-h1.is_bold, h2.is_bold, h3.is_bold, p.is_bold, a.is_bold {
+h1.is_bold, h2.is_bold, h3.is_bold, p.is_bold, div.is_bold.wpcf7-response-output, input.is_bold,
+input[type="submit"], button, a.is_bold {
   font-weight: 700; }
-h1.is_aligned-center, h2.is_aligned-center, h3.is_aligned-center, p.is_aligned-center, a.is_aligned-center {
+h1.is_aligned-center, h2.is_aligned-center, h3.is_aligned-center, p.is_aligned-center, div.is_aligned-center.wpcf7-response-output, input.is_aligned-center, button.is_aligned-center, a.is_aligned-center {
   text-align: center; }
-h1.is_aligned-left, h2.is_aligned-left, h3.is_aligned-left, p.is_aligned-left, a.is_aligned-left {
+h1.is_aligned-left, h2.is_aligned-left, h3.is_aligned-left, p.is_aligned-left, div.is_aligned-left.wpcf7-response-output, input.is_aligned-left, button.is_aligned-left, a.is_aligned-left {
   text-align: left; }
-h1.is_aligned-right, h2.is_aligned-right, h3.is_aligned-right, p.is_aligned-right, a.is_aligned-right {
+h1.is_aligned-right, h2.is_aligned-right, h3.is_aligned-right, p.is_aligned-right, div.is_aligned-right.wpcf7-response-output, input.is_aligned-right, button.is_aligned-right, a.is_aligned-right {
   text-align: right; }
-h1.is_black, h2.is_black, h3.is_black, p.is_black, a.is_black {
+h1.is_black, h2.is_black, h3.is_black, p.is_black, div.is_black.wpcf7-response-output, input.is_black, button.is_black, a.is_black {
   color: black; }
-h1.is_white, h2.is_white, h3.is_white, p.is_white, a.is_white {
+h1.is_white, h2.is_white, h3.is_white, p.is_white, div.is_white.wpcf7-response-output, input.is_white, button.is_white, a.is_white {
   color: white; }
 
-p.is_small {
+p.is_small, div.is_small.wpcf7-response-output, input.is_small, button.is_small {
   font-size: 15px; }
 
 body > * {

@@ -18,6 +18,7 @@ if( have_rows('page') ):
   endwhile;
 endif;
 
+include( locate_template('content/contact.php') );
 include( locate_template('content/team.php') );
 include( locate_template('content/location.php') );
 

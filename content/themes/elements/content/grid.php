@@ -21,11 +21,11 @@ echo '<section class="section_grid has_no-pad">';
           $image = get_sub_field( 'grid_item_image' );
           $title = get_sub_field( 'grid_item_title' );
           ?>
-          <li class="fadeIn-up" style="background:url('<?php echo $image['sizes']['medium']; ?>')">
+          <li style="background:url('<?php echo $image['sizes']['medium']; ?>')">
             <div class="mask"></div>
             
             <?php if( $title ): ?>
-              <p class="is_white is_aligned-center"><?php echo $title; ?></p>
+              <p class="is_white is_aligned-center fadeIn-up"><?php echo $title; ?></p>
             <?php endif; ?>
           </li>
           <?php

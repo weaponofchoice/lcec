@@ -29,13 +29,19 @@
 @import
   "modules/_link-arrow",
   
+  "modules/form/_form",
+  "modules/form/_input",
+  "modules/form/_label",
+  "modules/form/_button",
+  
   "modules/content/_section",
   "modules/content/_text",
   "modules/content/_grid",
   "modules/content/_domain",
   "modules/content/_accordion",
   "modules/content/_team",
-  "modules/content/_location";
+  "modules/content/_location",
+  "modules/content/_contact";
   
 // STATE
 @import
