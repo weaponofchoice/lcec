@@ -1804,12 +1804,10 @@ main section:last-child {
       float: left;
       padding-left: 2em; }
 
-.section_location .section_header {
-  padding-bottom: 3.75rem; }
-  .section_location .section_header h3 {
-    padding-bottom: .5em;
-    margin-bottom: .5em;
-    border-bottom: thin dotted #003363; }
+.section_location .section_header h3 {
+  padding-bottom: .5em;
+  margin-bottom: .5em;
+  border-bottom: thin dotted #003363; }
 .section_location .section_body {
   max-width: none;
   padding-left: 0;
