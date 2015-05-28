@@ -1564,6 +1564,35 @@ nav ul li.current-menu-item a:after {
       nav ul li {
         display: block;
         padding: 1em 0; } }
+.lang {
+  display: inline; }
+  .lang a:after {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    content: '';
+    bottom: -10px;
+    right: 0;
+    left: 0;
+    position: absolute;
+    width: 70%;
+    height: 1px;
+    margin: auto;
+    background-color: #003363; }
+  .lang a.current:after,
+  .lang a:hover:after {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s; }
+
 .link-arrow {
   display: block;
   float: left;

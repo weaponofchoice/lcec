@@ -51,6 +51,7 @@
       );
     
       wp_nav_menu( $nav );
+      include_once('includes/lang.php');
       ?>
       <!-- <?php do_action('icl_language_selector'); ?> -->
     </nav>
