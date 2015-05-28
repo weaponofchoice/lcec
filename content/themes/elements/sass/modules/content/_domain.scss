@@ -6,6 +6,10 @@
     color: $white;
   }
   
+  .section_header{
+    z-index: $zIndex-domainHeader;
+  }
+  
   .top,
   .bottom{
     position: absolute;
@@ -18,10 +22,13 @@
   
   .top{
     top: 0;
+    
+    z-index: $zIndex-domainTop;
   }
   
   .bottom{
     bottom: 0;
+    z-index: $zIndex-domainBottom;
     
     background: $blue-transparent;
     

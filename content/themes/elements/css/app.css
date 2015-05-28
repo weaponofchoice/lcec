@@ -1759,6 +1759,8 @@ main section:last-child {
   width: 100%; }
   .section_domain * {
     color: white; }
+  .section_domain .section_header {
+    z-index: 800; }
   .section_domain .top,
   .section_domain .bottom {
     position: absolute;
@@ -1766,9 +1768,11 @@ main section:last-child {
     background-size: cover;
     background-repeat: no-repeat; }
   .section_domain .top {
-    top: 0; }
+    top: 0;
+    z-index: 600; }
   .section_domain .bottom {
     bottom: 0;
+    z-index: 700;
     background: rgba(0, 51, 99, 0.8); }
     .section_domain .bottom > div {
       bottom: 60px;
@@ -1788,7 +1792,7 @@ main section:last-child {
   right: 0;
   left: 0;
   position: absolute;
-  z-index: 200; }
+  z-index: 800; }
   .section_domain .section_header p, .section_domain .section_header div.wpcf7-response-output, .section_domain .section_header input, .section_domain .section_header button {
     margin-bottom: 1em; }
 
