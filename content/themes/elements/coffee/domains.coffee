@@ -10,8 +10,6 @@ $ ->
   
   # Apply heights
   domain.css "height", (viewport_h * 2) - (header_h * 2)
-  top.css "height", viewport_h - header_h
-  bottom.css "height", viewport_h - header_h
   
   # Stick
   waypoints = domain.waypoint(((direction) ->

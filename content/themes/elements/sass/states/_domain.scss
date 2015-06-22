@@ -5,6 +5,8 @@
       top: 60px;
       left: 0;
       position: fixed;
+      
+      height: calc(100% - 60px);
     }
   }
 
@@ -21,6 +23,8 @@
   .bottom{
     top: 0 !important;
     position: absolute !important;
+    
+    height: 100%;
   }
 
   .section_header{
