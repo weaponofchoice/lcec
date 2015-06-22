@@ -14,6 +14,8 @@ echo '<section class="section_grid has_no-pad">';
   
   // Grid content
   if( have_rows('grid_item') ):
+    $i = 1;
+    
     echo '<div class="section_body">';
       echo '<ul class="s-grid-2 l-grid-4">';
         
@@ -22,13 +24,16 @@ echo '<section class="section_grid has_no-pad">';
           $title = get_sub_field( 'grid_item_title' );
           ?>
           <li style="background-image:url('<?php echo $image['sizes']['medium']; ?>')">
-            <div class="mask"></div>
+            <a href="#anchor-<?php echo $i; ?>">
+              <div class="mask"></div>
             
-            <?php if( $title ): ?>
-              <p class="is_white is_aligned-center fadeIn-up"><?php echo $title; ?></p>
-            <?php endif; ?>
+              <?php if( $title ): ?>
+                <p class="is_white is_aligned-center fadeIn-up"><?php echo $title; ?></p>
+              <?php endif; ?>
+            </a>
           </li>
           <?php
+          $i++;
         endwhile;
         
       echo '</ul>';

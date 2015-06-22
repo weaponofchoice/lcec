@@ -1739,17 +1739,29 @@ main section:last-child {
     height: 0;
     padding: 0;
     padding-bottom: 40%; }
-    .section_grid .section_body ul li .mask {
-      padding-bottom: 200%; }
 
 .section_grid ul li {
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-position: center center !important; }
-  .section_grid ul li .mask {
+  .section_grid ul li a {
+    top: 0;
+    left: 0;
+    position: absolute;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 51, 99, 0.8); }
+    height: 100%; }
+    .section_grid ul li a .mask {
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+      -ms-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s;
+      width: 100%;
+      height: 100%;
+      padding-bottom: 200%;
+      background: rgba(0, 51, 99, 0.8); }
+  .section_grid ul li a:hover .mask {
+    background: transparent; }
   .section_grid ul li p, .section_grid ul li footer > div a, footer > div .section_grid ul li a, .section_grid ul li div.wpcf7-response-output, .section_grid ul li input, .section_grid ul li button {
     bottom: 35px;
     right: 0;

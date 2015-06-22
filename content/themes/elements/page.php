@@ -3,6 +3,7 @@ get_header();
 
 // Loop into ACF groups
 if( have_rows('page') ):
+  $i_anchor = 1;
   while( have_rows('page') ): the_row();
     
     if( get_row_layout() == 'text' ):
@@ -11,6 +12,7 @@ if( have_rows('page') ):
       include( locate_template('content/accordion.php') );
     elseif( get_row_layout() == 'domain' ):
       include( locate_template('content/domain.php') );
+      $i_anchor++;
     elseif( get_row_layout() == 'grid' ):
       include( locate_template('content/grid.php') );
     endif;
