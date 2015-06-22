@@ -10,7 +10,7 @@ $ ->
   
   # Apply heights
   domain.css "height", (viewport_h * 2) - (header_h * 2)
-  top.css "height", viewport_h - header_h
+  # top.css "height", viewport_h - header_h
   bottom.css "height", viewport_h - header_h
   
   # Stick
@@ -38,3 +38,11 @@ $ ->
       domain.css "margin-top", 0
     
   ), offset: header_h )
+  
+  # retina support
+  if window.devicePixelRatio > 1
+    image = $('.top')
+    image.each ->
+      src = $(this).css('background-image')
+      src_stripped = src.replace('url(','').replace('.jpg)','');
+      src_new = $(this).css "background-image", "url('" + src_stripped + "@2x.jpg')"

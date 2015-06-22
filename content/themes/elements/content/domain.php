@@ -10,7 +10,7 @@ $domain_c_text = get_sub_field( 'domain_c_text' );
     <h2><?php echo $domain_c_title; ?></h2>
   </div>
   
-  <div class="top" style="background-image:url('<?php echo $domain_c_background['sizes']['large']; ?>')"></div>
+  <div id="test<?php echo $i_anchor; ?>" class="top" style="background-image:url('<?php echo $domain_c_background['sizes']['large']; ?>')"></div>
   
   <div class="bottom">
     <div>

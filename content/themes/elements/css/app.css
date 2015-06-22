@@ -1840,6 +1840,7 @@ main section:last-child {
   .section_domain .bottom {
     position: absolute;
     width: 100%;
+    height: 50%;
     background-size: cover;
     background-repeat: no-repeat; }
   .section_domain .top {
@@ -2428,7 +2429,8 @@ body.is-mobile.is-loading > * {
 .section_domain .bottom.is_pinned {
   top: 60px;
   left: 0;
-  position: fixed; }
+  position: fixed;
+  height: calc(100% - 60px); }
 .section_domain .section_header.is_pinned {
   top: 120px;
   position: fixed; }
@@ -2436,7 +2438,8 @@ body.is-mobile.is-loading > * {
 .section_domain.is_scrolled .top,
 .section_domain.is_scrolled .bottom {
   top: 0 !important;
-  position: absolute !important; }
+  position: absolute !important;
+  height: 100%; }
 .section_domain.is_scrolled .section_header {
   top: 60px;
   position: absolute !important; }
@@ -2501,3 +2504,35 @@ nav.is-active {
   -ms-transform: translateY(0);
   -webkit-transform: translateY(0);
   transform: translateY(0); }
+
+.is-stretched-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%; }
+
+.is-stretched-object {
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  max-width: none; }
+  .is-stretched-object.is-stretched-wide {
+    width: 100%;
+    min-height: 100%;
+    height: auto; }
+  .is-stretched-object.is-stretched-high {
+    height: 100%;
+    min-width: 100%;
+    width: auto; }
+
+.centered .is-stretched-wrapper .is-stretched-object {
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  left: 50%; }
