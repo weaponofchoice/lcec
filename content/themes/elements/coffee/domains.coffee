@@ -10,8 +10,6 @@ $ ->
   
   # Apply heights
   domain.css "height", (viewport_h * 2) - (header_h * 2)
-  # top.css "height", viewport_h - header_h
-  bottom.css "height", viewport_h - header_h
   
   # Stick
   waypoints = domain.waypoint(((direction) ->
@@ -45,4 +43,4 @@ $ ->
     image.each ->
       src = $(this).css('background-image')
       src_stripped = src.replace('url(','').replace('.jpg)','');
-      src_new = $(this).css "background-image", "url('" + src_stripped + "@2x.jpg')"
+      $(this).css "background-image", "url('" + src_stripped + "@2x.jpg')"
