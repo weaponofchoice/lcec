@@ -163,30 +163,13 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
     }), {
       offset: 120
     });
-    waypoints = domain.waypoint((function(direction) {
-      var height;
-      height = $(this).height();
-      console.log(height);
-      return $(this.element).toggleClass("activated");
-    }), {
-      offset: -$(this.element).outerHeight() + 120
-    });
     return $(window).on("resize", function() {
       viewport_h = window.innerHeight;
       header_h = 60;
-      return domain.each(function() {
-        var height;
-        height = domain.height();
-        waypoints = domain.waypoint((function(direction) {
-          return $(this.element).toggleClass("activated");
-        }), {
-          offset: 120
-        });
-        return waypoints = domain.waypoint((function(direction) {
-          return $(this.element).toggleClass("activated");
-        }), {
-          offset: -height + 120
-        });
+      return waypoints = domain.waypoint((function(direction) {
+        return $(this.element).toggleClass("activated");
+      }), {
+        offset: 120
       });
     });
   });

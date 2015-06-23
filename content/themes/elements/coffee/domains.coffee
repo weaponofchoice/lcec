@@ -12,29 +12,14 @@ Pace.on 'done', ->
   waypoints = domain.waypoint(((direction) ->
     $(this.element).toggleClass "activated"
   ), offset: 120 )
-
-  # Fade out
-  waypoints = domain.waypoint(((direction) ->
-    height = $(this).height()
-    console.log height
-    $(this.element).toggleClass "activated"
-  ), offset:  -$(this.element).outerHeight() + 120 )
   
   # resizing window
   $(window).on "resize", ->
     # Determine height(s)
     viewport_h = window.innerHeight
     header_h = 60
-    
-    domain.each ->
-      height = domain.height()
-      
-      # Fade in
-      waypoints = domain.waypoint(((direction) ->
-        $(this.element).toggleClass "activated"
-      ), offset: 120 )
-      
-      # Fade out
-      waypoints = domain.waypoint(((direction) ->
-        $(this.element).toggleClass "activated"
-      ), offset:  -height + 120 )
+  
+    # Fade in
+    waypoints = domain.waypoint(((direction) ->
+      $(this.element).toggleClass "activated"
+    ), offset: 120 )
