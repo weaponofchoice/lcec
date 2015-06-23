@@ -1837,8 +1837,6 @@ body.home .section_grid ul li:hover {
   width: 100%;
   margin: 60px 0;
   padding: 0;
-  padding-top: 60px;
-  padding-bottom: 60px;
   display: inline-block;
   overflow: visible;
   background-size: cover;
@@ -1851,7 +1849,7 @@ body.home .section_grid ul li:hover {
     width: 100%;
     height: auto;
     overflow: hidden;
-    padding: 120px 0; }
+    padding: 155px 0 120px; }
     .section_domain .inner p, .section_domain .inner footer > div a, footer > div .section_domain .inner a, .section_domain .inner div.wpcf7-response-output, .section_domain .inner input, .section_domain .inner button {
       margin-bottom: 1em; }
     .section_domain .inner > * {
@@ -1863,7 +1861,7 @@ body.home .section_grid ul li:hover {
   margin: auto;
   padding: 0 60px; }
   .section_domain .label div {
-    top: -100px;
+    top: -40px;
     position: absolute;
     width: 70px;
     height: 70px;
@@ -1922,8 +1920,10 @@ body.home .section_grid ul li:hover {
       -webkit-transform: translateX(0);
       transform: translateX(0); } }
 @media only screen and (max-width: 43.75em) {
+  .section_domain .label {
+    padding: 0 30px; }
   .section_domain .inner {
-    padding: 60px 0; } }
+    padding: 100px 0 80px; } }
 .section_accordion {
   padding-bottom: 0; }
 
@@ -2475,7 +2475,7 @@ body.is-mobile.is-loading > * {
     -webkit-transform: translateX(0);
     transform: translateX(0); }
 
-body.no-background-blend-mode .section_domain {
+html.no-background-blend-mode .section_domain .inner {
   background-color: rgba(0, 51, 99, 0.8); }
 
 @media screen and (max-width: 1024px) {
