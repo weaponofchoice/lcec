@@ -1,4 +1,4 @@
-$ ->
+Pace.on 'done', ->
   # Variables
   domain = $('.section_domain')
   top = $('.section_domain .top')
