@@ -174,7 +174,7 @@ extract($args);
 					success: function( json ){
 						
 						// remove input
-						$input.removeAttr('checked');
+						$input.prop('checked', false);
 						$input.remove();
 						
 						

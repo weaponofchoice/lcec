@@ -684,7 +684,7 @@ class acf_field_flexible_content extends acf_field {
 		
 		
 		// value must be an array
-		$value = acf_force_type_array( $value );
+		$value = acf_get_array( $value );
 		
 		
 		// vars

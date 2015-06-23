@@ -172,15 +172,52 @@ img.acf-fw {
   z-index: 9999;
   font-size: 12px;
 }
+.acf-tooltip.top {
+  margin-top: -8px;
+}
+.acf-tooltip.right {
+  margin-right: -8px;
+}
+.acf-tooltip.bottom {
+  margin-bottom: -8px;
+}
+.acf-tooltip.left {
+  margin-left: -8px;
+}
 .acf-tooltip:before {
   border: solid;
-  border-color: #2F353E transparent;
-  border-width: 6px 6px 0 6px;
-  bottom: 0px;
-  margin: 0 0 -6px -6px;
+  border-color: transparent;
+  border-width: 6px;
   content: "";
-  left: 50%;
   position: absolute;
+}
+.acf-tooltip.top:before {
+  top: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border-top-color: #2F353E;
+  border-bottom-width: 0;
+}
+.acf-tooltip.right:before {
+  top: 50%;
+  margin-top: -6px;
+  right: 100%;
+  border-right-color: #2F353E;
+  border-left-width: 0;
+}
+.acf-tooltip.bottom:before {
+  bottom: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border-bottom-color: #2F353E;
+  border-top-width: 0;
+}
+.acf-tooltip.left:before {
+  top: 50%;
+  margin-top: -6px;
+  left: 100%;
+  border-left-color: #2F353E;
+  border-right-width: 0;
 }
 /*---------------------------------------------------------------------------------------------
 *
@@ -685,10 +722,11 @@ img.acf-fw {
 .acf-postbox {
   position: relative;
 }
-.acf-postbox > .inside,
 .acf-fields {
   margin: 0 !important;
+  /* override WP style - do not delete - you have tried this before */
   padding: 0 !important;
+  /* override WP style - do not delete - you have tried this before */
   position: relative;
 }
 .acf-fields > .acf-field {
@@ -698,6 +736,10 @@ img.acf-fw {
 }
 .acf-fields > .acf-field:first-child {
   border-top-width: 0;
+}
+/* position high */
+#acf_after_title-sortables .acf-postbox {
+  margin: 20px 0 0;
 }
 /* seamless */
 .acf-postbox.seamless {
@@ -710,9 +752,12 @@ img.acf-fw {
   display: none;
 }
 .acf-postbox.seamless > .acf-fields > .acf-field {
-  margin: 0;
-  padding: 15px 0;
-  border: 0 none !important;
+  padding: 0;
+  margin: 20px 0 0;
+  border: 0 none;
+}
+.acf-postbox.seamless > .acf-fields > .acf-field:first-child {
+  margin-top: 0;
 }
 .acf-postbox.seamless > .acf-fields > .acf-table,
 .acf-postbox.seamless > .acf-fields > .acf-table > tbody > tr > td {

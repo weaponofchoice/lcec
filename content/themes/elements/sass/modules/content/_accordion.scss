@@ -55,6 +55,21 @@
     margin: auto;
     padding: $section-spacing $side-margin;
     
+    > p{
+      margin-bottom: 1em;
+    }
+    
+    ul{
+      list-style: initial;
+      list-style-position: outside;
+      
+      li{
+        @extend p;
+        
+        color: $white;
+      }
+    }
+    
     .inner{
       top: $section-spacing;
       position: absolute;

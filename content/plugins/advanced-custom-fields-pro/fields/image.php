@@ -81,19 +81,27 @@ class acf_field_image extends acf_field {
 	
 	function render_field( $field ) {
 		
+		// vars
+		$uploader = acf_get_setting('uploader');
+		
+		
 		// enqueue
-		acf_enqueue_uploader();
+		if( $uploader == 'wp' ) {
+			
+			acf_enqueue_uploader();
+			
+		}
 		
 		
 		// vars
+		$url = '';
 		$div = array(
 			'class'					=> 'acf-image-uploader acf-cf',
 			'data-preview_size'		=> $field['preview_size'],
 			'data-library'			=> $field['library'],
-			'data-mime_types'		=> $field['mime_types']
+			'data-mime_types'		=> $field['mime_types'],
+			'data-uploader'			=> $uploader
 		);
-		
-		$url = '';
 		
 		
 		// has value?
@@ -109,16 +117,6 @@ class acf_field_image extends acf_field {
 			
 			}
 						
-		}
-		
-		
-		// uploader
-		$uploader = acf_get_setting('uploader');
-		
-		if( $uploader == 'basic' ) {
-			
-			$div['class'] .= ' basic';
-			
 		}
 		
 ?>

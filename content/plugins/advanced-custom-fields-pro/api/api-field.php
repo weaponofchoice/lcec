@@ -534,20 +534,6 @@ function acf_render_field_wrap( $field, $el = 'div', $instruction = 'label' ) {
 	// replace
 	$wrapper['class'] = str_replace('_', '-', $wrapper['class']);
 	$wrapper['class'] = str_replace('field-field-', 'field-', $wrapper['class']);
-	
-	
-	// compatibility
-	if( acf_get_compatibility('field_wrapper_class') ) {
-		
-		$wrapper['class'] .= " field_type-{$field['type']}";
-		
-		if( $field['key'] ) {
-			
-			$wrapper['class'] .= " field_key-{$field['key']}";
-			
-		}
-		
-	}
 		
 	
 	// merge in atts
@@ -745,7 +731,7 @@ function acf_get_fields_by_id( $id = 0 ) {
 	
 	// cache
 	$found = false;
-	$cache = wp_cache_get( 'fields/parent=' . $id, 'acf', false, $found );
+	$cache = wp_cache_get( 'get_fields/parent=' . $id, 'acf', false, $found );
 	
 	if( $found )
 	{
@@ -779,7 +765,7 @@ function acf_get_fields_by_id( $id = 0 ) {
 	
 	
 	// set cache
-	wp_cache_set( 'fields/parent=' . $id, $fields, 'acf' );
+	wp_cache_set( 'get_fields/parent=' . $id, $fields, 'acf' );
 		
 	
 	// return
@@ -841,7 +827,7 @@ function acf_get_field( $selector = null, $raw = false ) {
 	
 	
 	// get cache key
-	$cache_key = "load_field/{$k}={$v}";
+	$cache_key = "get_field/{$k}={$v}";
 	
 	
 	// get cache
@@ -1234,12 +1220,9 @@ function acf_update_field( $field = false, $specific = false ) {
 	
     
     // clear cache
-	wp_cache_delete( "load_field/ID={$field['ID']}", 'acf' );
-	wp_cache_delete( "fields/parent={$field['parent']}", 'acf' );
-	
-	
-    // update cache
-	//wp_cache_set( "load_field/ID={$field['ID']}", $field, 'acf' );
+	wp_cache_delete( "get_field/ID={$field['ID']}", 'acf' );
+	wp_cache_delete( "get_field/key={$field['key']}", 'acf' );
+	wp_cache_delete( "get_fields/parent={$field['parent']}", 'acf' );
 	
 	
     // return
@@ -1474,8 +1457,9 @@ function acf_delete_field( $selector = 0 ) {
 	
 	
 	// clear cache
-	wp_cache_delete( "load_field/ID={$field['ID']}", 'acf' );
-	wp_cache_delete( "fields/parent={$field['parent']}", 'acf' );
+	wp_cache_delete( "get_field/ID={$field['ID']}", 'acf' );
+	wp_cache_delete( "get_field/key={$field['key']}", 'acf' );
+	wp_cache_delete( "get_fields/parent={$field['parent']}", 'acf' );
 	
 	
 	// return

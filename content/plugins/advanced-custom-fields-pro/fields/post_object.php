@@ -118,7 +118,7 @@ class acf_field_post_object extends acf_field {
 		// update $args
 		if( !empty($field['post_type']) ) {
 		
-			$args['post_type'] = acf_force_type_array( $field['post_type'] );
+			$args['post_type'] = acf_get_array( $field['post_type'] );
 			
 		} else {
 			
@@ -219,7 +219,7 @@ class acf_field_post_object extends acf_field {
 			
 			
 			// optgroup or single
-			$post_types = acf_force_type_array( $args['post_type'] );
+			$post_types = acf_get_array( $args['post_type'] );
 			
 			// add as optgroup or results
 			if( count($post_types) == 1 ) {
@@ -528,7 +528,7 @@ class acf_field_post_object extends acf_field {
 		
 		
 		// force value to array
-		$value = acf_force_type_array( $value );
+		$value = acf_get_array( $value );
 		
 		
 		// convert values to int

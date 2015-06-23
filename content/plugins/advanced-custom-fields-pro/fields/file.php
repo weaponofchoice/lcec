@@ -75,8 +75,16 @@ class acf_field_file extends acf_field {
 	
 	function render_field( $field ) {
 		
+		// vars
+		$uploader = acf_get_setting('uploader');
+		
+		
 		// enqueue
-		acf_enqueue_uploader();
+		if( $uploader == 'wp' ) {
+			
+			acf_enqueue_uploader();
+			
+		}
 		
 		
 		// vars
@@ -91,9 +99,12 @@ class acf_field_file extends acf_field {
 		$div = array(
 			'class'				=> 'acf-file-uploader acf-cf',
 			'data-library' 		=> $field['library'],
-			'data-mime_types'	=> $field['mime_types']
+			'data-mime_types'	=> $field['mime_types'],
+			'data-uploader'		=> $uploader
 		);
 		
+		
+		// has value
 		if( $field['value'] && is_numeric($field['value']) ) {
 			
 			$file = get_post( $field['value'] );
@@ -111,16 +122,6 @@ class acf_field_file extends acf_field {
 				$o['name'] = end( $explode );	
 							
 			}
-			
-		}
-		
-		
-		// uploader
-		$uploader = acf_get_setting('uploader');
-		
-		if( $uploader == 'basic' ) {
-			
-			$div['class'] .= ' basic';
 			
 		}
 				
