@@ -1840,6 +1840,7 @@ main section:last-child {
   padding-top: 60px;
   padding-bottom: 60px;
   display: inline-block;
+  overflow: visible;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -1856,6 +1857,22 @@ main section:last-child {
     .section_domain .inner > * {
       max-width: 750px;
       margin: auto; }
+
+.section_domain .label {
+  max-width: 750px;
+  margin: auto;
+  padding: 0 60px; }
+  .section_domain .label div {
+    top: -100px;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    border-radius: 100%;
+    text-align: center; }
+    .section_domain .label div h3 {
+      color: #003363;
+      line-height: 70px; }
 
 .section_domain .inner,
 .section_domain .inner .section_header,

@@ -161,7 +161,7 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
     waypoints = domain.waypoint((function(direction) {
       return $(this.element).toggleClass("activated");
     }), {
-      offset: 120
+      offset: 200
     });
     return $(window).on("resize", function() {
       viewport_h = window.innerHeight;
@@ -169,7 +169,7 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
       return waypoints = domain.waypoint((function(direction) {
         return $(this.element).toggleClass("activated");
       }), {
-        offset: 120
+        offset: 200
       });
     });
   });
