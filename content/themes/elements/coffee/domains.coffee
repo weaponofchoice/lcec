@@ -8,33 +8,34 @@ $ ->
   viewport_h = window.innerHeight
   header_h = 60
   
-  # Fade in
-  waypoints = domain.waypoint(((direction) ->
-    $(this.element).toggleClass "test"
-  ), offset: header_h * 3 )
+  domain.each ->
+    height = domain.height()
+    
+    # Fade in
+    waypoints = domain.waypoint(((direction) ->
+      $(this.element).toggleClass "activated"
+    ), offset: 120 )
   
-  # Fade out
-  waypoints = domain.waypoint(((direction) ->
-    $(this.element).toggleClass "test"
-  ), offset: '-60%' )
+    # Fade out
+    waypoints = domain.waypoint(((direction) ->
+      $(this.element).toggleClass "activated"
+    ), offset:  -height + 120 )
   
   # resizing window
   window.on 'resize', ->
     # Determine height(s)
     viewport_h = window.innerHeight
     header_h = 60
-  
-    # Apply heights
-    domain.css "height", viewport_h - header_h
-    top.css "height", viewport_h - header_h
-    bottom.css "height", viewport_h - header_h
-  
-    # Fade in
-    waypoints = domain.waypoint(((direction) ->
-      $(this.element).toggleClass "test"
-    ), offset: header_h * 3 )
-  
-    # Fade out
-    waypoints = domain.waypoint(((direction) ->
-      $(this.element).toggleClass "test"
-    ), offset: '-70%' )
+    
+    domain.each ->
+      height = domain.height()
+      
+      # Fade in
+      waypoints = domain.waypoint(((direction) ->
+        $(this.element).toggleClass "activated"
+      ), offset: 120 )
+      
+      # Fade out
+      waypoints = domain.waypoint(((direction) ->
+        $(this.element).toggleClass "activated"
+      ), offset:  -height + 120 )
