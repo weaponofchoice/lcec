@@ -1,67 +1,78 @@
 .section_domain{
-  padding: 0;
+  @include transition( .5s );
+  
   width: 100%;
+  margin: 60px 0;
+  padding: 0;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  display: inline-block;
+  overflow: visible;
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-blend-mode: multiply;
   
   *{
     color: $white;
   }
   
-  .section_header{
-    z-index: $zIndex-domainHeader;
-  }
-  
-  .top,
-  .bottom{
-    position: absolute;
-    
+  .inner{
     width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 120px 0;
     
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  
-  .top{
-    top: 0;
+    p{
+      margin-bottom: 1em;
+    }
     
-    z-index: $zIndex-domainTop;
-  }
-  
-  .bottom{
-    bottom: 0;
-    z-index: $zIndex-domainBottom;
-    
-    background: $blue-transparent;
-    
-    > div{
-      bottom: 60px;
-      right: 0;
-      left: 0;
+    > *{
+      max-width: 750px;
       margin: auto;
-      position: absolute;
-      
-      p{
-        margin-bottom: 1em;
-      }
     }
   }
 }
 
-// Max width
-.bottom > *{
+// Label
+.section_domain .label{
   max-width: 750px;
   margin: auto;
+  padding: 0 60px;
+  
+  div{
+    top: -100px;
+    position: absolute;
+    
+    width: 70px;
+    height: 70px;
+    
+    background-color: $white;
+    border-radius: 100%;
+    text-align: center;
+    
+    h3{
+      color: $blue;
+      line-height: 70px;
+    }
+  }
 }
 
-// domain header
-.section_domain .section_header{
-  top: 60px;
-  right: 0;
-  left: 0;
-  position: absolute;
-  z-index: $zIndex-domainHeader;
-
-  p{
-    margin-bottom: 1em;
+// Animations
+.section_domain{
+  .inner,
+  .inner .section_header,
+  .inner .section_body{
+    @include hide( .5s );
+  }
+  
+  .section_header{
+    @include transform( translateX(-50px) );
+  }
+  
+  .section_body{
+    @include transform( translateX(50px) );
   }
 }
 
@@ -71,40 +82,18 @@
     
     height: auto !important;
     margin-top: 0 !important;
-    margin-bottom: 50px;
-    padding: 60px 0;
+    margin-bottom: 60px;
     
-    background-color: $blue;
-    
-    .section_header{
-      top: 0 !important;
-      position: relative !important;
-      
-      margin-bottom: 60px;
-    }
-    
-    .top,
-    .bottom{
-      position: relative !important;
-      
-      height: auto !important;
-      overflow: hidden;
-    }
-    
-    .bottom > div{
-      bottom: 0;
-      position: relative;
-      
+    .inner{
       height: auto;
       overflow: hidden;
     }
-  }
-  
-  .section_domain.is_scrolled{
-    div.section_header,
-    div.top,
-    div.bottom{
-      position: relative !important;
+    
+    .inner,
+    .inner .section_header,
+    .inner .section_body{
+      @include show( 0s );
+      @include transform( translateX(0) );
     }
   }
 }

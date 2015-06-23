@@ -4,16 +4,20 @@ $domain_c_caption = get_sub_field( 'domain_c_caption' );
 $domain_c_title = get_sub_field( 'domain_c_title' );
 $domain_c_text = get_sub_field( 'domain_c_text' );
 ?>
-<section class="section_domain">
-  <div class="section_header">
-    <p><?php echo $domain_c_caption; ?></p>
-    <h2><?php echo $domain_c_title; ?></h2>
+<section class="section_domain" id="anchor-<?php echo $i_anchor; ?>" style="background-image:url('<?php echo $domain_c_background['sizes']['large']; ?>')">
+  <div class="label">
+    <div>
+      <h3 class="is_bold"><?php echo $i_anchor; ?></h3>
+    </div>
   </div>
   
-  <div class="top" style="background-image:url('<?php echo $domain_c_background['sizes']['large']; ?>')"></div>
-  
-  <div class="bottom">
-    <div>
+  <div class="inner">
+    <div class="section_header">
+      <p><?php echo $domain_c_caption; ?></p>
+      <h2><?php echo $domain_c_title; ?></h2>
+    </div>
+    
+    <div class="section_body">
       <?php echo $domain_c_text; ?>
       
       <?php
