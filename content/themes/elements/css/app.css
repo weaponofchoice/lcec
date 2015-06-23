@@ -1985,6 +1985,7 @@ html.no-background-blend-mode .section_grid ul li a {
     .section_accordion .section_body > div > p, .section_accordion footer.section_body > div > a, .section_accordion .section_body > div > div.wpcf7-response-output, .section_accordion .section_body > div > input, .section_accordion .section_body > div > button, .section_accordion .section_body > div ul .section_body > div > li {
       margin-bottom: 1em; }
     .section_accordion .section_body > div ul {
+      padding-left: 1em;
       list-style: initial;
       list-style-position: outside; }
       .section_accordion .section_body > div ul li {
