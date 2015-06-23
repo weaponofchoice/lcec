@@ -1823,7 +1823,7 @@ body.home .section_grid ul li:hover {
     .section_grid .section_body ul li p, .section_grid .section_body ul li footer > div a, footer > div .section_grid .section_body ul li a, .section_grid .section_body ul li div.wpcf7-response-output, .section_grid .section_body ul li input, .section_grid .section_body ul li button {
       display: none; }
 
-  body.home .section_grid ul li:hover {
+  body.home .section_grid ul li {
     background-color: rgba(0, 51, 99, 0.8); } }
 @media screen and (min-width: 1500px) {
   .section_grid .section_body ul li {
@@ -2475,7 +2475,7 @@ body.is-mobile.is-loading > * {
     -webkit-transform: translateX(0);
     transform: translateX(0); }
 
-@media only screen and (max-width: 43.75em) {
+@media screen and (max-width: 1024px) {
   .section_domain {
     background-color: rgba(0, 51, 99, 0.8); } }
 .fadeIn-up {
