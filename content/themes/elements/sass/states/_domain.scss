@@ -18,8 +18,14 @@
   }
 }
 
-html.no-background-blend-mode .section_domain .inner{
-  background-color: $blue-transparent;
+html.no-background-blend-mode .section_domain{
+  .label{
+    z-index: 999;
+  }
+  
+  .inner{
+    background-color: $blue-transparent;
+  }
 }
 
 @media screen and (max-width: 1024px){

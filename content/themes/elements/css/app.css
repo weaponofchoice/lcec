@@ -2475,6 +2475,8 @@ body.is-mobile.is-loading > * {
     -webkit-transform: translateX(0);
     transform: translateX(0); }
 
+html.no-background-blend-mode .section_domain .label {
+  z-index: 999; }
 html.no-background-blend-mode .section_domain .inner {
   background-color: rgba(0, 51, 99, 0.8); }
 
