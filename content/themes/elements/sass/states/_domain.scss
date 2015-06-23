@@ -18,6 +18,10 @@
   }
 }
 
+body.no-background-blend-mode .section_domain{
+  background-color: $blue-transparent;
+}
+
 @media screen and (max-width: 1024px){
   .section_domain{
     background-color: $blue-transparent;
