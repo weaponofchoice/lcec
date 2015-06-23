@@ -23,12 +23,12 @@ echo '<section class="section_grid has_no-pad">';
           $image = get_sub_field( 'grid_item_image' );
           $title = get_sub_field( 'grid_item_title' );
           ?>
-          <li class="retina" style="background-image:url('<?php echo $image['sizes']['medium']; ?>')">
-            <a href="#anchor-<?php echo $i; ?>">
+          <li class="retina" style="background-image:url('<?php echo $image['sizes']['small']; ?>')">
+            <?php if( is_front_page() ): ?><a href="#anchor-<?php echo $i; ?>"><?php endif; ?>
               <?php if( $title ): ?>
                 <p class="is_white is_aligned-center fadeIn-up"><?php echo $title; ?></p>
               <?php endif; ?>
-            </a>
+            <?php if( is_front_page() ): ?></a><?php endif; ?>
           </li>
           <?php
           $i++;

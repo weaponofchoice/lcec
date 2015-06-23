@@ -4,8 +4,6 @@
   width: 100%;
   margin: 60px 0;
   padding: 0;
-  padding-top: 60px;
-  padding-bottom: 60px;
   display: inline-block;
   overflow: visible;
   
@@ -22,7 +20,7 @@
     width: 100%;
     height: auto;
     overflow: hidden;
-    padding: 120px 0;
+    padding: 155px 0 120px;
     
     p{
       margin-bottom: 1em;
@@ -42,7 +40,7 @@
   padding: 0 60px;
   
   div{
-    top: -100px;
+    top: -40px;
     position: absolute;
     
     width: 70px;
@@ -94,6 +92,18 @@
     .inner .section_body{
       @include show( 0s );
       @include transform( translateX(0) );
+    }
+  }
+}
+
+@media #{$small-only}{
+  .section_domain{
+    .label{
+      padding: 0 30px;
+    }
+    
+    .inner{
+      padding: 100px 0 80px;
     }
   }
 }

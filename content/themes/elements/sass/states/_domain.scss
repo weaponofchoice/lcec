@@ -17,3 +17,19 @@
     }
   }
 }
+
+html.no-background-blend-mode .section_domain{
+  .label{
+    z-index: 999;
+  }
+  
+  .inner{
+    background-color: $blue-transparent;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .section_domain{
+    background-color: $blue-transparent;
+  }
+}

@@ -6,6 +6,8 @@
 // Includes
 require_once('includes/scripts.php');
 
+require_once('includes/image-sizes.php');
+
 require_once('includes/admin/login.php');
 require_once('includes/admin/removal.php');
 require_once('includes/admin/menu.php');

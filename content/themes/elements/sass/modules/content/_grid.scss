@@ -46,10 +46,6 @@
   background-size: cover !important;
   background-position: center center !important;
   
-  &:hover{
-    background-color: transparent;
-  }
-  
   a{
     top: 0;
     left: 0;
@@ -69,6 +65,11 @@
     padding: 0 35px;
   }
 }
+
+body.home .section_grid ul li:hover{
+  background-color: transparent;
+}
+
 
 // Removing margin-bottom for last row
 @media #{$large-up}{
@@ -105,6 +106,10 @@
   }
 }
 
+html.no-background-blend-mode .section_grid ul li a{
+  background-color: $blue-transparent;
+}
+
 @media #{$medium-down}{
   .section_grid{
     .section_header{
@@ -123,22 +128,16 @@
             display: none;
           }
           
-          .mask{
-            padding-bottom: 100%;
-          }
-          
           p{
             display: none;
-          }
-          
-          a:hover{
-            .mask{
-              background: $blue-transparent;
-            }
           }
         }
       }
     }
+  }
+  
+  body.home .section_grid ul li{
+    background-color: $blue-transparent;
   }
 }
 

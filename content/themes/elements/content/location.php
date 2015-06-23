@@ -1,7 +1,7 @@
 <?php
-$loc_title = get_field( 'location_title' );
-$loc_text = get_field( 'location_text' );
-$loc_map = get_field( 'location_map' );
+$loc_title = get_sub_field( 'location_title' );
+$loc_text = get_sub_field( 'location_text' );
+$loc_map = get_sub_field( 'location_map' );
 ?>
 <section class="section_location">
   <div class="section_header">
@@ -21,6 +21,7 @@ $loc_map = get_field( 'location_map' );
   function initialize(){
     var myLatlng = new google.maps.LatLng(<?php echo $loc_map['lat'] . ',' . $loc_map['lng']; ?>);
     var mapOptions = {
+      scrollwheel: false,
       zoom: 16,
       center: myLatlng
     }
