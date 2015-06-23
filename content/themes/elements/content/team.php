@@ -1,7 +1,7 @@
 <section class="section_team">
   <div class="section_body">
     <?php
-    $members = get_field( 'team_members' );
+    $members = get_sub_field( 'team_members' );
     
     if( $members ):
       foreach( $members as $member ):

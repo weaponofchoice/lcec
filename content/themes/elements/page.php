@@ -11,10 +11,15 @@ if( have_rows('page') ):
     elseif( get_row_layout() == 'accordion' ):
       include( locate_template('content/accordion.php') );
     elseif( get_row_layout() == 'domain' ):
-      include( locate_template('content/domain.php') );
-      $i_anchor++;
+      include( locate_template('content/domain.php') ); $i_anchor++;
     elseif( get_row_layout() == 'grid' ):
       include( locate_template('content/grid.php') );
+    elseif( get_row_layout() == 'form' ):
+      include( locate_template('content/contact.php') );
+    elseif( get_row_layout() == 'team' ):
+      include( locate_template('content/team.php') );
+    elseif( get_row_layout() == 'location' ):
+      include( locate_template('content/location.php') );
     endif;
     
   endwhile;
