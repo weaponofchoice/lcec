@@ -138,6 +138,12 @@
           p{
             display: none;
           }
+          
+          a:hover{
+            .mask{
+              background: $blue-transparent;
+            }
+          }
         }
       }
     }
