@@ -22,7 +22,7 @@ $ ->
     ), offset:  -height + 120 )
   
   # resizing window
-  window.on 'resize', ->
+  $(window).on "resize", ->
     # Determine height(s)
     viewport_h = window.innerHeight
     header_h = 60
