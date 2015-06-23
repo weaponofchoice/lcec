@@ -1832,19 +1832,26 @@ main section:last-child {
   .section_grid .section_body ul li {
     padding-bottom: 30%; } }
 .section_domain {
-  padding: 0;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
   width: 100%;
+  padding: 0;
+  padding-top: 60px;
+  padding-bottom: 60px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center; }
+  background-position: center center;
+  background-blend-mode: multiply; }
   .section_domain * {
     color: white; }
   .section_domain .inner {
     width: 100%;
     height: auto;
     overflow: hidden;
-    padding: 120px 0;
-    background-color: rgba(0, 51, 99, 0.8); }
+    padding: 120px 0; }
     .section_domain .inner p, .section_domain .inner footer > div a, footer > div .section_domain .inner a, .section_domain .inner div.wpcf7-response-output, .section_domain .inner input, .section_domain .inner button {
       margin-bottom: 1em; }
     .section_domain .inner > * {
@@ -2424,28 +2431,30 @@ body.is-mobile.is-loading > * {
 @media only screen and (max-width: 43.75em) {
   .is_fullwidth {
     margin-left: -1.875rem; } }
-.section_domain.test .inner,
-.section_domain.test .inner .section_header,
-.section_domain.test .inner .section_body {
-  opacity: 1;
-  visibility: visible;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s; }
-.section_domain.test .inner .section_header {
-  -moz-transform: translateX(0);
-  -o-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -webkit-transform: translateX(0);
-  transform: translateX(0); }
-.section_domain.test .inner .section_body {
-  -moz-transform: translateX(0);
-  -o-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -webkit-transform: translateX(0);
-  transform: translateX(0); }
+.section_domain.activated {
+  background-color: rgba(0, 51, 99, 0.8); }
+  .section_domain.activated .inner,
+  .section_domain.activated .inner .section_header,
+  .section_domain.activated .inner .section_body {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s; }
+  .section_domain.activated .inner .section_header {
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0); }
+  .section_domain.activated .inner .section_body {
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0); }
 
 .fadeIn-up {
   opacity: 0;

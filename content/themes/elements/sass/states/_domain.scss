@@ -1,5 +1,7 @@
 .section_domain{
-  &.test{
+  &.activated{
+    background-color: $blue-transparent;
+    
     .inner,
     .inner .section_header,
     .inner .section_body{
