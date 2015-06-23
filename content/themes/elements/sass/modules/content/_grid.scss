@@ -46,10 +46,6 @@
   background-size: cover !important;
   background-position: center center !important;
   
-  &:hover{
-    background-color: transparent;
-  }
-  
   a{
     top: 0;
     left: 0;
@@ -69,6 +65,11 @@
     padding: 0 35px;
   }
 }
+
+body.home .section_grid ul li:hover{
+  background-color: transparent;
+}
+
 
 // Removing margin-bottom for last row
 @media #{$large-up}{

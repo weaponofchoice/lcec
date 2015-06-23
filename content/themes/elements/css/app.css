@@ -1751,8 +1751,6 @@ main section:last-child {
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-position: center center !important; }
-  .section_grid ul li:hover {
-    background-color: transparent; }
   .section_grid ul li a {
     top: 0;
     left: 0;
@@ -1766,6 +1764,9 @@ main section:last-child {
     margin: auto;
     position: absolute;
     padding: 0 35px; }
+
+body.home .section_grid ul li:hover {
+  background-color: transparent; }
 
 @media only screen and (min-width: 56.3125em) {
   .l-grid-4 li:nth-last-child(-n + 4) {
