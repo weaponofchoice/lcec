@@ -2,68 +2,46 @@
   padding: 0;
   width: 100%;
   
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  
   *{
     color: $white;
   }
   
-  .section_header{
-    z-index: $zIndex-domainHeader;
-  }
-  
-  .top,
-  .bottom{
-    position: absolute;
-    
+  .inner{
     width: 100%;
-    height: 50%;
+    height: 100%;
+    padding: 60px 0;
     
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
-  
-  .top{
-    top: 0;
+    background-color: $blue-transparent;
     
-    z-index: $zIndex-domainTop;
-  }
-  
-  .bottom{
-    bottom: 0;
-    z-index: $zIndex-domainBottom;
+    p{
+      margin-bottom: 1em;
+    }
     
-    background: $blue-transparent;
-    
-    > div{
-      bottom: 60px;
-      right: 0;
-      left: 0;
+    > *{
+      max-width: 750px;
       margin: auto;
-      position: absolute;
-      
-      p{
-        margin-bottom: 1em;
-      }
     }
   }
 }
 
-// Max width
-.bottom > *{
-  max-width: 750px;
-  margin: auto;
-}
-
-// domain header
-.section_domain .section_header{
-  top: 60px;
-  right: 0;
-  left: 0;
-  position: absolute;
-  z-index: $zIndex-domainHeader;
-
-  p{
-    margin-bottom: 1em;
+// Animations
+.section_domain{
+  .inner,
+  .inner .section_header,
+  .inner .section_body{
+    @include hide( .5s );
+  }
+  
+  .section_header{
+    @include transform( translateX(-50px) );
+  }
+  
+  .section_body{
+    @include transform( translateX(50px) );
   }
 }
 
@@ -73,40 +51,18 @@
     
     height: auto !important;
     margin-top: 0 !important;
-    margin-bottom: 50px;
-    padding: 60px 0;
+    margin-bottom: 60px;
     
-    background-color: $blue;
-    
-    .section_header{
-      top: 0 !important;
-      position: relative !important;
-      
-      margin-bottom: 60px;
-    }
-    
-    .top,
-    .bottom{
-      position: relative !important;
-      
-      height: auto !important;
-      overflow: hidden;
-    }
-    
-    .bottom > div{
-      bottom: 0;
-      position: relative;
-      
+    .inner{
       height: auto;
       overflow: hidden;
     }
-  }
-  
-  .section_domain.is_scrolled{
-    div.section_header,
-    div.top,
-    div.bottom{
-      position: relative !important;
+    
+    .inner,
+    .inner .section_header,
+    .inner .section_body{
+      @include show( 0s );
+      @include transform( translateX(0) );
     }
   }
 }
