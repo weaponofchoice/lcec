@@ -6,12 +6,27 @@
     color: $white;
   }
   
+  .section_header,
+  .bottom,
+  .bottom > div{
+    @include hide( .5s );
+  }
+  
+  .section_header{
+    @include transform(translateX(-50px));
+  }
+  
+  .bottom > div{
+    @include transform(translateX(50px));
+  }
+  
   .section_header{
     z-index: $zIndex-domainHeader;
   }
   
   .top,
   .bottom{
+    top: 0;
     position: absolute;
     
     width: 100%;
