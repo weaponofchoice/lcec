@@ -126,11 +126,11 @@ class acf_field_relationship extends acf_field {
 		// update $args
 		if( !empty($options['post_type']) ) {
 			
-			$args['post_type'] = acf_force_type_array( $options['post_type'] );
+			$args['post_type'] = acf_get_array( $options['post_type'] );
 		
 		} elseif( !empty($field['post_type']) ) {
 		
-			$args['post_type'] = acf_force_type_array( $field['post_type'] );
+			$args['post_type'] = acf_get_array( $field['post_type'] );
 			
 		} else {
 			
@@ -246,7 +246,7 @@ class acf_field_relationship extends acf_field {
 			
 			
 			// optgroup or single
-			$post_types = acf_force_type_array( $args['post_type'] );
+			$post_types = acf_get_array( $args['post_type'] );
 			
 			// add as optgroup or results
 			if( count($post_types) == 1 ) {
@@ -326,17 +326,7 @@ class acf_field_relationship extends acf_field {
 		// get post_id
 		if( !$post_id ) {
 			
-			$form_data = acf_get_setting('form_data');
-			
-			if( !empty($form_data['post_id']) ) {
-				
-				$post_id = $form_data['post_id'];
-				
-			} else {
-				
-				$post_id = get_the_ID();
-				
-			}
+			$post_id = acf_get_setting('form_data/post_id', get_the_ID());
 			
 		}
 		
@@ -377,6 +367,7 @@ class acf_field_relationship extends acf_field {
 		
 		// return
 		return $title;
+		
 	}
 	
 	
@@ -417,8 +408,8 @@ class acf_field_relationship extends acf_field {
 		
 		
 		// data types
-		$field['post_type'] = acf_force_type_array( $field['post_type'] );
-		$field['taxonomy'] = acf_force_type_array( $field['taxonomy'] );
+		$field['post_type'] = acf_get_array( $field['post_type'] );
+		$field['taxonomy'] = acf_get_array( $field['taxonomy'] );
 		
 		
 		// post_types
@@ -444,7 +435,7 @@ class acf_field_relationship extends acf_field {
 		if( !empty($field['taxonomy']) ) {
 			
 			// get the field's terms
-			$term_groups = acf_force_type_array( $field['taxonomy'] );
+			$term_groups = acf_get_array( $field['taxonomy'] );
 			$term_groups = acf_decode_taxonomy_terms( $term_groups );
 			
 			
@@ -665,6 +656,8 @@ class acf_field_relationship extends acf_field {
 				
 			</ul>
 			
+			
+			
 		</div>
 		
 	</div>
@@ -813,7 +806,7 @@ class acf_field_relationship extends acf_field {
 		
 		
 		// force value to array
-		$value = acf_force_type_array( $value );
+		$value = acf_get_array( $value );
 		
 		
 		// convert to int
@@ -865,7 +858,7 @@ class acf_field_relationship extends acf_field {
 		
 		
 		// force value to array
-		$value = acf_force_type_array( $value );
+		$value = acf_get_array( $value );
 		
 					
 		// array

@@ -178,10 +178,10 @@ function acf_update_value( $value = null, $post_id = 0, $field ) {
 	
 	
 	// strip slashes
-	// allow 3rd party customisation
-	if( acf_get_setting('stripslashes') )
-	{
+	if( acf_get_setting('stripslashes') ) {
+		
 		$value = stripslashes_deep($value);
+		
 	}
 	
 	

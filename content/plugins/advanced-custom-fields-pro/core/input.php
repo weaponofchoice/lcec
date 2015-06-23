@@ -334,7 +334,7 @@ function acf_enqueue_uploader() {
 	
 	
 	// bail early if acf has already loaded
-	if( acf_get_setting('enqueue_uploader', false) ) {
+	if( acf_get_setting('enqueue_uploader') ) {
 	
 		return;
 		

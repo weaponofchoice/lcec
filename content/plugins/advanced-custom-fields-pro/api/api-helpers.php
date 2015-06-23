@@ -13,30 +13,22 @@
 *  @return	(mixed)
 */
 
-function acf_get_setting( $name, $allow_filter = true ) {
+function acf_get_setting( $name, $default = null ) {
 	
 	// vars
-	$r = null;
+	$settings = acf()->settings;
 	
 	
-	// load from ACF if available
-	if( isset( acf()->settings[ $name ] ) ) {
-		
-		$r = acf()->settings[ $name ];
-		
-	}
+	// find setting
+	$setting = acf_maybe_get( $settings, $name, $default );
 	
 	
 	// filter for 3rd party customization
-	if( $allow_filter ) {
-		
-		$r = apply_filters( "acf/settings/{$name}", $r );
-		
-	}
+	$setting = apply_filters( "acf/settings/{$name}", $setting );
 	
 	
 	// return
-	return $r;
+	return $setting;
 	
 }
 
@@ -56,7 +48,7 @@ function acf_get_setting( $name, $allow_filter = true ) {
 
 function acf_get_compatibility( $name ) {
 	
-	return apply_filters( "acf/compatibility/{$name}", true );
+	return apply_filters( "acf/compatibility/{$name}", false );
 	
 }
 
@@ -99,7 +91,7 @@ function acf_update_setting( $name, $value ) {
 function acf_append_setting( $name, $value ) {
 	
 	// createa array if needed
-	if( ! isset(acf()->settings[ $name ]) ) {
+	if( !isset(acf()->settings[ $name ]) ) {
 		
 		acf()->settings[ $name ] = array();
 		
@@ -996,7 +988,7 @@ function acf_get_pretty_taxonomies( $taxonomies = array() ) {
 function acf_get_taxonomy_terms( $taxonomies = array() ) {
 	
 	// force array
-	$taxonomies = acf_force_type_array( $taxonomies );
+	$taxonomies = acf_get_array( $taxonomies );
 	
 	
 	// get pretty taxonomy names
@@ -1180,7 +1172,7 @@ function acf_cache_get( $key, &$found ) {
 
 
 /*
-*  acf_force_type_array
+*  acf_get_array
 *
 *  This function will force a variable to become an array
 *
@@ -1192,7 +1184,7 @@ function acf_cache_get( $key, &$found ) {
 *  @return	(array)
 */
 
-function acf_force_type_array( $var ) {
+function acf_get_array( $var = false, $delimiter = ',' ) {
 	
 	// is array?
 	if( is_array($var) ) {
@@ -1211,15 +1203,16 @@ function acf_force_type_array( $var ) {
 	
 	
 	// string 
-	if( is_string($var) ) {
+	if( is_string($var) && $delimiter ) {
 		
-		return explode(',', $var);
+		return explode($delimiter, $var);
 		
 	}
 	
 	
 	// place in array
 	return array( $var );
+	
 } 
 
 
@@ -1263,7 +1256,7 @@ function acf_get_posts( $args = array() ) {
 	if( $args['post__in'] ) {
 		
 		// force value to array
-		$args['post__in'] = acf_force_type_array( $args['post__in'] );
+		$args['post__in'] = acf_get_array( $args['post__in'] );
 		
 		
 		// convert to int
@@ -1393,7 +1386,7 @@ function acf_get_grouped_posts( $args ) {
 
 	
 	// find array of post_type
-	$post_types = acf_force_type_array( $args['post_type'] );
+	$post_types = acf_get_array( $args['post_type'] );
 	$post_types_labels = acf_get_pretty_post_types($post_types);
 	
 	
@@ -2599,23 +2592,36 @@ function acf_is_screen( $id = '' ) {
 *  @since	5.1.5
 *
 *  @param	$array (array) the array to look within
-*  @param	$key (key) the array key to look for
+*  @param	$key (key) the array key to look for. Nested values may be found using '/'
 *  @param	$default (mixed) the value returned if not found
 *  @return	$post_id (int)
 */
 
 function acf_maybe_get( $array, $key, $default = null ) {
 	
-	// check if exists
-	if( isset($array[ $key ]) ) {
+	// vars
+	$keys = explode('/', $key);
+	
+	
+	// loop through keys
+	foreach( $keys as $k ) {
 		
-		return $array[ $key ];
+		// return default if does not exist
+		if( !isset($array[ $k ]) ) {
+			
+			return $default;
+			
+		}
+		
+		
+		// update $array
+		$array = $array[ $k ];
 		
 	}
 	
 	
 	// return
-	return $default;
+	return $array;
 	
 }
 
@@ -2986,7 +2992,7 @@ function acf_get_valid_terms( $terms = false, $taxonomy = 'category' ) {
 	
 	
 	// force into array
-	$terms = acf_force_type_array( $terms );
+	$terms = acf_get_array( $terms );
 	
 	
 	// force ints
@@ -3019,6 +3025,53 @@ function acf_get_valid_terms( $terms = false, $taxonomy = 'category' ) {
 	return $terms;
 	
 }
+
+
+/*
+*  acf_esc_html_deep
+*
+*  Navigates through an array and escapes html from the values.
+*
+*  @type	function
+*  @date	10/06/2015
+*  @since	5.2.7
+*
+*  @param	$value (mixed)
+*  @return	$value
+*/
+
+/*
+function acf_esc_html_deep( $value ) {
+	
+	// array
+	if( is_array($value) ) {
+		
+		$value = array_map('acf_esc_html_deep', $value);
+	
+	// object
+	} elseif( is_object($value) ) {
+		
+		$vars = get_object_vars( $value );
+		
+		foreach( $vars as $k => $v ) {
+			
+			$value->{$k} = acf_esc_html_deep( $v );
+		
+		}
+		
+	// string
+	} elseif( is_string($value) ) {
+
+		$value = esc_html($value);
+
+	}
+	
+	
+	// return
+	return $value;
+
+}
+*/
 
 
 /*

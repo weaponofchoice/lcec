@@ -1552,12 +1552,25 @@ var acf;
 		
 		is_in_view: function( $el ) {
 			
-			var docViewTop = $(window).scrollTop();
-		    var docViewBottom = docViewTop + $(window).height();
-		
-		    var elemTop = $el.offset().top;
-		    var elemBottom = elemTop + $el.height();
-		
+			// vars
+		    var elemTop = $el.offset().top,
+		    	elemBottom = elemTop + $el.height();
+		    
+		    
+			// bail early if hidden
+			if( elemTop === elemBottom ) {
+				
+				return false;
+				
+			}
+			
+			
+			// more vars
+			var docViewTop = $(window).scrollTop(),
+				docViewBottom = docViewTop + $(window).height();
+			
+			
+			// return
 		    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 					
 		},
@@ -1612,10 +1625,105 @@ var acf;
 		*  @return	(string)
 		*/
 		
-		str_replace: function(search, replace, subject) {
+		str_replace: function( search, replace, subject ) {
 			
 			return subject.split(search).join(replace);
 			
+		},
+		
+		
+		/*
+		*  str_sanitize
+		*
+		*  description
+		*
+		*  @type	function
+		*  @date	4/06/2015
+		*  @since	5.2.3
+		*
+		*  @param	$post_id (int)
+		*  @return	$post_id (int)
+		*/
+		
+		str_sanitize: function( string ) {
+			
+			// vars
+			var string2 = '',
+				replace = {
+				'æ': 'a',
+				'å': 'a',
+				'á': 'a',
+				'ä': 'a',
+				'č': 'c',
+				'ď': 'd',
+				'é': 'e',
+				'ě': 'e',
+				'ë': 'e',
+				'í': 'i',
+				'ĺ': 'l',
+				'ľ': 'l',
+				'ň': 'n',
+				'ø': 'o',
+				'ó': 'o',
+				'ô': 'o',
+				'ő': 'o',
+				'ö': 'o',
+				'ŕ': 'r',
+				'š': 's',
+				'ť': 't',
+				'ú': 'u',
+				'ů': 'u',
+				'ű': 'u',
+				'ü': 'u',
+				'ý': 'y',
+				'ř': 'r',
+				'ž': 'z',
+				' ': '_',
+				'\'': '',
+				'?': '',
+				'/': '',
+				'\\': '',
+				'.': '',
+				',': '',
+				'>': '',
+				'<': '',
+				'"': '',
+				'[': '',
+				']': '',
+				'|': '',
+				'{': '',
+				'}': ''
+			};
+			
+			
+			// lowercase
+			string = string.toLowerCase();
+			
+			
+			// loop through characters
+			for( i = 0; i < string.length; i++ ) {
+				
+				// character
+				var c = string.charAt(i);
+				
+				
+				// override c with replacement
+				if( typeof replace[c] !== 'undefined' ) {
+					
+					c = replace[c];
+						
+				}
+				
+				
+				// append
+				string2 += c;
+					
+			}
+			
+			
+			// return
+			return string2;
+				
 		}
 		
 	};
@@ -2251,10 +2359,54 @@ var acf;
 			
 			
 			// position
-			this.$el.css({
-				top: e.$el.offset().top - this.$el.outerHeight() - 6,
-				left: e.$el.offset().left + ( e.$el.outerWidth() / 2 ) - ( this.$el.outerWidth() / 2 )
-			});
+			var tolerance = 10;
+				target_w = e.$el.outerWidth(),
+				target_h = e.$el.outerHeight(),
+				target_t = e.$el.offset().top,
+				target_l = e.$el.offset().left,
+				tooltip_w = this.$el.outerWidth(),
+				tooltip_h = this.$el.outerHeight();
+			
+			
+			// calculate top
+			var top = target_t - tooltip_h,
+				left = target_l + (target_w / 2) - (tooltip_w / 2);
+			
+			
+			// too far left
+			if( left < tolerance ) {
+				
+				this.$el.addClass('right');
+				
+				left = target_l + target_w;
+				top = target_t + (target_h / 2) - (tooltip_h / 2);
+			
+			
+			// too far right
+			} else if( (left + tooltip_w + tolerance) > $(window).width() ) {
+				
+				this.$el.addClass('left');
+				
+				left = target_l - tooltip_w;
+				top = target_t + (target_h / 2) - (tooltip_h / 2);
+			
+				
+			// too far top
+			} else if( top - $(window).scrollTop() < tolerance ) {
+				
+				this.$el.addClass('bottom');
+				
+				top = target_t + target_h;
+
+			} else {
+				
+				this.$el.addClass('top');
+				
+			}
+			
+			
+			// update css
+			this.$el.css({ 'top': top, 'left': left });
 			
 			
 			// avoid double title	
@@ -2589,7 +2741,7 @@ console.time("acf_test_ready");
 				// use show() to force display when postbox has been hidden by 'Show on screen' toggle
 				$postbox.removeClass('acf-hidden hide-if-js').show();
 				$label.removeClass('acf-hidden hide-if-js').show();
-				$toggle.attr('checked', 'checked');
+				$toggle.prop('checked', true);
 				
 				
 				// replace HTML if needed
@@ -2644,7 +2796,7 @@ console.time("acf_test_ready");
 				
 				
 				// bail early if not a field which saves taxonomy terms to post
-				if( $el.is('.acf-taxonomy-field') && $el.attr('data-load_save') != '1' ) {
+				if( $el.is('.acf-taxonomy-field') && $el.attr('data-save') != '1' ) {
 					
 					return;
 					
@@ -2770,7 +2922,7 @@ console.time("acf_test_ready");
 				// actually a term relationship, it is meta data
 				var $el = $(this).closest('.acf-taxonomy-field');
 				
-				if( $el.exists() && $el.attr('data-load_save') != '1' ) {
+				if( $el.exists() && $el.attr('data-save') != '1' ) {
 					
 					return;
 					
@@ -2811,6 +2963,58 @@ console.time("acf_test_ready");
 	});
 
 
+	
+})(jQuery);
+
+(function($){
+	
+	acf.fields.checkbox = acf.field.extend({
+		
+		type: 'checkbox',
+		
+		events: {
+			'change input':	'change'
+		},
+		
+		change: function( e ){
+			
+			// vars
+			var $ul = e.$el.closest('ul'),
+				$inputs = $ul.find('input[name]'),
+				checked = e.$el.is(':checked');
+			
+			
+			// is toggle?
+			if( e.$el.hasClass('acf-checkbox-toggle') ) {
+				
+				// toggle all
+				$inputs.prop('checked', checked);
+				
+				
+				// return
+				return;
+				
+			}
+			
+			
+			// bail early if no toggle
+			if( !$ul.find('.acf-checkbox-toggle').exists() ) {
+				
+				return;
+				
+			}
+			
+			
+			// determine if all inputs are checked
+			var checked = ( $inputs.not(':checked').length == 0 );
+			
+			
+			// update toggle
+			$ul.find('.acf-checkbox-toggle').prop('checked', checked);
+			
+		}
+		
+	});
 	
 })(jQuery);
 
@@ -3551,7 +3755,7 @@ console.time("acf_test_ready");
 		initialize: function(){
 			
 			// add attribute to form
-			if( this.$el.hasClass('basic') ) {
+			if( this.o.uploader == 'basic' ) {
 				
 				this.$el.closest('form').attr('enctype', 'multipart/form-data');
 				
@@ -4367,7 +4571,7 @@ console.time("acf_test_ready");
 		initialize: function(){
 			
 			// add attribute to form
-			if( this.$el.hasClass('basic') ) {
+			if( this.o.uploader == 'basic' ) {
 				
 				this.$el.closest('form').attr('enctype', 'multipart/form-data');
 				
@@ -5477,7 +5681,8 @@ console.time("acf_test_ready");
 		
 		actions: {
 			'ready':	'initialize',
-			'append':	'initialize'
+			'append':	'initialize',
+			//'show':		'show'
 		},
 		
 		events: {
@@ -5538,7 +5743,7 @@ console.time("acf_test_ready");
 				
 				
 				// Scrolled to bottom
-				if( $(this).scrollTop() + $(this).innerHeight() >= $(this).get(0).scrollHeight ) {
+				if( Math.ceil( $(this).scrollTop() ) + $(this).innerHeight() >= $(this).get(0).scrollHeight ) {
 					
 					// get paged
 					var paged = $el.data('paged') || 1;
@@ -5551,52 +5756,72 @@ console.time("acf_test_ready");
 					// fetch
 					self.doFocus($field);
 					self.fetch();
+					
 				}
 				
 			});
 			
 			
-			/*
-var scroll_timer = null;
-			var scroll_event = function( e ){
+/*
+			// scroll event
+			var maybe_fetch = function( e ){
+				console.log('scroll');
+				// remove listener
+				$(window).off('scroll', maybe_fetch);
 				
-				console.log( 'scroll_event' );
 				
-				if( scroll_timer) {
+				// is field in view
+			    if( acf.is_in_view($field) ) {
 					
-			        clearTimeout( scroll_timer );
-			        
-			    }
-			    
-			    
-			    scroll_timer = setTimeout(function(){
-				    
-				    
-				    if( $field.is(':visible') && acf.is_in_view($field) ) {
+					// fetch
+					self.doFocus($field);
+					self.fetch();
+					
+					
+					// return
+					return;
+				}
 						
-						// fetch
-						self.doFocus($field);
-						self.fetch();
-						
-						
-						$(window).off('scroll', scroll_event);
-						
-					}
-				    
-				    
-			    }, 100);			    
-			    				
+				
+				// add listener
+				setTimeout(function(){
+					
+					$(window).on('scroll', maybe_fetch);
+				
+				}, 500);
 				
 			};
-			
-						
-			$(window).on('scroll', scroll_event);
-			
 */
-			// ajax fetch values for left side
+			
+			
+			// fetch
 			this.fetch();
 			
 		},
+		
+/*
+		show: function(){
+			
+			console.log('show field: %o', this.o.xhr);
+			
+			// bail ealry if already loaded
+			if( typeof this.o.xhr !== 'undefined' ) {
+				
+				return;	
+				
+			}
+			
+			
+			// is field in view
+		    if( acf.is_in_view(this.$field) ) {
+				
+				// fetch
+				this.fetch();
+				
+			}
+			
+		},
+*/
 		
 		fetch: function(){
 			
@@ -5637,7 +5862,7 @@ var scroll_timer = null;
 			
 			
 			// add message
-			this.$choices.children('.list').append('<p>' + acf._e('relationship', 'loading') + '...</p>');
+			this.$choices.find('ul:last').append('<p><i class="acf-loading"></i> ' + acf._e('relationship', 'loading') + '</p>');
 			
 			
 			// get results
@@ -5671,7 +5896,7 @@ var scroll_timer = null;
 			
 			
 			// remove p tag
-			this.$choices.children('.list').children('p').remove();
+			this.$choices.find('p').remove();
 			
 			
 			// no results?
@@ -7065,7 +7290,7 @@ var scroll_timer = null;
 					
 					
 					// check input
-					$li.find('input').attr('checked', 'checked');
+					$li.find('input').prop('checked', true);
 					
 					
 					// scroll to bottom
@@ -7625,11 +7850,9 @@ var scroll_timer = null;
 			
 			
 			// vars
-			var $first_field = null;
-			
-			
-			// message
-			var message = acf._e('validation_failed');
+			var $scrollTo = null,
+				count = 0,
+				message = acf._e('validation_failed');
 			
 			
 			// show field error messages
@@ -7641,16 +7864,41 @@ var scroll_timer = null;
 					var error = json.errors[ i ];
 					
 					
+					// is error for a specific field?
+					if( !error.input ) {
+						
+						// update message
+						message += '. ' + error.message;
+						
+						
+						// ignore following functionality
+						continue;
+						
+					}
+					
+					
 					// get input
 					var $input = $form.find('[name="' + error.input + '"]').first();
 					
 					
 					// if $_POST value was an array, this $input may not exist
-					if( ! $input.exists() ) {
+					if( !$input.exists() ) {
 						
 						$input = $form.find('[name^="' + error.input + '"]').first();
 						
 					}
+					
+					
+					// bail early if input doesn't exist
+					if( !$input.exists() ) {
+						
+						continue;
+						
+					}
+					
+					
+					// increase
+					count++;
 					
 					
 					// now get field
@@ -7661,10 +7909,10 @@ var scroll_timer = null;
 					this.add_error( $field, error.message );
 					
 					
-					// save as first field
-					if( i == 0 ) {
+					// set $scrollTo
+					if( $scrollTo === null ) {
 						
-						$first_field = $field;
+						$scrollTo = $field;
 						
 					}
 					
@@ -7672,15 +7920,13 @@ var scroll_timer = null;
 				
 				
 				// message
-				message += '. ';
-				
-				if( json.errors.length == 1 ) {
+				if( count == 1 ) {
 					
-					message += acf._e('validation_failed_1');
+					message += '. ' + acf._e('validation_failed_1');
 					
-				} else {
+				} else if( count > 1 ) {
 					
-					message += acf._e('validation_failed_2').replace('%d', json.errors.length);
+					message += '. ' + acf._e('validation_failed_2').replace('%d', count);
 					
 				}
 			
@@ -7702,18 +7948,21 @@ var scroll_timer = null;
 			// update message
 			$message.children('p').html( message );
 			
-						
-			// if message is not in view, scroll to first error field
-			if( $first_field ) {
+			
+			// if no $scrollTo, set to message
+			if( $scrollTo === null ) {
 				
-				// timeout avoids flicker jump
-				setTimeout(function(){
-					
-					$("html, body").animate({ scrollTop: $first_field.offset().top - ( $(window).height() / 2 ) }, 500);
-					
-				}, 1);
+				$scrollTo = $message;
 				
 			}
+			
+			
+			// timeout avoids flicker jump
+			setTimeout(function(){
+				
+				$("html, body").animate({ scrollTop: $scrollTo.offset().top - ( $(window).height() / 2 ) }, 500);
+				
+			}, 1);
 			
 		},
 		
@@ -8347,6 +8596,7 @@ ed.on('ResizeEditor', function(e) {
 // @codekit-prepend "../js/event-manager.js";
 // @codekit-prepend "../js/acf.js";
 // @codekit-prepend "../js/acf-ajax.js";
+// @codekit-prepend "../js/acf-checkbox.js";
 // @codekit-prepend "../js/acf-color-picker.js";
 // @codekit-prepend "../js/acf-conditional-logic.js";
 // @codekit-prepend "../js/acf-date-picker.js";

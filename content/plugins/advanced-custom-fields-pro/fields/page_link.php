@@ -111,7 +111,7 @@ class acf_field_page_link extends acf_field {
 		// update $args
 		if( !empty($field['post_type']) ) {
 		
-			$args['post_type'] = acf_force_type_array( $field['post_type'] );
+			$args['post_type'] = acf_get_array( $field['post_type'] );
 			
 		} else {
 			
@@ -381,7 +381,7 @@ class acf_field_page_link extends acf_field {
 	function get_posts( $value, $field ) {
 		
 		// force value to array
-		$value = acf_force_type_array( $value );
+		$value = acf_get_array( $value );
 		
 		
 		// get selected post ID's
