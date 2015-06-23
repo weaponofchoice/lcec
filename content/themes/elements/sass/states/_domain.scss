@@ -17,3 +17,9 @@
     }
   }
 }
+
+@media #{$small-only}{
+  .section_domain{
+    background-color: $blue-transparent;
+  }
+}

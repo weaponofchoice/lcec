@@ -124,22 +124,16 @@ body.home .section_grid ul li:hover{
             display: none;
           }
           
-          .mask{
-            padding-bottom: 100%;
-          }
-          
           p{
             display: none;
-          }
-          
-          a:hover{
-            .mask{
-              background: $blue-transparent;
-            }
           }
         }
       }
     }
+  }
+  
+  body.home .section_grid ul li:hover{
+    background-color: $blue-transparent;
   }
 }
 
