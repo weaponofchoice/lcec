@@ -11,7 +11,7 @@ Pace.on 'done', ->
   # Fade in
   waypoints = domain.waypoint(((direction) ->
     $(this.element).toggleClass "activated"
-  ), offset: 120 )
+  ), offset: 200 )
   
   # resizing window
   $(window).on "resize", ->
@@ -22,4 +22,4 @@ Pace.on 'done', ->
     # Fade in
     waypoints = domain.waypoint(((direction) ->
       $(this.element).toggleClass "activated"
-    ), offset: 120 )
+    ), offset: 200 )
