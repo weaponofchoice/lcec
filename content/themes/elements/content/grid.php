@@ -25,8 +25,6 @@ echo '<section class="section_grid has_no-pad">';
           ?>
           <li class="retina" style="background-image:url('<?php echo $image['sizes']['medium']; ?>')">
             <a href="#anchor-<?php echo $i; ?>">
-              <div class="mask"></div>
-            
               <?php if( $title ): ?>
                 <p class="is_white is_aligned-center fadeIn-up"><?php echo $title; ?></p>
               <?php endif; ?>
