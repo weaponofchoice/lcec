@@ -1835,9 +1835,11 @@ main section:last-child {
   -o-transition: 0.5s;
   transition: 0.5s;
   width: 100%;
+  margin: 60px 0;
   padding: 0;
   padding-top: 60px;
   padding-bottom: 60px;
+  display: inline-block;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
