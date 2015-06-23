@@ -1831,98 +1831,70 @@ main section:last-child {
     padding-bottom: 30%; } }
 .section_domain {
   padding: 0;
-  width: 100%; }
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; }
   .section_domain * {
     color: white; }
-  .section_domain .section_header,
-  .section_domain .bottom,
-  .section_domain .bottom > div {
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s; }
-  .section_domain .section_header {
-    -moz-transform: translateX(-50px);
-    -o-transform: translateX(-50px);
-    -ms-transform: translateX(-50px);
-    -webkit-transform: translateX(-50px);
-    transform: translateX(-50px); }
-  .section_domain .bottom > div {
-    -moz-transform: translateX(50px);
-    -o-transform: translateX(50px);
-    -ms-transform: translateX(50px);
-    -webkit-transform: translateX(50px);
-    transform: translateX(50px); }
-  .section_domain .section_header {
-    z-index: 800; }
-  .section_domain .top,
-  .section_domain .bottom {
-    top: 0;
-    position: absolute;
+  .section_domain .inner {
     width: 100%;
-    height: 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center; }
-  .section_domain .top {
-    top: 0;
-    z-index: 600; }
-  .section_domain .bottom {
-    bottom: 0;
-    z-index: 700;
-    background: rgba(0, 51, 99, 0.8); }
-    .section_domain .bottom > div {
-      bottom: 60px;
-      right: 0;
-      left: 0;
-      margin: auto;
-      position: absolute; }
-      .section_domain .bottom > div p, .section_domain .bottom > div footer > div a, footer > div .section_domain .bottom > div a, .section_domain .bottom > div div.wpcf7-response-output, .section_domain .bottom > div input, .section_domain .bottom > div button {
-        margin-bottom: 1em; }
+    height: 100%;
+    padding: 60px 0;
+    background-color: rgba(0, 51, 99, 0.8); }
+    .section_domain .inner p, .section_domain .inner footer > div a, footer > div .section_domain .inner a, .section_domain .inner div.wpcf7-response-output, .section_domain .inner input, .section_domain .inner button {
+      margin-bottom: 1em; }
+    .section_domain .inner > * {
+      max-width: 750px;
+      margin: auto; }
 
-.bottom > * {
-  max-width: 750px;
-  margin: auto; }
-
+.section_domain .inner,
+.section_domain .inner .section_header,
+.section_domain .inner .section_body {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s; }
 .section_domain .section_header {
-  top: 60px;
-  right: 0;
-  left: 0;
-  position: absolute;
-  z-index: 800; }
-  .section_domain .section_header p, .section_domain .section_header footer > div a, footer > div .section_domain .section_header a, .section_domain .section_header div.wpcf7-response-output, .section_domain .section_header input, .section_domain .section_header button {
-    margin-bottom: 1em; }
+  -moz-transform: translateX(-50px);
+  -o-transform: translateX(-50px);
+  -ms-transform: translateX(-50px);
+  -webkit-transform: translateX(-50px);
+  transform: translateX(-50px); }
+.section_domain .section_body {
+  -moz-transform: translateX(50px);
+  -o-transform: translateX(50px);
+  -ms-transform: translateX(50px);
+  -webkit-transform: translateX(50px);
+  transform: translateX(50px); }
 
 @media screen and (max-width: 1024px) {
   .section_domain {
     position: relative !important;
     height: auto !important;
     margin-top: 0 !important;
-    margin-bottom: 50px;
-    padding: 60px 0;
-    background-color: #003363; }
-    .section_domain .section_header {
-      top: 0 !important;
-      position: relative !important;
-      margin-bottom: 60px; }
-    .section_domain .top,
-    .section_domain .bottom {
-      position: relative !important;
-      height: auto !important;
-      overflow: hidden; }
-    .section_domain .bottom > div {
-      bottom: 0;
-      position: relative;
+    margin-bottom: 60px; }
+    .section_domain .inner {
       height: auto;
       overflow: hidden; }
-
-  .section_domain.is_scrolled div.section_header,
-  .section_domain.is_scrolled div.top,
-  .section_domain.is_scrolled div.bottom {
-    position: relative !important; } }
+    .section_domain .inner,
+    .section_domain .inner .section_header,
+    .section_domain .inner .section_body {
+      opacity: 1;
+      visibility: visible;
+      -webkit-transition: 0s;
+      -moz-transition: 0s;
+      -ms-transition: 0s;
+      -o-transition: 0s;
+      transition: 0s;
+      -moz-transform: translateX(0);
+      -o-transform: translateX(0);
+      -ms-transform: translateX(0);
+      -webkit-transform: translateX(0);
+      transform: translateX(0); } }
 .section_accordion {
   padding-bottom: 0; }
 
@@ -2449,9 +2421,9 @@ body.is-mobile.is-loading > * {
 @media only screen and (max-width: 43.75em) {
   .is_fullwidth {
     margin-left: -1.875rem; } }
-.section_domain.test .bottom,
-.section_domain.test .section_header,
-.section_domain.test .bottom > div {
+.section_domain.test .inner,
+.section_domain.test .inner .section_header,
+.section_domain.test .inner .section_body {
   opacity: 1;
   visibility: visible;
   -webkit-transition: 0.5s;
@@ -2459,27 +2431,18 @@ body.is-mobile.is-loading > * {
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s; }
-.section_domain.test .section_header {
+.section_domain.test .inner .section_header {
   -moz-transform: translateX(0);
   -o-transform: translateX(0);
   -ms-transform: translateX(0);
   -webkit-transform: translateX(0);
   transform: translateX(0); }
-.section_domain.test .bottom > div {
+.section_domain.test .inner .section_body {
   -moz-transform: translateX(0);
   -o-transform: translateX(0);
   -ms-transform: translateX(0);
   -webkit-transform: translateX(0);
   transform: translateX(0); }
-
-.section_domain.is_scrolled .top,
-.section_domain.is_scrolled .bottom {
-  top: 0 !important;
-  position: absolute !important;
-  height: calc(100% - 60px); }
-.section_domain.is_scrolled .section_header {
-  top: 60px;
-  position: absolute !important; }
 
 .fadeIn-up {
   opacity: 0;

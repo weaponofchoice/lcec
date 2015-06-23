@@ -1,49 +1,17 @@
 .section_domain{
   &.test{
-    .bottom,
-    .section_header,
-    .bottom > div{
+    .inner,
+    .inner .section_header,
+    .inner .section_body{
       @include show( .5s );
     }
     
-    .section_header{
+    .inner .section_header{
       @include transform(translateX(0));
     }
     
-    .bottom > div{
+    .inner .section_body{
       @include transform(translateX(0));
     }
-  }
-  //.top,
-//  .bottom{
-//    &.is_pinned{
-//      top: 60px;
-//      left: 0;
-//      position: fixed;
-//
-//      height: calc(100% - 60px);
-//    }
-//  }
-//
-//  .section_header{
-//    &.is_pinned{
-//      top: 120px;
-//      position: fixed;
-//    }
-//  }
-}
-
-.section_domain.is_scrolled{
-  .top,
-  .bottom{
-    top: 0 !important;
-    position: absolute !important;
-    
-    height: calc(100% - 60px);
-  }
-
-  .section_header{
-    top: 60px;
-    position: absolute !important;
   }
 }
