@@ -8,11 +8,6 @@ $ ->
   viewport_h = window.innerHeight
   header_h = 60
   
-  # Apply heights
-  domain.css "height", viewport_h - header_h
-  top.css "height", viewport_h - header_h
-  bottom.css "height", viewport_h - header_h
-  
   # Fade in
   waypoints = domain.waypoint(((direction) ->
     $(this.element).toggleClass "test"
@@ -21,7 +16,7 @@ $ ->
   # Fade out
   waypoints = domain.waypoint(((direction) ->
     $(this.element).toggleClass "test"
-  ), offset: '-70%' )
+  ), offset: '-60%' )
   
   # resizing window
   window.on 'resize', ->
