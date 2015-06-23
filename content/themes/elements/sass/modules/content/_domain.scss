@@ -97,3 +97,11 @@
     }
   }
 }
+
+@media #{$small-only}{
+  .section_domain{
+    .inner{
+      padding: 60px 0;
+    }
+  }
+}
