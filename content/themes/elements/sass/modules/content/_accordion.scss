@@ -5,31 +5,31 @@
 .section_accordion .section_header > a{
   @include flex;
   @include align-items( center );
-  
+
   width: 50%;
   float: left;
   padding-bottom: $section-spacing;
-  
+
   img{
     float: left;
-    
+
     width: 50px;
     margin-right: 1em;
   }
-  
+
   &:after{
     @include transform( rotate(45deg) );
-    
+
     content: '';
     right: 0;
     bottom: -15px;
     left: -50px;
     position: absolute;
-    
+
     width: 30px;
     height: 30px;
     margin: auto;
-    
+
     background-color: $blue;
   }
 }
@@ -38,40 +38,41 @@
   max-width: none;
   padding-left: 0;
   padding-right: 0;
-  
+
   background: $blue;
-  
+
   *{
     color: $white;
   }
-  
+
   > div{
     top: 0;
     right: 0;
     left: 0;
     position: absolute;
-    
+
+    width: 100%;
     max-width: 750px;
     margin: auto;
     padding: $section-spacing $side-margin;
-    
+
     > p{
       margin-bottom: 1em;
     }
-    
+
     ul{
       padding-left: 1em;
-      
-      list-style: initial;
+
+      list-style-type: disc;
       list-style-position: outside;
-      
+
       li{
         @extend p;
-        
+
         color: $white;
       }
     }
-    
+
     .inner{
       top: $section-spacing;
       position: absolute;
