@@ -1391,6 +1391,7 @@ main {
   min-height: 100%;
   overflow: hidden;
   margin-top: 120px;
+  display: block;
   background: white; }
 
 @media only screen and (max-width: 43.75em) {
@@ -1979,6 +1980,7 @@ html.no-background-blend-mode .section_grid ul li a {
     right: 0;
     left: 0;
     position: absolute;
+    width: 100%;
     max-width: 750px;
     margin: auto;
     padding: 3.75rem 3.75rem; }
@@ -1986,7 +1988,7 @@ html.no-background-blend-mode .section_grid ul li a {
       margin-bottom: 1em; }
     .section_accordion .section_body > div ul {
       padding-left: 1em;
-      list-style: initial;
+      list-style-type: disc;
       list-style-position: outside; }
       .section_accordion .section_body > div ul li {
         color: white; }
