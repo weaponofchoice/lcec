@@ -1391,6 +1391,7 @@ main {
   min-height: 100%;
   overflow: hidden;
   margin-top: 120px;
+  display: block;
   background: white; }
 
 @media only screen and (max-width: 43.75em) {
