@@ -1,20 +1,19 @@
-.section_domain{
-  &.activated{
-    background-color: $blue-transparent;
-    
-    .inner,
-    .inner .section_header,
-    .inner .section_body{
-      @include show( .5s );
-    }
-    
-    .inner .section_header{
-      @include transform(translateX(0));
-    }
-    
-    .inner .section_body{
-      @include transform(translateX(0));
-    }
+.section_domain.activated,
+body.ie .section_domain{
+  background-color: $blue-transparent;
+
+  .inner,
+  .inner .section_header,
+  .inner .section_body{
+    @include show( .5s );
+  }
+
+  .inner .section_header{
+    @include transform(translateX(0));
+  }
+
+  .inner .section_body{
+    @include transform(translateX(0));
   }
 }
 
@@ -22,7 +21,7 @@ html.no-background-blend-mode .section_domain{
   .label{
     z-index: 999;
   }
-  
+
   .inner{
     background-color: $blue-transparent;
   }

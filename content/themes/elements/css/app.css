@@ -2463,11 +2463,15 @@ body.is-mobile.is-loading > * {
 @media only screen and (max-width: 43.75em) {
   .is_fullwidth {
     margin-left: -1.875rem; } }
-.section_domain.activated {
+.section_domain.activated,
+body.ie .section_domain {
   background-color: rgba(0, 51, 99, 0.8); }
   .section_domain.activated .inner,
   .section_domain.activated .inner .section_header,
-  .section_domain.activated .inner .section_body {
+  .section_domain.activated .inner .section_body,
+  body.ie .section_domain .inner,
+  body.ie .section_domain .inner .section_header,
+  body.ie .section_domain .inner .section_body {
     opacity: 1;
     visibility: visible;
     -webkit-transition: 0.5s;
@@ -2475,13 +2479,15 @@ body.is-mobile.is-loading > * {
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s; }
-  .section_domain.activated .inner .section_header {
+  .section_domain.activated .inner .section_header,
+  body.ie .section_domain .inner .section_header {
     -moz-transform: translateX(0);
     -o-transform: translateX(0);
     -ms-transform: translateX(0);
     -webkit-transform: translateX(0);
     transform: translateX(0); }
-  .section_domain.activated .inner .section_body {
+  .section_domain.activated .inner .section_body,
+  body.ie .section_domain .inner .section_body {
     -moz-transform: translateX(0);
     -o-transform: translateX(0);
     -ms-transform: translateX(0);
