@@ -5,7 +5,7 @@
     padding-left: 0;
     padding-right: 0   ;
   }
-  
+
   .section_header{
     top: 50%;
     right: 0;
@@ -13,20 +13,20 @@
     margin: auto;
     position: absolute;
     z-index: 1;
-    
+
     &.animated{
       @include transform( translateY(-100%) );
     }
-    
+
     h2{
       margin-bottom: 0;
     }
   }
-  
+
   .section_body{
     ul{
       width: 100%;
-    
+
       li{
         height: 0;
         padding: 0;
@@ -39,35 +39,46 @@
 // Grid item
 .section_grid ul li{
   @include transition( .5s );
-  
+
   background-color: $blue-transparent;
   background-blend-mode: multiply;
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-position: center center !important;
-  
-  a{
-    top: 0;
-    left: 0;
-    position: absolute;
-    
+
+  .inner{
     width: 100%;
-    height: 100%;
-  }
-  
-  p{
-    bottom: 35px;
-    right: 0;
-    left: 0;
-    margin: auto;
-    position: absolute;
-    
-    padding: 0 35px;
+    height: 0;
+    padding-bottom: 160%;
+
+    a{
+      top: 0;
+      left: 0;
+      position: absolute;
+
+      width: 100%;
+      height: 100%;
+    }
+
+    p{
+      bottom: 35px;
+      right: 0;
+      left: 0;
+      margin: auto;
+      position: absolute;
+
+      padding: 0 35px;
+    }
   }
 }
 
 body.home .section_grid ul li:hover{
   background-color: transparent;
+}
+
+// Backgorund blend mode fallbacks
+html.no-background-blend-mode .section_grid ul li .inner{
+  background: $blue-transparent;
 }
 
 
@@ -99,15 +110,11 @@ body.home .section_grid ul li:hover{
 .section_grid ul.isotope_masonry{
   li:nth-child(n){
     margin-bottom: $column-gutter;
-    
+
     img{
       margin-bottom: 0;
     }
   }
-}
-
-html.no-background-blend-mode .section_grid ul li a{
-  background-color: $blue-transparent;
 }
 
 @media #{$medium-down}{
@@ -117,17 +124,17 @@ html.no-background-blend-mode .section_grid ul li a{
         @include transform( translateY(-50%) );
       }
     }
-    
+
     .section_body{
       ul{
         li{
           padding-bottom: 50%;
-          
+
           &:nth-child(3),
           &:nth-child(4){
             display: none;
           }
-          
+
           p{
             display: none;
           }
@@ -135,7 +142,7 @@ html.no-background-blend-mode .section_grid ul li a{
       }
     }
   }
-  
+
   body.home .section_grid ul li{
     background-color: $blue-transparent;
   }
