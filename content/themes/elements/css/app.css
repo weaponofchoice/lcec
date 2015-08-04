@@ -1773,6 +1773,9 @@ main section:last-child {
 body.home .section_grid ul li:hover {
   background-color: transparent; }
 
+html.no-background-blend-mode .home .section_grid ul li .inner {
+  background: transparent; }
+
 html.no-background-blend-mode .section_grid ul li .inner {
   background: rgba(0, 51, 99, 0.8); }
 

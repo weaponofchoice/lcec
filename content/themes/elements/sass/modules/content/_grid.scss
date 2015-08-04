@@ -76,6 +76,11 @@ body.home .section_grid ul li:hover{
   background-color: transparent;
 }
 
+// Backgorund blend mode fallbacks
+html.no-background-blend-mode .home .section_grid ul li .inner{
+  background: transparent;
+}
+
 html.no-background-blend-mode .section_grid ul li .inner{
   background: $blue-transparent;
 }
