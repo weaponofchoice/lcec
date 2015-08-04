@@ -76,7 +76,7 @@ body.home .section_grid ul li:hover{
   background-color: transparent;
 }
 
-body.no-background-blend-mode .section_grid ul li .inner{
+html.no-background-blend-mode .section_grid ul li .inner{
   background: $blue-transparent;
 }
 

@@ -1773,7 +1773,7 @@ main section:last-child {
 body.home .section_grid ul li:hover {
   background-color: transparent; }
 
-body.no-background-blend-mode .section_grid ul li .inner {
+html.no-background-blend-mode .section_grid ul li .inner {
   background: rgba(0, 51, 99, 0.8); }
 
 @media only screen and (min-width: 56.3125em) {
