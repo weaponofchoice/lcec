@@ -77,10 +77,6 @@ body.home .section_grid ul li:hover{
 }
 
 // Backgorund blend mode fallbacks
-html.no-background-blend-mode .home .section_grid ul li .inner{
-  background: transparent;
-}
-
 html.no-background-blend-mode .section_grid ul li .inner{
   background: $blue-transparent;
 }
@@ -119,10 +115,6 @@ html.no-background-blend-mode .section_grid ul li .inner{
       margin-bottom: 0;
     }
   }
-}
-
-html.no-background-blend-mode .section_grid ul li a{
-  background-color: $blue-transparent;
 }
 
 @media #{$medium-down}{

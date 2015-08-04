@@ -1773,9 +1773,6 @@ main section:last-child {
 body.home .section_grid ul li:hover {
   background-color: transparent; }
 
-html.no-background-blend-mode .home .section_grid ul li .inner {
-  background: transparent; }
-
 html.no-background-blend-mode .section_grid ul li .inner {
   background: rgba(0, 51, 99, 0.8); }
 
@@ -1819,9 +1816,6 @@ html.no-background-blend-mode .section_grid ul li .inner {
   margin-bottom: 1.875rem; }
   .section_grid ul.isotope_masonry li:nth-child(n) img {
     margin-bottom: 0; }
-
-html.no-background-blend-mode .section_grid ul li a {
-  background-color: rgba(0, 51, 99, 0.8); }
 
 @media only screen and (max-width: 56.25em) {
   .section_grid .section_header.animated {
