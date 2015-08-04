@@ -1752,22 +1752,29 @@ main section:last-child {
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-position: center center !important; }
-  .section_grid ul li a {
-    top: 0;
-    left: 0;
-    position: absolute;
+  .section_grid ul li .inner {
     width: 100%;
-    height: 100%; }
-  .section_grid ul li p, .section_grid ul li footer > div a, footer > div .section_grid ul li a, .section_grid ul li div.wpcf7-response-output, .section_grid ul li input, .section_grid ul li button, .section_grid .section_accordion .section_body > div ul li li, .section_accordion .section_body > div .section_grid ul li li {
-    bottom: 35px;
-    right: 0;
-    left: 0;
-    margin: auto;
-    position: absolute;
-    padding: 0 35px; }
+    height: 0;
+    padding-bottom: 160%; }
+    .section_grid ul li .inner a {
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%; }
+    .section_grid ul li .inner p, .section_grid ul li .inner footer > div a, footer > div .section_grid ul li .inner a, .section_grid ul li .inner div.wpcf7-response-output, .section_grid ul li .inner input, .section_grid ul li .inner button, .section_grid .section_accordion .section_body > div ul li .inner li, .section_accordion .section_body > div .section_grid ul li .inner li {
+      bottom: 35px;
+      right: 0;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      padding: 0 35px; }
 
 body.home .section_grid ul li:hover {
   background-color: transparent; }
+
+body.no-background-blend-mode .section_grid ul li .inner {
+  background: rgba(0, 51, 99, 0.8); }
 
 @media only screen and (min-width: 56.3125em) {
   .l-grid-4 li:nth-last-child(-n + 4) {
