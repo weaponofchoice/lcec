@@ -159,3 +159,9 @@ html.no-background-blend-mode .section_grid ul li .inner{
     }
   }
 }
+
+@media #{$small-only}{
+  .section_grid h2{
+    font-size: 30px;
+  }
+}
