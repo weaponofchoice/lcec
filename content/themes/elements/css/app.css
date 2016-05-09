@@ -2454,14 +2454,19 @@ body.is-loading {
     -o-transition: 0s;
     transition: 0s; }
 
-body.is-touch.is-loading > * {
-  opacity: 1;
-  visibility: visible;
-  -webkit-transition: 0s;
-  -moz-transition: 0s;
-  -ms-transition: 0s;
-  -o-transition: 0s;
-  transition: 0s; }
+body.is-touch.is-loading {
+  position: relative;
+  background: none;
+  background-attachment: inherit;
+  background-color: #003363; }
+  body.is-touch.is-loading > * {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: 0s;
+    -moz-transition: 0s;
+    -ms-transition: 0s;
+    -o-transition: 0s;
+    transition: 0s; }
 
 .is_fullwidth {
   width: calc(100% + (3.75rem * 2));
