@@ -6,17 +6,17 @@ body{
 
 body.is-loading{
   position: fixed;
-  
+
   background: url('../img/logo.svg') center center no-repeat;
   background-size: 200px;
   background-attachment: fixed;
   background-color: $white;
-  
+
   > *{
     @include hide( 0s );
   }
 }
 
-body.is-mobile.is-loading > *{
+body.is-touch.is-loading > *{
   @include show( 0s );
 }
