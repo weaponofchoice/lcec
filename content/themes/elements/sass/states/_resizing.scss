@@ -17,6 +17,14 @@ body.is-loading{
   }
 }
 
-body.is-touch.is-loading > *{
-  @include show( 0s );
+body.is-touch.is-loading{
+  position: relative;
+
+  background: none;
+  background-attachment: inherit;
+  background-color: $blue;
+
+  > *{
+    @include show( 0s );
+  }
 }
