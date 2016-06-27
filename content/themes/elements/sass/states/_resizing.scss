@@ -1,3 +1,19 @@
+@keyframes pulsate{
+  0%{
+    opacity: .6;
+    width: 5px;
+    height: 5px;
+    border-width: 2px;
+  }
+
+  100%{
+    opacity: 0;
+    width: 30px;
+    height: 30px;
+    border-width: 5px;
+  }
+}
+
 body{
   > *{
     @include show( .5s );
@@ -5,6 +21,37 @@ body{
 }
 
 body.is-loading{
+  position: fixed;
+
+  background-color: $white;
+
+  > *{
+    @include hide( 0s );
+  }
+
+  &:after{
+    content: "";
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+
+    margin: auto;
+
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border: 3px solid $black;
+
+    -webkit-transform-origin: 50% 50%;
+    animation-name: pulsate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+}
+
+body.is-resizing{
   position: fixed;
 
   background: url('../img/logo.svg') center center no-repeat;
